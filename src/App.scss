@@ -1,0 +1,24 @@
+.App{
+  width: 90%;
+  margin-left: 5%;
+}
+
+.inline_element{
+  display: flex;
+  margin-top: 24px;
+
+  .left_col{
+    width: 33%;
+
+    label {
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 1em;
+    }
+  }
+
+  .right_col{
+    width: 66%;
+  }
+}
+

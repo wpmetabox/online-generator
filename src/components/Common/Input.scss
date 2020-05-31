@@ -1,0 +1,34 @@
+.input_container{
+  height: 48px;
+  margin-top: 12px;
+  display: flex;
+
+  .left_col{
+    width: 33%;
+    padding-top: 12px;
+
+    span{
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 1em;
+    }
+  }
+  .right_col{
+    width: 66%;
+
+    input{
+      height: 40px;
+      color: #2c3e50;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      width: 100%;
+      padding-left: 12px;
+    }
+
+    span{
+      color: #555;
+      top: 4px;
+      position: relative;
+    }
+  }
+}
