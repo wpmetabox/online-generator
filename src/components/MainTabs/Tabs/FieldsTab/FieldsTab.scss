@@ -123,19 +123,18 @@
       .og-builder__field-body{
         border: 1px solid #ccc;
         padding: 15px;
-        margin-top: -1px;
 
         .react-tabs__tab-list{
           padding-left: 0px;
           height: 36px;
           margin-bottom: 0px;
-          border: none;
+          border-bottom: 1px solid #ccc;
 
           .react-tabs__tab {
             height: 23px;
             border-radius: 0;
             background-color: #f1f1f1;
-            border-color: #aaa;
+            border-color: #ccc;
       
             span{
               margin-left: 6px;
@@ -144,17 +143,18 @@
 
           .react-tabs__tab:nth-child(2){
             margin-left: 4px;
-            border-bottom: 1px solid #ccc;
           }
 
           .react-tabs__tab--selected{
             background-color: #fff;
+            border-bottom-color: #fff;;
           }
         }
 
         .field_content{
+          border: 1px solid #ccc;
           padding: 15px;
-          border: 1px solid #fafafa;
+          margin-top: -1px;
         }
       }
     }

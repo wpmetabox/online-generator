@@ -115,10 +115,6 @@ export const fields = {
     'std': '',
     'placeholder': '',
     'size': '',
-    'datalist': {
-      'id': '',
-      'options': [],
-    },
     'clone': false,
   },
 
@@ -515,3 +511,4 @@ export const fields = {
     'field_type': 'select_advanced', // select, select_advanced
   },
 }
+

@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './App.scss';
 import MainTabs from './components/MainTabs/MainTabs';
+import { Provider } from './context/GeneratorContext';
+import ResultCode from './components/ResultCode/ResultCode';
 
 function App() {
+
+
   return (
     <div className="App">
-      <MainTabs />
-   </div>
+      <Provider>
+        <MainTabs />
+        <ResultCode />
+      </Provider>
+    </div>
   );
 }
 

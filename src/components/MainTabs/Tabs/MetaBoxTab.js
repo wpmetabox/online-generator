@@ -5,8 +5,8 @@ import DivRow from '../DivRow';
 const MetaBoxTab = (props) => {
   return (
     <div>
-      <Input ref={props.register} data={{ placeholder: "Enter ID here", name: "id_meta_box", label: "ID", defaulValue: "untitled" }} />
-      <Input ref={props.register} data={{ placeholder: "Enter title here", name: "title_meta_box", label: "Title", defaulValue: "Untitled Metabox" }} />
+      <Input ref={props.register} data={{ placeholder: "Enter ID here", name: "id_meta_box", label: "ID", defaultValue: "untitled" }} />
+      <Input ref={props.register} data={{ placeholder: "Enter title here", name: "title_meta_box", label: "Title", defaultValue: "Untitled Metabox" }} />
       <DivRow label="Priority" >
         <div className="radio-group">
           <label><input ref={props.register} type="radio" name="priority" value="default" defaultChecked />Default</label>
@@ -32,7 +32,7 @@ const MetaBoxTab = (props) => {
         </div>
       </DivRow>
       <DivRow label="Autosave" >
-        <input ref={props.register} name="auto_save" type="checkbox" />
+        <input ref={props.register} name="autosave" type="checkbox" />
       </DivRow>
     </div>
   )

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { fieldTypes, fields } from '../../../../contants/constants';
+import { fieldTypes, fields } from '../../../../constants/constants';
 import FieldItem from './FieldItem';
 
 const FieldMenu = (props) => {

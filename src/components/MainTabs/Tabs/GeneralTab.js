@@ -1,6 +1,6 @@
 import React from 'react';
 import Input from '../../Common/Input';
-import { generalInputs } from '../../../contants/constants';
+import { generalInputs } from '../../../constants/constants';
 
 const GeneralTab = (props) => {
 

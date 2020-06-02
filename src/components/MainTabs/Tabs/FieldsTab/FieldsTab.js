@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './FieldsTab.scss'
 import FieldMenu from './FieldMenu';
 import FieldSelected from './FieldSelected';
-import { fields } from '../../../../contants/constants';
+import { fields } from '../../../../constants/constants';
 
 const initialDnDState = {
   draggedFrom: null,
@@ -12,15 +12,20 @@ const initialDnDState = {
   updatedOrder: []
 }
 
-const FieldsTab = () => {
+const FieldsTab = (props) => {
   const [selectedList, setListSelected] = useState([]);
+  const [isShow, setIsShow] = useState('');
   const [dragAndDrop, setDragAndDrop] = useState(initialDnDState);
+
   useEffect(() => {
+    setIsShow(selectedList.length);
     return
   }, [selectedList]);
 
   const onSelect = (item) => {
+    setIsShow(selectedList.length + 1);
     setListSelected(selectedList.concat(item));
+
   }
 
   const onDragStart = (event) => {
@@ -78,6 +83,12 @@ const FieldsTab = () => {
     });
   }
 
+  const handleShow = index => {
+    index === isShow ? setIsShow(-isShow) : setIsShow(index)
+  }
+
+  console.log('ggg', isShow)
+
   return (
     <div className="fields_container" >
       <div className="left_fields">
@@ -94,9 +105,12 @@ const FieldsTab = () => {
         {
           selectedList.map((item, index) =>
             <FieldSelected
+              handleShow={handleShow}
+              register={props.register}
               data={fields[item]}
               key={index}
               index={index}
+              isShow={isShow === index + 1}
               onDragStart={onDragStart}
               onDragOver={onDragOver}
               onDrop={onDrop}
