@@ -11,19 +11,19 @@ const ResultCode = () => {
     const [copied, setCopied] = useState(false);
 
     return (
-        <div class="og-result" id="results" style={{ display: data ? 'block' : 'none' }} >
-            <div class="alert alert-info">
+        <div className="og-result" id="results" style={{ display: data ? 'block' : 'none' }} >
+            <div className="alert alert-info">
                 Copy the code and paste into your theme's <code>functions.php</code> file. If you want to save the meta box for later use or reference again, please
                 <a href="/pricing/">
                     <strong>become a premium user</strong>
                 </a>.
             </div>
             <div className="result_wrapper">
-                <Highlight language={'php'}>
+                <Highlight language='php'>
                     {data}
                 </Highlight>
                 <Clipboard title="Click to copy the code" data-clipboard-text={data} onSuccess={() => setCopied(true)}>
-                    <button id="result-copy" class="og-result__button-copy">
+                    <button id="result-copy" className="og-result__button-copy">
                         {!copied && copyIcon}
                         {copied ? 'Copied' : 'Copy'}
                     </button>

@@ -5,7 +5,6 @@ import GeneralContent from './FieldContent/GeneralContent';
 import AdvancedContent from './FieldContent/AdvancedContent';
 
 const FieldSelected = (props) => {
-  console.log('1111', props)
   return (
     <div
       data-position={props.index}

@@ -1,5 +1,4 @@
 export const getLabel = (keyName) => {
-    console.log('kkk', keyName)
     let result = '';
     switch (keyName) {
         case 'id':

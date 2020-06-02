@@ -87,7 +87,7 @@ const FieldsTab = (props) => {
     index === isShow ? setIsShow(-isShow) : setIsShow(index)
   }
 
-  console.log('ggg', isShow)
+  console.log('ggg', selectedList)
 
   return (
     <div className="fields_container" >

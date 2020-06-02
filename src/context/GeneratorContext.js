@@ -20,5 +20,5 @@ const generatePHPCode = dispatch => params => {
 export const { Provider, Context, actions } = createDataContext(
     generatorReducer,
     { generatePHPCode },
-    { data: null }
+    { data: '' }
 );

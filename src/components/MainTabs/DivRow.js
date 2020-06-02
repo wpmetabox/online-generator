@@ -6,7 +6,9 @@ const DivRow = ({ label, children }) => {
       <div className="left_col">
         <label className="label">{label}</label>
       </div>
-      {children}
+      <div className="right_col">
+        {children}
+      </div>
     </div>
   )
 }
