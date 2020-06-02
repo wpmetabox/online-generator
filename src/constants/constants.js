@@ -25,7 +25,7 @@ export const generalInputs = [
     id: 3,
     placeholder: "Enter prefix for field ID here",
     label: "Field ID Prefix",
-    name: "function_name",
+    name: "prefix",
     defaultValue: "prefix-",
     description: "Leave empty to ignore this or use _ to make the fields hidden."
   }

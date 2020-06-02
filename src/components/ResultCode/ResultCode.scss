@@ -42,6 +42,32 @@
             padding: 0.5em;
             color: #abb2bf;
             background: #282c34;
+            border-radius: 2px;
+            font-size: 13px;
+        }
+
+        button{
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: inline-block;
+            border: 1px solid #00b1b3;
+            border-radius: 4px;
+            background: #00b1b3;
+            color: #fff;
+            line-height: 1;
+            padding: 14px 18px;
+            text-transform: none;
+            font-weight: 700;
+            text-align: center;
+            white-space: nowrap;
+            transition: all .2s;
+        }
+
+        svg{
+            fill: currentColor;
+            width: 1em;
+            height: 1em;
         }
     }
 }
