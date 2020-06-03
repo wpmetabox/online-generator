@@ -12,8 +12,7 @@ const GeneralContent = (props) => {
     const inputsNumber = ['size'];
     const checkboxes = ['clone']
     const field = fields[props.type];
-    const elementName = `${props.type}_${props.index + 1}_${name}`
-    console.log('zzz',elementName)
+    const elementName = `fields_${props.index}_${name}`
 
     let result = ''
     if (inputsText.includes(name)) {
@@ -21,7 +20,6 @@ const GeneralContent = (props) => {
       if (name === 'id') {
         defaultValue = `${props.type}_${props.index + 1}`
       }
-      console.log('dddd',defaultValue)
 
       result = <Input type='text' name={elementName} defaultValue={defaultValue} ref={props.register} key={elementName} />
     }

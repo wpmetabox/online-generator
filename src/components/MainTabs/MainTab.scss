@@ -42,8 +42,14 @@
   }
 
   #meta-box-context{
-    padding: 1em 1.5em;
+    padding: 12px 1.5em;
     width: 100%;
     border: 1px solid #ddd;
+  }
+
+  .radio-group{
+    label{
+      margin-right: 8px;
+    }
   }
 }
