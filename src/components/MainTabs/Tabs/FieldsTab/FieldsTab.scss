@@ -159,4 +159,24 @@
       }
     }
   }
+
+  .advanced_content{
+    .custom_attributes{
+      h3{
+        text-transform: none;
+        letter-spacing: normal;
+        font-family: inherit;
+        font-size: 1rem;
+        margin-top: 24px;
+      }
+      
+      a{
+        color: #00b1b3;
+        text-decoration: none;
+      }
+      a:hover{
+        text-decoration: underline;
+      }
+    }
+  }
 }

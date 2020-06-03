@@ -38,14 +38,14 @@ const FieldSelected = (props) => {
       <div className="og-builder__field-body" style={{ display: props.isShow ? 'block' : 'none' }}>
         <Tabs>
           <TabList>
-            <Tab>General</Tab>
-            <Tab>Advanced</Tab>
+            <Tab key={1}>General</Tab>
+            <Tab kyey={2}>Advanced</Tab>
           </TabList>
           <TabPanel>
             <GeneralContent register={props.register} type={props.data?.type} index={props.index} />
           </TabPanel>
           <TabPanel>
-            <AdvancedContent />
+            <AdvancedContent register={props.register} type={props.data?.type} index={props.index} />
           </TabPanel>
         </Tabs>
       </div>
