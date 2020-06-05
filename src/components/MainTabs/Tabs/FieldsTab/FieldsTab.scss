@@ -177,6 +177,86 @@
       a:hover{
         text-decoration: underline;
       }
+
+      button{
+          display: inline-block;
+          border: 1px solid #00b1b3;
+          border-radius: 4px;
+          background: #00b1b3;
+          color: #fff;
+          line-height: 1;
+          padding: .5em 1em;
+          text-transform: none;
+          font-weight: 700;
+          text-align: center;
+          white-space: nowrap;
+          transition: all .2s;
+      }
+
+      .input_value {
+          padding: .5em 1em !important;
+          margin-top: 0;
+          color: #2c3e50;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+      }
+
+      .input_label {
+          padding: .5em 1em !important;
+          margin-top: 0;
+          color: #2c3e50;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+      }
+
+     
+      table{
+        margin: 0 0 1.5em;
+        font-size: 1em;
+        width: 100%;
+
+        tbody{
+            img{
+                height: 12px;
+            }
+
+            tr{
+                border-bottom: 1px solid #ddd;
+            }
+    
+            td{
+                padding: 5px 20px 5px 0;
+                text-align: left;
+                padding-right: 0px;
+
+                input{
+                    color: #2c3e50;
+                    border: 1px solid #ddd;
+                    border-radius: 4px;
+                    padding: .5em 1em !important;
+                    margin-top: 0;
+                    display: block;
+                    width: 86%;
+
+                }
+
+                button{
+                    display: inline-block;
+                    border: 1px solid #00b1b3;
+                    border-radius: 4px;
+                    background: #00b1b3;
+                    color: #fff;
+                    line-height: 1;
+                    font-weight: 700;
+                    text-align: center;
+                    white-space: nowrap;
+                    transition: all .2s;
+                    padding: .5em 1em;
+                    text-transform: none;
+                }
+            }
+        }
+      }
     }
   }
 }

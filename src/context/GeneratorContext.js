@@ -7,7 +7,6 @@ const generatePHPCode = dispatch => params => {
     const paramsFormatted = formatParams(params);
 
     serverApi.post('/generator', { data: paramsFormatted }).then(response => {
-        console.log('ggg', response)
         if (response.status === 200) {
             dispatch({ type: GENERATE_PHP_CODE, payload: response.data })
         }
@@ -35,8 +34,6 @@ const formatParams = (params) => {
             }
         }
     })
-
-    console.log(result)
 
     return result
 }

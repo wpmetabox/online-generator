@@ -20,11 +20,11 @@ const FieldsTab = (props) => {
   useEffect(() => {
     setIsShow(selectedList.length);
     return
-  }, [selectedList]);
+  }, [selectedList.length]);
 
   const onSelect = (item) => {
     setIsShow(selectedList.length + 1);
-    setListSelected(selectedList.concat(item));
+    setListSelected(selectedList.concat({ type: item, name: item }));
 
   }
 
@@ -75,6 +75,19 @@ const FieldsTab = (props) => {
     });
   }
 
+  const removeItem = (index) => {
+    let newList = selectedList;
+    newList.splice(index, 1)
+    setListSelected(newList);
+  }
+
+  const copyItem = (type, name) => {
+    let item = { type }
+    const sameTypeItems = selectedList.filter(item => item.name.includes(type))
+    item.name = `${name}_copy_${sameTypeItems.length + 1}`
+    setListSelected([...selectedList, item])
+  }
+
 
   const onDragLeave = () => {
     setDragAndDrop({
@@ -87,7 +100,6 @@ const FieldsTab = (props) => {
     index === isShow ? setIsShow(-isShow) : setIsShow(index)
   }
 
-  console.log('ggg', selectedList)
 
   return (
     <div className="fields_container" >
@@ -107,8 +119,9 @@ const FieldsTab = (props) => {
             <FieldSelected
               handleShow={handleShow}
               register={props.register}
-              data={fields[item]}
-              key={index}
+              data={fields[item.type]}
+              name={item.name}
+              key={item.type + index}
               index={index}
               isShow={isShow === index + 1}
               onDragStart={onDragStart}
@@ -117,6 +130,8 @@ const FieldsTab = (props) => {
               onDragLeave={onDragLeave}
               dragAndDrop={dragAndDrop}
               draggedTo={dragAndDrop.draggedTo}
+              removeItem={removeItem}
+              copyItem={copyItem}
             />
           )
         }

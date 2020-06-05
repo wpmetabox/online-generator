@@ -3,14 +3,14 @@ import { fields } from '../../../../../constants/constants';
 import RowContainer from './Elements/RowContainer';
 import Input from './Elements/Input';
 import Checkbox from './Elements/Checkbox';
+import Options from './Elements/Options';
 import { getLabel } from '../../../../../utility/functions';
 
 const GeneralContent = (props) => {
-  console.log('asdasd', props)
   const getElement = name => {
     const inputsText = ['id', 'name', 'desc', 'std', 'placeholder', 'min', 'max'];
     const inputsNumber = ['size'];
-    const checkboxes = ['clone']
+    const checkboxes = ['clone'];
     const field = fields[props.type];
     const elementName = `fields_${props.index}_${name}`
 
@@ -18,7 +18,12 @@ const GeneralContent = (props) => {
     if (inputsText.includes(name)) {
       let defaultValue = field[name];
       if (name === 'id') {
-        defaultValue = `${props.type}_${props.index + 1}`
+        if (props.name.includes('copy')) {
+          defaultValue = props.name
+        } else {
+          defaultValue = `${props.name}_${props.index + 1}`
+        }
+
       }
 
       result = <Input type='text' name={elementName} defaultValue={defaultValue} ref={props.register} key={elementName} />
@@ -38,11 +43,14 @@ const GeneralContent = (props) => {
     <div className="field_content">
       {
         Object.keys(fields[props.type]).map((keyName, keyIndex) =>
-          <RowContainer label={getLabel(keyName)} key={getLabel(keyName) + keyIndex} >
-            {
-              getElement(keyName)
-            }
-          </RowContainer>
+          keyName !== 'options'
+            ?
+            <RowContainer label={getLabel(keyName)} key={getLabel(keyName) + keyIndex} >
+              {
+                getElement(keyName)
+              }
+            </RowContainer>
+            : <Options />
         )
       }
     </div>

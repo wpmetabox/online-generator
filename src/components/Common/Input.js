@@ -2,7 +2,6 @@ import React from 'react';
 import './Input.scss';
 
 const Input = React.forwardRef(({ data }, ref) => {
-  console.log('ggg',data)
   return (
     <div className="input_container">
       <div className="left_col">

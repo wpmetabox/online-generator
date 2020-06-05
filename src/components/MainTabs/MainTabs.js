@@ -12,7 +12,6 @@ import { actions } from '../../context/GeneratorContext';
 export const MainTabs = () => {
   const { handleSubmit, register } = useForm();
   const onSubmit = data => {
-    console.log('hihii', data)
     actions.generatePHPCode(data)
   }
 

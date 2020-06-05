@@ -18,17 +18,17 @@ const FieldSelected = (props) => {
         <span >{props.data?.name}</span>
         <span className="actions">
           <span className="type">{props.data?.type}</span>
-          <span className="item-remove" title="Remove">
+          <span className="item-remove" title="Remove" onClick={() => props.removeItem(props.index)}>
             {
               trashIcon
             }
           </span>
-          <span className="item-copy" title="Remove">
+          <span className="item-copy" title="copy" onClick={() => props.copyItem(props.data?.type, props.name.includes('copy') ? props.name : `${props.name}_${props.index + 1}`)} >
             {
               copyIcon
             }
           </span>
-          <span className="item-arrow" title="Remove">
+          <span className="item-arrow" title="arrow">
             {
               props.isShow ? arrowUpIcon : arrowDownIcon
             }
@@ -36,16 +36,16 @@ const FieldSelected = (props) => {
         </span>
       </div >
       <div className="og-builder__field-body" style={{ display: props.isShow ? 'block' : 'none' }}>
-        <Tabs>
+        <Tabs forceRenderTabPanel={true}>
           <TabList>
-            <Tab key={1}>General</Tab>
-            <Tab kyey={2}>Advanced</Tab>
+            <Tab>General</Tab>
+            <Tab>Advanced</Tab>
           </TabList>
           <TabPanel>
-            <GeneralContent register={props.register} type={props.data?.type} index={props.index} />
+            <GeneralContent register={props.register} type={props.data?.type} name={props?.name} index={props.index} />
           </TabPanel>
           <TabPanel>
-            <AdvancedContent register={props.register} type={props.data?.type} index={props.index} />
+            <AdvancedContent register={props.register} type={props.data?.type} name={props?.name} index={props.index} />
           </TabPanel>
         </Tabs>
       </div>
