@@ -26,13 +26,13 @@ const GeneralContent = (props) => {
 
       }
 
-      result = <Input type='text' name={elementName} defaultValue={defaultValue} ref={props.register} key={elementName} />
+      result = <Input type='text' name={elementName} defaultValue={defaultValue} ref={props.register} keyValue={elementName} />
     }
     if (inputsNumber.includes(name)) {
-      result = <Input type='number' name={elementName} key={elementName} />
+      result = <Input type='number' name={elementName} keyValue={elementName} />
     }
     if (checkboxes.includes(name)) {
-      result = <Checkbox name={elementName} ref={props.register} key={elementName} />
+      result = <Checkbox name={elementName} ref={props.register} keyValue={elementName} />
     }
 
     return result;

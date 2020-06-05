@@ -354,7 +354,6 @@ export const fields = {
     'std': '',
     'desc': '',
     'address_field': '',
-    //			'style'        : '',
     'class': '',
   },
 
