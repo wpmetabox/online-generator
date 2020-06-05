@@ -4,7 +4,7 @@ import generatorReducer from './GeneratorReducer';
 import { GENERATE_PHP_CODE } from './GeneratorActions';
 
 const generatePHPCode = dispatch => params => {
-    console.log('aaaa',params)
+    console.log('aaaa', params)
     const paramsFormatted = formatParams(params);
 
     serverApi.post('/generator', { data: paramsFormatted }).then(response => {
@@ -18,7 +18,6 @@ const generatePHPCode = dispatch => params => {
 
 const formatParams = (params) => {
     let result = {};
-    result['fields'] = {}
 
     // format fields params
     Object.keys(params).map((keyName, keyIndex) => {
@@ -28,19 +27,15 @@ const formatParams = (params) => {
         else {
             const keys = keyName.split('_');
             console.log(keys)
-            for (let i = 1; i < keys.length - 1; i++) {
-                if (!result['fields'][keys[i]]) {
-                    result['fields'][keys[i]] = {}
-                    console.log('333',result['fields'])
-                    break
+            keys.reduce((result, value, index) => {
+                if (!result[value]) {
+                    result[value] = {}
                 }
-                console.log('111', result['fields'])
-                if(i + 1 === keys.length){
-                    console.log('2222', result['fields'])
-                    result['fields'][keys[i]][keys[i + 1]] = Object.values(params)[keyIndex]
+                if (index === keys.length - 1) {
+                    result[value] = Object.values(params)[keyIndex]
                 }
-         
-            }
+                return result[value]
+            }, result);
         }
     })
     console.log('result', result)
