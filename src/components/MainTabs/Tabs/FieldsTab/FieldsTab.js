@@ -24,7 +24,7 @@ const FieldsTab = (props) => {
 
   const onSelect = (item) => {
     setIsShow(selectedList.length + 1);
-    setListSelected(selectedList.concat({ type: item, name: item }));
+    setListSelected(selectedList.concat({ type: item, name: item, data: { general: fields[item], advanced: [] } }));
 
   }
 
@@ -100,7 +100,6 @@ const FieldsTab = (props) => {
     index === isShow ? setIsShow(-isShow) : setIsShow(index)
   }
 
-
   return (
     <div className="fields_container" >
       <div className="left_fields">
@@ -119,7 +118,7 @@ const FieldsTab = (props) => {
             <FieldSelected
               handleShow={handleShow}
               register={props.register}
-              data={fields[item.type]}
+              data={item.data}
               name={item.name}
               key={item.type + index}
               index={index}

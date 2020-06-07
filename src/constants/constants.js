@@ -85,73 +85,163 @@ export const fieldTypes = {
 }
 
 export const fields = {
+  'text': {
+    'general': {
+      'id': '',
+      'type': 'text',
+      'name': 'Text',
+      'desc': '',
+      'std': '',
+      'placeholder': '',
+      'size': '',
+      'clone': false,
+    },
+    'advanced': {
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+      'datalist': {
+        'id': '',
+        'items': []
+      }
+    }
+  },
+  'number': {
+    'general': {
+      'id': '',
+      'type': 'number',
+      'name': 'Number',
+      'desc': '',
+      'std': '',
+      'placeholder': '',
+      'min': '',
+      'max': '',
+      'clone': false,
+    },
+    'advanced': {
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+    }
+  },
+  'url': {
+    'general': {
+      'id': '',
+      'type': 'url',
+      'name': 'URL',
+      'desc': '',
+      'std': '',
+      'placeholder': '',
+      'size': '',
+      'clone': false,
+    },
+    'advanced': {
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+    }
+  },
+
+  'email': {
+    'general': {
+      'id': '',
+      'name': 'Email',
+      'type': 'email',
+      'desc': '',
+      'std': '',
+      'placeholder': '',
+      'clone': false,
+    },
+    'advanced': {
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+    }
+  },
+  'range': {
+    'general': {
+      'id': '',
+      'name': 'Range',
+      'type': 'range',
+      'desc': '',
+      'std': 0,
+      'min': 0,
+      'max': 9,
+      'step': 1,
+      'clone': false,
+    },
+    'advanced': {
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+    }
+  },
   'autocomplete': {
-    'id': '',
-    'type': 'autocomplete',
-    'name': 'Auto Complete',
-    'desc': '',
-    'std': '',
-    'placeholder': '',
-    'size': '',
-    'options': [],
-    'clone': false,
+    'general': {
+      'id': '',
+      'type': 'autocomplete',
+      'name': 'Auto Complete',
+      'desc': '',
+      'std': '',
+      'placeholder': '',
+      'size': '',
+      'options': [],
+      'clone': false,
+    },
+    'advanced': {
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+    }
   },
 
   'text_list': {
-    'id': '',
-    'type': 'text_list',
-    'name': 'Text List',
-    'desc': '',
-    'std': '',
-    'options': [],
-    'clone': false,
+    'general': {
+      'id': '',
+      'type': 'text_list',
+      'name': 'Text List',
+      'desc': '',
+      'std': '',
+      'options': [],
+      'clone': false,
+    },
+    'advanced': {
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+    }
   },
 
-  'text': {
-    'id': '',
-    'type': 'text',
-    'name': 'Text',
-    'desc': '',
-    'std': '',
-    'placeholder': '',
-    'size': '',
-    'clone': false,
-  },
 
   'textarea': {
-    'id': '',
-    'type': 'textarea',
-    'name': 'Textarea',
-    'desc': '',
-    'std': '',
-    'placeholder': '',
-    'rows': '',
-    'cols': '',
-    'clone': false,
+    'general': {
+      'id': '',
+      'type': 'textarea',
+      'name': 'Textarea',
+      'desc': '',
+      'std': '',
+      'placeholder': '',
+      'rows': '',
+      'cols': '',
+      'clone': false,
+    },
+    'advanced': {
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+    }
   },
 
-  'number': {
-    'id': '',
-    'type': 'number',
-    'name': 'Number',
-    'desc': '',
-    'std': '',
-    'placeholder': '',
-    'min': '',
-    'max': '',
-    'clone': false,
-  },
 
-  'url': {
-    'id': '',
-    'type': 'url',
-    'name': 'URL',
-    'desc': '',
-    'std': '',
-    'placeholder': '',
-    'size': '',
-    'clone': false,
-  },
+
 
   'password': {
     'id': '',
@@ -222,18 +312,6 @@ export const fields = {
     'inline': true,
   },
 
-  'range': {
-    'id': '',
-    'name': 'Range',
-    'type': 'range',
-    'desc': '',
-    'std': 0,
-    'min': 0,
-    'max': 9,
-    'step': 1,
-    'clone': false,
-  },
-
   'wysiwyg': {
     'id': '',
     'name': 'WYSIWYG',
@@ -243,16 +321,6 @@ export const fields = {
     'raw': false,
     'clone': false,
     'options': [],
-  },
-
-  'email': {
-    'id': '',
-    'name': 'Email',
-    'type': 'email',
-    'desc': '',
-    'std': '',
-    'placeholder': '',
-    'clone': false,
   },
 
   'hidden': {

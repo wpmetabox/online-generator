@@ -1,5 +1,4 @@
 import React from 'react';
-import { fields } from '../../../../../constants/constants';
 import RowContainer from './Elements/RowContainer';
 import Input from './Elements/Input';
 import Checkbox from './Elements/Checkbox';
@@ -9,14 +8,14 @@ import { NUMBER_INPUT, TEXT_INPUT, CHECKBOX } from '../../../../../constants/con
 
 const GeneralContent = (props) => {
   const getElement = name => {
-    const field = fields[props.type];
+    const filedData = props.generalData;
     const elementName = `fields_${props.index}_${name}`
     const elementType = getElementType(name)
 
     let result = ''
     if (elementType === TEXT_INPUT) {
-      let defaultValue = field[name];
-      if (name === 'id') {
+      let defaultValue = filedData[name];
+      if (isIdInput(name)) {
         if (props.name.includes('copy')) {
           defaultValue = props.name
         } else {
@@ -35,6 +34,10 @@ const GeneralContent = (props) => {
     return result;
   }
 
+  const isIdInput = (name) => {
+    return name === 'id'
+  }
+
   const isOptionElement = (keyName) => {
     return keyName === 'options';
   }
@@ -42,7 +45,7 @@ const GeneralContent = (props) => {
   return (
     <div className="field_content">
       {
-        Object.keys(fields[props.type]).map((keyName, keyIndex) =>
+        Object.keys(props.generalData).map((keyName, keyIndex) =>
           isOptionElement(keyName)
             ? <Options key={keyName + keyIndex} register={props.register} index={props.index} defaultValue={[]} />
             : <RowContainer label={getLabel(keyName)} key={getLabel(keyName) + keyIndex} >
