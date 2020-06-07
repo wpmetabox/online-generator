@@ -260,4 +260,33 @@
       }
     }
   }
+
+  .search_result{
+    .btn_field{
+      margin-left: 1%;
+      width: 47%;
+      margin-right: 2%;
+      margin-bottom: 10px;
+      color: #555;
+      border-color: #ccc;
+      background: #f7f7f7;
+      box-shadow: 0 1px 0 #ccc;
+      vertical-align: top;
+      display: inline-block;
+      text-decoration: none;
+      font-size: 13px;
+      line-height: 26px;
+      height: 32px;
+      padding: 0 10px 1px;
+      cursor: pointer;
+      border-width: 1px;
+      border-style: solid;
+      -webkit-appearance: none;
+      border-radius: 3px;
+      white-space: nowrap;
+      box-sizing: border-box;
+      text-transform: none;
+      font-weight: 400;
+    }
+  }
 }

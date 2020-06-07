@@ -8,27 +8,20 @@ import { NUMBER_INPUT, TEXT_INPUT, CHECKBOX } from '../../../../../constants/con
 
 const GeneralContent = (props) => {
   const getElement = name => {
-    const filedData = props.generalData;
+    const fieldData = props.fieldData;
     const elementName = `fields_${props.index}_${name}`
     const elementType = getElementType(name)
+    let defaultValue = fieldData[name];
 
     let result = ''
     if (elementType === TEXT_INPUT) {
-      let defaultValue = filedData[name];
-      if (isIdInput(name)) {
-        if (props.name.includes('copy')) {
-          defaultValue = props.name
-        } else {
-          defaultValue = `${props.name}_${props.index + 1}`
-        }
-      }
       result = <Input type='text' name={elementName} defaultValue={defaultValue} ref={props.register} keyValue={elementName} />
     }
     if (elementType === NUMBER_INPUT) {
-      result = <Input type='number' name={elementName} keyValue={elementName} />
+      result = <Input type='number' name={elementName} keyValue={elementName} defaultValue={defaultValue} />
     }
     if (elementType === CHECKBOX) {
-      result = <Checkbox name={elementName} ref={props.register} keyValue={elementName} />
+      result = <Checkbox name={elementName} ref={props.register} keyValue={elementName} defaultValue={defaultValue} />
     }
 
     return result;
@@ -45,7 +38,7 @@ const GeneralContent = (props) => {
   return (
     <div className="field_content">
       {
-        Object.keys(props.generalData).map((keyName, keyIndex) =>
+        Object.keys(props.fieldData).map((keyName, keyIndex) =>
           isOptionElement(keyName)
             ? <Options key={keyName + keyIndex} register={props.register} index={props.index} defaultValue={[]} />
             : <RowContainer label={getLabel(keyName)} key={getLabel(keyName) + keyIndex} >

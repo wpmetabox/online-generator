@@ -244,286 +244,542 @@ export const fields = {
 
 
   'password': {
-    'id': '',
-    'type': 'password',
-    'name': 'Password',
-    'desc': '',
-    'std': '',
-    'placeholder': '',
-    'size': '',
+    'general': {
+      'id': '',
+      'type': 'password',
+      'name': 'Password',
+      'desc': '',
+      'std': '',
+      'placeholder': '',
+      'size': '',
+      'clone': false
+    },
+    'advanced': {
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+    }
   },
 
 
   'select': {
-    'id': '',
-    'name': 'Select',
-    'type': 'select',
-    'desc': '',
-    'std': '',
-    'placeholder': 'Select an Item',
-    'options': [],
-    'multiple': false,
-    'clone': false,
+    'general': {
+      'id': '',
+      'name': 'Select',
+      'type': 'select',
+      'desc': '',
+      'std': '',
+      'placeholder': 'Select an Item',
+      'options': [],
+      'multiple': false,
+      'clone': false
+    },
+    'advanced': {
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+    }
   },
 
   'select_advanced': {
-    'id': '',
-    'name': 'Select Advanced',
-    'type': 'select_advanced',
-    'desc': '',
-    'std': '',
-    'placeholder': 'Select an Item',
-    'options': [],
-    'multiple': false,
-    'js_options': [],
-    'clone': false,
+    'general' : {
+      'id': '',
+      'name': 'Select Advanced',
+      'type': 'select_advanced',
+      'desc': '',
+      'std': '',
+      'placeholder': 'Select an Item',
+      'options': [],
+      'multiple': false,
+      'js_options': [],
+      'clone': false
+    },
+    'advanced': {
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+      'select2': []
+    }
   },
 
   'checkbox_list': {
-    'id': '',
-    'name': 'Checkbox List',
-    'type': 'checkbox_list',
-    'desc': '',
-    'std': '',
-    'options': [],
-    'clone': false,
+    'general': {
+      'id': '',
+      'name': 'Checkbox List',
+      'type': 'checkbox_list',
+      'desc': '',
+      'std': '',
+      'options': [],
+      'clone': false,
+    },
+    'advanced':{
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+    }
   },
 
 
   'checkbox': {
-    'id': '',
-    'name': 'Checkbox',
-    'type': 'checkbox',
-    'desc': 'Default Description',
-    'std': 0,
-    'clone': false,
+    'general':{
+      'id': '',
+      'name': 'Checkbox',
+      'type': 'checkbox',
+      'desc': 'Default Description',
+      'std': 0,
+      'clone': false,
+    },
+    'advanced':{
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+    }
   },
 
 
   'radio': {
-    'id': '',
-    'name': 'Radio',
-    'type': 'radio',
-    'desc': '',
-    'std': '',
-    'placeholder': '',
-    'options': [],
-    'clone': false,
-    'inline': true,
+    'general': {
+      'id': '',
+      'name': 'Radio',
+      'type': 'radio',
+      'desc': '',
+      'std': '',
+      'placeholder': '',
+      'options': [],
+      'clone': false,
+      'inline': true,
+    },
+    'advanced':{
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+    }
   },
 
   'wysiwyg': {
-    'id': '',
-    'name': 'WYSIWYG',
-    'type': 'wysiwyg',
-    'desc': '',
-    'std': '',
-    'raw': false,
-    'clone': false,
-    'options': [],
+    'general':{
+      'id': '',
+      'name': 'WYSIWYG',
+      'type': 'wysiwyg',
+      'desc': '',
+      'std': '',
+      'raw': false,
+      'clone': false,
+      'options': [],
+    },
+    'advanced':{
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+      'editor': []
+    }
   },
 
   'hidden': {
-    'id': '',
-    'type': 'hidden',
-    'std': '',
-    'name': 'Hidden',
+    'general':{
+      'id': '',
+      'type': 'hidden',
+      'desc': '',
+      'std': '',
+      'name': 'Hidden',
+      'clone': false
+    },
+    'advanced':{
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': []
+    }
   },
 
   'heading': {
-    'id': '',
-    'type': 'heading',
-    'desc': '',
-    'name': 'Heading',
+    'general':{
+      'id': '',
+      'type': 'heading',
+      'desc': '',
+      'std': '',
+      'name': 'Heading',
+      'clone': false
+    },
+    'advanced':{
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': []
+    }
   },
 
   'color': {
-    'id': '',
-    'name': 'Color Picker',
-    'type': 'color',
-    'std': '',
-    'desc': '',
-    'clone': false,
-    'class': '',
+    'general':{
+      'id': '',
+      'name': 'Color Picker',
+      'type': 'color',
+      'std': '',
+      'desc': '',
+      'clone': false,
+      'class': '',
+    },
+    'advanced':{
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': []
+    }
   },
 
   'date': {
-    'id': '',
-    'type': 'date',
-    'name': 'Date Picker',
-    'std': '',
-    'desc': '',
-    'js_options': [],
-    'clone': false,
-    'class': '',
+    'general':{
+      'id': '',
+      'type': 'date',
+      'name': 'Date Picker',
+      'std': '',
+      'desc': '',
+      'js_options': [],
+      'clone': false,
+      'class': '',
+      'size': '',
+      'inline': false,
+      'timestamp': false,
+    },
+    'advanced':{
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+      'datePicker': []
+    }
   },
 
   'datetime': {
-    'id': '',
-    'type': 'datetime',
-    'name': 'Date Time Picker',
-    'std': '',
-    'desc': '',
-    'js_options': [],
-    'clone': false,
-    'class': '',
+    'general':{
+      'id': '',
+      'type': 'datetime',
+      'name': 'Date Time Picker',
+      'std': '',
+      'desc': '',
+      'js_options': [],
+      'clone': false,
+      'class': '',
+      'size': '',
+      'inline': false,
+      'timestamp': false,
+    },
+    'advanced':{
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+      'datetimePicker': []
+    }
   },
 
   'time': {
-    'id': '',
-    'name': 'Time Picker',
-    'type': 'time',
-    'std': '',
-    'desc': '',
-    'js_options': [],
-    'class': '',
-    'clone': false,
+    'general': {
+      'id': '',
+      'name': 'Time Picker',
+      'type': 'time',
+      'std': '',
+      'desc': '',
+      'js_options': [],
+      'class': '',
+      'clone': false,
+      'size': ''
+    },
+    'advanced':{
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+      'timePicker': []
+    }
   },
 
   'divider': {
     'id': 'uniqid',
     'type': 'divider',
     'name': 'Divider',
-  },
+  }, // khong co 2 tab general va advanced
 
   'fieldset_text': {
-    'id': '',
-    'type': 'fieldset_text',
-    'name': 'Fieldset Text',
-    'std': '',
-    'desc': '',
-    'class': '',
-    'rows': 2,
-    'options': [],
+    'general': {
+      'id': '',
+      'type': 'fieldset_text',
+      'name': 'Fieldset Text',
+      'std': '',
+      'desc': '',
+      'class': '',
+      'rows': 2,
+      'options': [],
+      'clone': false
+    },
+    'advanced':{
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+    }
   },
 
   'button': {
-    'id': '',
-    'type': 'button',
-    'name': 'Button',
-    'desc': '',
-    'class': '',
-    'clone': false,
+    'general': {
+      'id': '',
+      'type': 'button',
+      'name': 'Button',
+      'desc': '',
+      'std': '',
+      'class': '',
+      'clone': false,
+    },
+    'advanced':{
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+    }
   },
 
   'oembed': {
-    'id': '',
-    'type': 'oembed',
-    'name': 'oEmbed',
-    'std': '',
-    'desc': 'oEmbed description',
-    'size': '',
+    'general': {
+      'id': '',
+      'type': 'oembed',
+      'name': 'oEmbed',
+      'std': '',
+      'desc': 'oEmbed description',
+      'size': '',
+      'placeholder': '',
+      'clone': false
+    },
+    'advanced':{
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+      'datalist': {
+        'id': '',
+        'items': []
+      }
+    }
   },
 
   'map': {
-    'id': '',
-    'type': 'map',
-    'name': 'Map',
-    'std': '',
-    'desc': '',
-    'address_field': '',
-    'class': '',
+    'general': {
+      'id': '',
+      'type': 'map',
+      'name': 'Map',
+      'std': '',
+      'desc': '',
+      'address_field': '',
+      'class': '',
+      'api_key': '',
+      'region': '',
+      'clone': false
+    },
+    'advanced':{
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+    }
   },
 
   'slider': {
-    'id': '',
-    'type': 'slider',
-    'name': 'Slider',
-    'std': '',
-    'desc': '',
-    'js_options': [],
-    'prefix': '',
-    'suffix': '',
+    'general':{
+      'id': '',
+      'type': 'slider',
+      'name': 'Slider',
+      'std': '',
+      'desc': '',
+      'js_options': [],
+      'prefix': '',
+      'suffix': '',
+      'clone': false
+    },
+    'advanced':{
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+      'slider': []
+    }
   },
 
 
   'taxonomy': {
-    'id': '',
-    'type': 'taxonomy',
-    'name': 'Taxonomy',
-    'std': '',
-    'desc': '',
-    'placeholder': '',
-    'query_args': '',
-    'taxonomy': 'category',
-    'field_type': 'select',
+    'general':{
+      'id': '',
+      'type': 'taxonomy',
+      'name': 'Taxonomy',
+      'std': '',
+      'desc': '',
+      'placeholder': '',
+      'query_args': '',
+      'taxonomy': 'category',
+      'field_type': 'select',
+      'parent': false,
+      'clone': false
+    },
+    'advanced':{
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+      'query_args': []
+    }
   },
 
   'taxonomy_advanced': {
-    'id': '',
-    'type': 'taxonomy_advanced',
-    'name': 'Taxonomy Advanced',
-    'std': '',
-    'desc': '',
-    'placeholder': '',
-    'query_args': '',
-    'taxonomy': 'category',
-    'field_type': 'select',
+    'general': {
+      'id': '',
+      'type': 'taxonomy_advanced',
+      'name': 'Taxonomy Advanced',
+      'std': '',
+      'desc': '',
+      'placeholder': '',
+      'query_args': '',
+      'taxonomy': 'category',
+      'field_type': 'select',
+    },
+    'advanced':{
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+      'query_args': []
+    }
   },
 
   'post': {
-    'id': '',
-    'type': 'post',
-    'name': 'Post',
-    'std': '',
-    'desc': '',
-    'post_type': 'post',
-    'field_type': 'select_advanced', // select, select_advanced
-    'parent': false,
-    'query_args': '',
+    'general':{
+      'id': '',
+      'type': 'post',
+      'name': 'Post',
+      'std': '',
+      'desc': '',
+      'post_type': 'post',
+      'field_type': 'select_advanced', // select, select_advanced
+      'parent': false,
+      'query_args': '',
+      'clone': false,
+      'placeholder': ''
+    },
+    'advanced':{
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+      'query_args': []
+    }
   },
 
   'file': {
-    'id': '',
-    'type': 'file',
-    'name': 'File',
-    'std': '',
-    'desc': '',
-    'force_delete': false,
-    'max_file_uploads': '',
-    'mime_type': '',
+    'general': {
+      'id': '',
+      'type': 'file',
+      'name': 'File',
+      'std': '',
+      'desc': '',
+      'force_delete': false,
+      'max_file_uploads': '',
+      'mime_type': '',
+      'clone': false,
+      'size': ''
+    },
+    'advanced':{
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+    }
   },
 
   'file_advanced': {
-    'id': '',
-    'type': 'file_advanced',
-    'name': 'File Advanced',
-    'std': '',
-    'desc': '',
-    'force_delete': false,
-    'mime_type': '',
-    'max_file_uploads': 4,
-    'max_status': true,
+    'general':{
+      'id': '',
+      'type': 'file_advanced',
+      'name': 'File Advanced',
+      'std': '',
+      'desc': '',
+      'force_delete': false,
+      'mime_type': '',
+      'max_file_uploads': 4,
+      'max_status': true,
+      'clone': false,
+      'size': ''
+    },
+    'advanced':{
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+    }
   },
 
   'file_input': {
-    'id': '',
-    'type': 'file_input',
-    'name': 'File Input',
-    'placeholder': '',
-    'size': '',
-    'std': '',
-    'clone': false,
+   'general': {
+      'id': '',
+      'type': 'file_input',
+      'name': 'File Input',
+      'placeholder': '',
+      'size': '',
+      'desc': '',
+      'std': '',
+      'clone': false,
+    },
+    'advanced':{
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+      'datalist': {
+        'id': '',
+        'items': []
+      }
+    }
   },
 
   'image': {
-    'id': '',
-    'type': 'image',
-    'name': 'Image Upload',
-    'std': '',
-    'desc': '',
-    //			'force_delete' : false,
-    //			'max_file_uploads': 4,
+    'general': {
+      'id': '',
+      'type': 'image',
+      'name': 'Image Upload',
+      'std': '',
+      'clone': false,
+      'desc': '',
+      //			'force_delete' : false,
+      //			'max_file_uploads': 4,
+    },
+    'advanced':{
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+    }
   },
 
   'video': {
-    'id': '',
-    'type': 'video',
-    'name': 'Video',
-    'std': '',
-    'desc': '',
-    'force_delete': false,
-    'max_file_uploads': 4,
+    'general':{
+      'id': '',
+      'type': 'video',
+      'name': 'Video',
+      'std': '',
+      'desc': '',
+      'force_delete': false,
+      'max_file_uploads': 4,
+      'clone': false,
+    },
+    'advanced':{
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+    }
   },
 
   'plupload_image': {
@@ -538,22 +794,43 @@ export const fields = {
   },
 
   'image_advanced': {
-    'id': '',
-    'type': 'image_advanced',
-    'name': 'Image Advanced',
-    'std': '',
-    'desc': '',
+    'general': {
+      'id': '',
+      'type': 'image_advanced',
+      'name': 'Image Advanced',
+      'desc': '',
+      'max_file_uploads': '',
+      'force_delete' : false,
+      'clone': false,
+      'max_status': false,
+    },
+    'advanced':{
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+    }
   },
 
   'image_select': {
-    'id': '',
-    'type': 'image_select',
-    'name': 'Image Select',
-    'std': '',
-    'desc': '',
-    'force_delete': false,
-    'max_file_uploads': 4,
-    'options': [],
+    'general':{
+      'id': '',
+      'type': 'image_select',
+      'name': 'Image Select',
+      'std': '',
+      'desc': '',
+      // 'force_delete': false,
+      // 'max_file_uploads': 4,
+      'options': [],
+      'clone': false,
+      'multiple': false,
+    },
+    'advanced':{
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+    }
   },
 
   'thickbox_image': {
@@ -568,14 +845,25 @@ export const fields = {
   },
 
   'user': {
-    'id': '',
-    'type': 'user',
-    'name': 'User',
-    'std': '',
-    'desc': '',
-    'class': '',
-    'query_args': '',
-    'field_type': 'select_advanced', // select, select_advanced
+    'general':{
+      'id': '',
+      'type': 'user',
+      'name': 'User',
+      'std': '',
+      'desc': '',
+      'class': '',
+      'query_args': '',
+      'field_type': 'select_advanced', // select, select_advanced,
+      'placeholder': '',
+      'clone': false
+    },
+    'advanced':{
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+      'query_args': []
+    }
   },
 }
 

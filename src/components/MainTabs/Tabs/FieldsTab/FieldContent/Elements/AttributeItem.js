@@ -5,10 +5,10 @@ const AttributeItem = (props) => {
     return (
         <tr>
             <td width="45%">
-                <SmallInput placeholder="Enter value" ref={props.register} name={`${props.name}_attributes_${props.item}_key`} />
+                <SmallInput placeholder="Enter value" ref={props.register} name={`${props.name}_attributes_${props.index}_key`} defaultValue={props.data.key} />
             </td>
             <td width="45%">
-                <SmallInput placeholder="Enter label" ref={props.register} name={`${props.name}_attributes_${props.item}_label`} />
+                <SmallInput placeholder="Enter label" ref={props.register} name={`${props.name}_attributes_${props.index}_label`} defaultValue={props.data.label} />
             </td>
             <td width="10%">
                 <button type="button" className="og-button--small">

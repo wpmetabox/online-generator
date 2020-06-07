@@ -3,6 +3,8 @@ import './FieldsTab.scss'
 import FieldMenu from './FieldMenu';
 import FieldSelected from './FieldSelected';
 import { fields } from '../../../../constants/constants';
+import { getDataCopiedItem } from '../../../../utility/functions';
+import SearchResultList from './SearchResultList';
 
 const initialDnDState = {
   draggedFrom: null,
@@ -15,6 +17,7 @@ const initialDnDState = {
 const FieldsTab = (props) => {
   const [selectedList, setListSelected] = useState([]);
   const [isShow, setIsShow] = useState('');
+  const [searchParam, setSearchParam] = useState('');
   const [dragAndDrop, setDragAndDrop] = useState(initialDnDState);
 
   useEffect(() => {
@@ -24,7 +27,9 @@ const FieldsTab = (props) => {
 
   const onSelect = (item) => {
     setIsShow(selectedList.length + 1);
-    setListSelected(selectedList.concat({ type: item, name: item, data: { general: fields[item], advanced: [] } }));
+    let dataItem = fields[item];
+    dataItem.general.id = `${item}_${selectedList.length + 1}`
+    setListSelected(selectedList.concat({ type: item, data: dataItem }));
 
   }
 
@@ -81,10 +86,11 @@ const FieldsTab = (props) => {
     setListSelected(newList);
   }
 
-  const copyItem = (type, name) => {
+  const copyItem = (type, index) => {
+    const sameTypeItems = selectedList.filter(item => item.type === type)
     let item = { type }
-    const sameTypeItems = selectedList.filter(item => item.name.includes(type))
-    item.name = `${name}_copy_${sameTypeItems.length + 1}`
+    item.data = getDataCopiedItem(type, index);
+    item.data.general.id = item.data.general.id + `_copy_${sameTypeItems.length}`
     setListSelected([...selectedList, item])
   }
 
@@ -103,8 +109,11 @@ const FieldsTab = (props) => {
   return (
     <div className="fields_container" >
       <div className="left_fields">
-        <input type="search" id="fields-search-input" className="search_input" placeholder="Enter field type here" />
-        <FieldMenu onSelectField={onSelect} />
+        <input type="search" id="fields-search-input" className="search_input" placeholder="Enter field type here" onChange={e => setSearchParam(e.target.value)} />
+        {
+          searchParam ? <SearchResultList onSelectField={onSelect} searchParam={searchParam} /> : <FieldMenu onSelectField={onSelect} />
+        }
+
       </div>
       <div className="right_fields">
         <p className="title">{
@@ -119,7 +128,6 @@ const FieldsTab = (props) => {
               handleShow={handleShow}
               register={props.register}
               data={item.data}
-              name={item.name}
               key={item.type + index}
               index={index}
               isShow={isShow === index + 1}

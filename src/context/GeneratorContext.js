@@ -3,7 +3,6 @@ import generatorReducer from './GeneratorReducer';
 import { GENERATE_PHP_CODE } from './GeneratorActions';
 
 const generatePHPCode = dispatch => params => {
-    console.log('aaaa', params)
     const paramsFormatted = formatParams(params);
     const requestOptions = {
         method: 'POST',
@@ -30,7 +29,6 @@ const formatParams = (params) => {
         }
         else {
             const keys = keyName.split('_');
-            console.log(keys)
             keys.reduce((result, value, index) => {
                 if (!result[value]) {
                     result[value] = {}
@@ -42,7 +40,6 @@ const formatParams = (params) => {
             }, result);
         }
     })
-    console.log('result', result)
 
     return result
 }

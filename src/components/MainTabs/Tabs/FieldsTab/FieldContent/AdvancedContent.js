@@ -4,7 +4,7 @@ import Input from './Elements/Input';
 import AttributeItem from './Elements/AttributeItem';
 
 const AdvancedContent = (props) => {
-  const [attributes, setAttributes] = useState(props.defaultValue);
+  const [attributes, setAttributes] = useState(props.data.attributes);
 
   return (
     <div className="advanced_content">
@@ -22,14 +22,15 @@ const AdvancedContent = (props) => {
         <table >
           <tbody>
             {
-              attributes.map((item, index) => (
-                <AttributeItem item={item} key={index} register={props.register} name={`fields_${props.index}`} />
+              attributes?.map((item, index) => (
+                <AttributeItem data={item} key={index} index={index} register={props.register} name={`fields_${props.index}`} />
               ))
             }
           </tbody>
         </table>
-        <button type="button" className="og-button--small" onClick={() => setAttributes(attributes.concat(attributes.length))} >+ Attribute</button>
+        <button type="button" className="og-button--small" onClick={() => setAttributes(attributes.concat({ key: '', label: '' }))} >+ Attribute</button>
       </div>
+      <input type='hidden' name={`fields_${props.index}_attributes`} value={attributes.length} />
     </div>
   );
 }
