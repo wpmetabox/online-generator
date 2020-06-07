@@ -45,7 +45,7 @@ const FieldSelected = (props) => {
             <GeneralContent register={props.register} type={props.data?.type} name={props?.name} index={props.index} />
           </TabPanel>
           <TabPanel>
-            <AdvancedContent register={props.register} type={props.data?.type} name={props?.name} index={props.index} />
+            <AdvancedContent register={props.register} type={props.data?.type} name={props?.name} index={props.index} defaultValue={[]} />
           </TabPanel>
         </Tabs>
       </div>

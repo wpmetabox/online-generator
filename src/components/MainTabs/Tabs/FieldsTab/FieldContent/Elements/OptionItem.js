@@ -5,10 +5,10 @@ export const OptionItem = (props) => {
     return (
         <tr>
             <td width="45%">
-                <SmallInput placeholder="Enter value" />
+                <SmallInput placeholder="Enter value" ref={props.register} name={`${props.name}_options_${props.item}_key`} />
             </td>
             <td width="45%">
-                <SmallInput placeholder="Enter label" />
+                <SmallInput placeholder="Enter label" ref={props.register} name={`${props.name}_options_${props.item}_label`} />
             </td>
             <td width="10%">
                 <button type="button" className="og-button--small">

@@ -1,19 +1,23 @@
 import createDataContext from './createDataContext';
-import serverApi from '../api/serverApi';
 import generatorReducer from './GeneratorReducer';
 import { GENERATE_PHP_CODE } from './GeneratorActions';
 
 const generatePHPCode = dispatch => params => {
     console.log('aaaa', params)
     const paramsFormatted = formatParams(params);
-
-    serverApi.post('/generator', { data: paramsFormatted }).then(response => {
-        if (response.status === 200) {
-            dispatch({ type: GENERATE_PHP_CODE, payload: response.data })
-        }
-    }).catch(err => {
-        console.error(err);
-    });
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ data: paramsFormatted })
+    };
+    fetch('https://metabox.io/wp-json/meta-box-online-generator/generator', requestOptions)
+        .then(response => response.json())
+        .then(data =>
+            dispatch({ type: GENERATE_PHP_CODE, payload: data })
+        )
+        .catch(err => {
+            console.error(err);
+        });
 };
 
 const formatParams = (params) => {

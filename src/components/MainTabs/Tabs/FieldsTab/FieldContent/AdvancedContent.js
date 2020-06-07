@@ -4,7 +4,7 @@ import Input from './Elements/Input';
 import AttributeItem from './Elements/AttributeItem';
 
 const AdvancedContent = (props) => {
-  const [attributes, setAttributes] = useState([]);
+  const [attributes, setAttributes] = useState(props.defaultValue);
 
   return (
     <div className="advanced_content">

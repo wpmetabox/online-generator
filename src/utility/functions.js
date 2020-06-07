@@ -1,3 +1,5 @@
+import { TEXT_INPUT, NUMBER_INPUT, CHECKBOX } from '../constants/constants';
+
 export const getLabel = (keyName) => {
     let result = '';
     switch (keyName) {
@@ -30,4 +32,23 @@ export const getLabel = (keyName) => {
             break;
     }
     return result;
+}
+
+export const getElementType = (name) => {
+    const inputsText = ['id', 'name', 'desc', 'std', 'placeholder', 'min', 'max'];
+    const inputsNumber = ['size'];
+    const checkboxes = ['clone'];
+
+    let type = ''
+    if (inputsText.includes(name)) {
+        type = TEXT_INPUT
+    }
+    if (inputsNumber.includes(name)) {
+        type = NUMBER_INPUT
+    }
+    if (checkboxes.includes(name)) {
+        type = CHECKBOX
+    }
+
+    return type
 }

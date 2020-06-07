@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import OptionItem from './OptionItem';
 
-const Options = () => {
-    const [options, setOptions] = useState([]);
+const Options = (props) => {
+    const [options, setOptions] = useState(props.defaultValue);
 
     return (
         <div className="builder-options">
@@ -11,7 +11,7 @@ const Options = () => {
                 <tbody>
                     {
                         options.map((item, index) => (
-                            <OptionItem item={item} key={index} />
+                            <OptionItem item={item} key={index} register={props.register}  name={`fields_${props.index}`} />
                         ))
                     }
                 </tbody>

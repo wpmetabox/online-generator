@@ -511,3 +511,6 @@ export const fields = {
   },
 }
 
+export const TEXT_INPUT = 'TEXT_INPUT'
+export const NUMBER_INPUT = 'NUMBER_INPUT'
+export const CHECKBOX = 'CHECKBOX'
