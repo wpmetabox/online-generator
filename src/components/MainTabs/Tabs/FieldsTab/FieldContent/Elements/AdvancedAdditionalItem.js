@@ -1,7 +1,8 @@
 import React from 'react';
 import SmallInput from './SmallInput';
 
-const AttributeItem = (props) => {
+const AdvancedAdditionalItem = (props) => {
+    console.log('ITEMEEEEE: ', props);
     return (
         <tr>
             <td width="45%">
@@ -19,4 +20,4 @@ const AttributeItem = (props) => {
     )
 }
 
-export default AttributeItem;
+export default AdvancedAdditionalItem;

@@ -818,3 +818,46 @@ export const fields = {
 export const TEXT_INPUT = 'TEXT_INPUT'
 export const NUMBER_INPUT = 'NUMBER_INPUT'
 export const CHECKBOX = 'CHECKBOX'
+export const LIST_WORDPRESS_FIELDS = ["post", "taxonomy", "taxonomy_advanced", "user"];
+export const ADVANCED_ADDITIONAL = {
+  "attribute" : {
+    "title": "Custom attributes",
+    "titleLink": "https://docs.metabox.io/extensions/meta-box-builder/#custom-attributes",
+    "buttonName": "+ Attribute"
+  },
+  "select2" : {
+    "title": "Select2 options",
+    "titleLink": "https://select2.org/",
+    "buttonName": "+ Option"
+  },
+  "query_args" : {
+    "title": "Query arguments",
+    "titleLink": null,
+    "buttonName": "+ Option"
+  },
+  "slider" : {
+    "title": "Slider options",
+    "titleLink": 'https://api.jqueryui.com/slider/',
+    "buttonName": "+ Option"
+  },
+  "editor" : {
+    "title": "Editor options",
+    "titleLink": 'https://codex.wordpress.org/Function_Reference/wp_editor',
+    "buttonName": "+ Option"
+  },
+  "date_picker": {
+    "title": "Date picker options",
+    "titleLink": 'https://api.jqueryui.com/datepicker/',
+    "buttonName": "+ Option"
+  },
+  "datetime_picker": {
+    "title": "Date picker options",
+    "titleLink": 'https://api.jqueryui.com/datepicker/',
+    "buttonName": "+ Option"
+  },
+  "time_picker": {
+    "title": "Time picker options",
+    "titleLink": 'https://trentrichardson.com/examples/timepicker/',
+    "buttonName": "+ Option"
+  }
+}

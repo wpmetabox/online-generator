@@ -79,6 +79,9 @@ export const getLabel = (keyName, type) => {
         case 'max_status':
             result = 'Max Status'
             break;
+        case 'options':
+            result = 'Options'
+            break;
     }
 
     return result;

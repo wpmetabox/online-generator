@@ -2,7 +2,8 @@ import React from 'react';
 import SmallInput from './SmallInput';
 
 export const OptionItem = (props) => {
-    const WIDTH = props.hasSelected ? '35%' : '45%';
+    console.log('ITEM: ', props);
+    const WIDTH = props.hasSelect ? '35%' : '45%';
     const isImageSelect = props.type === "image_select";
     const label = isImageSelect ? "Image URL" : "Label";
     const placeholder = isImageSelect ? "Enter Image URL" : "Enter label";
@@ -17,12 +18,12 @@ export const OptionItem = (props) => {
             }
             <tr>
                 <td width={WIDTH}>
-                    <SmallInput placeholder="Enter value" defaultValue={props.item.key} ref={props.register} name={`${props.name}_options_${props.index}_key`} />
+                    <SmallInput placeholder="Enter value" defaultValue={props.data.key} ref={props.register} name={`${props.name}_options_${props.index}_key`} />
                 </td>
                 <td width={WIDTH}>
-                    <SmallInput placeholder={placeholder} defaultValue={props.item.label} ref={props.register} name={`${props.name}_options_${props.index}_label`} />
+                    <SmallInput placeholder={placeholder} defaultValue={props.data.label} ref={props.register} name={`${props.name}_options_${props.index}_label`} />
                 </td>
-                { props.hasSelected && 
+                { props.hasSelect && 
                     (
                         <td width="15%">
                             <input type="checkbox" name={`${props.name}_options_${props.index}_label`} />
