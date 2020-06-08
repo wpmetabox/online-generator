@@ -19,7 +19,7 @@ const FieldMenu = (props) => {
               <div className="og-panel__body">
                 {
                   Object.keys(fieldTypes[keyName]).map((key, index) =>
-                    <FieldItem title={fieldTypes[keyName][key]} type={key} key={index} onSelectField={props.onSelxectField} />
+                    <FieldItem title={fieldTypes[keyName][key]} type={key} key={index} onSelectField={props.onSelectField} />
                   )
                 }
               </div>
