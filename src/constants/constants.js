@@ -63,7 +63,7 @@ export const fieldTypes = {
     'heading': 'Heading',
     'divider': 'Divider',
   },
-  'Date &amp; Time Fields': {
+  'Date & Time Fields': {
     'date': 'Date',
     'datetime': 'Date Time',
     'time': 'Time',
@@ -92,8 +92,8 @@ export const fields = {
       'name': 'Text',
       'desc': '',
       'std': '',
-      'placeholder': '',
       'size': '',
+      'placeholder': '',
       'clone': false,
     },
     'advanced': {
@@ -115,6 +115,7 @@ export const fields = {
       'desc': '',
       'std': '',
       'placeholder': '',
+      'step': '',
       'min': '',
       'max': '',
       'clone': false,
@@ -133,8 +134,8 @@ export const fields = {
       'name': 'URL',
       'desc': '',
       'std': '',
-      'placeholder': '',
       'size': '',
+      'placeholder': '',
       'clone': false,
     },
     'advanced': {
@@ -144,7 +145,6 @@ export const fields = {
       'attributes': [],
     }
   },
-
   'email': {
     'general': {
       'id': '',
@@ -152,6 +152,7 @@ export const fields = {
       'type': 'email',
       'desc': '',
       'std': '',
+      'size': '',
       'placeholder': '',
       'clone': false,
     },
@@ -181,26 +182,6 @@ export const fields = {
       'attributes': [],
     }
   },
-  'autocomplete': {
-    'general': {
-      'id': '',
-      'type': 'autocomplete',
-      'name': 'Auto Complete',
-      'desc': '',
-      'std': '',
-      'placeholder': '',
-      'size': '',
-      'options': [],
-      'clone': false,
-    },
-    'advanced': {
-      'before': '',
-      'after': '',
-      'class': '',
-      'attributes': [],
-    }
-  },
-
   'text_list': {
     'general': {
       'id': '',
@@ -218,18 +199,13 @@ export const fields = {
       'attributes': [],
     }
   },
-
-
-  'textarea': {
+  'checkbox': {
     'general': {
       'id': '',
-      'type': 'textarea',
-      'name': 'Textarea',
-      'desc': '',
-      'std': '',
-      'placeholder': '',
-      'rows': '',
-      'cols': '',
+      'name': 'Checkbox',
+      'type': 'checkbox',
+      'desc': 'Default Description',
+      'std': false,
       'clone': false,
     },
     'advanced': {
@@ -239,10 +215,39 @@ export const fields = {
       'attributes': [],
     }
   },
-
-
-
-
+  'checkbox_list': {
+    'general': {
+      'id': '',
+      'name': 'Checkbox List',
+      'type': 'checkbox_list',
+      'desc': '',
+      'options': [],
+      'clone': false,
+    },
+    'advanced': {
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+    }
+  },
+  'button': {
+    'general': {
+      'id': '',
+      'type': 'button',
+      'name': 'Button',
+      'desc': '',
+      'std': '',
+      'class': '',
+      'clone': false,
+    },
+    'advanced': {
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+    }
+  },
   'password': {
     'general': {
       'id': '',
@@ -250,8 +255,8 @@ export const fields = {
       'name': 'Password',
       'desc': '',
       'std': '',
-      'placeholder': '',
       'size': '',
+      'placeholder': '',
       'clone': false
     },
     'advanced': {
@@ -261,8 +266,23 @@ export const fields = {
       'attributes': [],
     }
   },
-
-
+  'radio': {
+    'general': {
+      'id': '',
+      'name': 'Radio',
+      'type': 'radio',
+      'desc': '',
+      'options': [],
+      'inline': true,
+      'clone': false,
+    },
+    'advanced': {
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+    }
+  },
   'select': {
     'general': {
       'id': '',
@@ -282,9 +302,8 @@ export const fields = {
       'attributes': [],
     }
   },
-
   'select_advanced': {
-    'general' : {
+    'general': {
       'id': '',
       'name': 'Select Advanced',
       'type': 'select_advanced',
@@ -304,66 +323,122 @@ export const fields = {
       'select2': []
     }
   },
-
-  'checkbox_list': {
+  'textarea': {
     'general': {
       'id': '',
-      'name': 'Checkbox List',
-      'type': 'checkbox_list',
-      'desc': '',
-      'std': '',
-      'options': [],
-      'clone': false,
-    },
-    'advanced':{
-      'before': '',
-      'after': '',
-      'class': '',
-      'attributes': [],
-    }
-  },
-
-
-  'checkbox': {
-    'general':{
-      'id': '',
-      'name': 'Checkbox',
-      'type': 'checkbox',
-      'desc': 'Default Description',
-      'std': 0,
-      'clone': false,
-    },
-    'advanced':{
-      'before': '',
-      'after': '',
-      'class': '',
-      'attributes': [],
-    }
-  },
-
-
-  'radio': {
-    'general': {
-      'id': '',
-      'name': 'Radio',
-      'type': 'radio',
+      'type': 'textarea',
+      'name': 'Textarea',
       'desc': '',
       'std': '',
       'placeholder': '',
-      'options': [],
+      'rows': '',
+      'cols': '',
       'clone': false,
-      'inline': true,
     },
-    'advanced':{
+    'advanced': {
       'before': '',
       'after': '',
       'class': '',
       'attributes': [],
     }
   },
+  'hidden': {
+    'general': {
+      'id': '',
+      'type': 'hidden',
+      'name': 'Hidden',
+      'desc': '',
+      'std': '',
 
+      'clone': false
+    },
+    'advanced': {
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': []
+    }
+  },
+  'image_select': {
+    'general': {
+      'id': '',
+      'type': 'image_select',
+      'name': 'Image Select',
+      'std': '',
+      'desc': '',
+      // 'force_delete': false,
+      // 'max_file_uploads': 4,
+      'options': [],
+      'multiple': false,
+      'clone': false,
+    },
+    'advanced': {
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+    }
+  },
+  'color': {
+    'general': {
+      'id': '',
+      'name': 'Color Picker',
+      'type': 'color',
+      'std': '',
+      'desc': '',
+      'clone': false,
+      'class': '',
+    },
+    'advanced': {
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': []
+    }
+  },
+  'oembed': {
+    'general': {
+      'id': '',
+      'type': 'oembed',
+      'name': 'oEmbed',
+      'desc': 'oEmbed description',
+      'std': '',
+      'size': '',
+      'placeholder': '',
+      'clone': false
+    },
+    'advanced': {
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+      'datalist': {
+        'id': '',
+        'items': []
+      }
+    }
+  },
+  'slider': {
+    'general': {
+      'id': '',
+      'type': 'slider',
+      'name': 'Slider',
+      'std': '',
+      'desc': '',
+      'prefix': '',
+      'suffix': '',
+      'clone': false
+    },
+    'advanced': {
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+      'slider': []
+    }
+  },
   'wysiwyg': {
-    'general':{
+    'general': {
       'id': '',
       'name': 'WYSIWYG',
       'type': 'wysiwyg',
@@ -373,7 +448,7 @@ export const fields = {
       'clone': false,
       'options': [],
     },
-    'advanced':{
+    'advanced': {
       'before': '',
       'after': '',
       'class': '',
@@ -381,132 +456,24 @@ export const fields = {
       'editor': []
     }
   },
-
-  'hidden': {
-    'general':{
-      'id': '',
-      'type': 'hidden',
-      'desc': '',
-      'std': '',
-      'name': 'Hidden',
-      'clone': false
-    },
-    'advanced':{
-      'before': '',
-      'after': '',
-      'class': '',
-      'attributes': []
-    }
-  },
-
-  'heading': {
-    'general':{
-      'id': '',
-      'type': 'heading',
-      'desc': '',
-      'std': '',
-      'name': 'Heading',
-      'clone': false
-    },
-    'advanced':{
-      'before': '',
-      'after': '',
-      'class': '',
-      'attributes': []
-    }
-  },
-
-  'color': {
-    'general':{
-      'id': '',
-      'name': 'Color Picker',
-      'type': 'color',
-      'std': '',
-      'desc': '',
-      'clone': false,
-      'class': '',
-    },
-    'advanced':{
-      'before': '',
-      'after': '',
-      'class': '',
-      'attributes': []
-    }
-  },
-
-  'date': {
-    'general':{
-      'id': '',
-      'type': 'date',
-      'name': 'Date Picker',
-      'std': '',
-      'desc': '',
-      'js_options': [],
-      'clone': false,
-      'class': '',
-      'size': '',
-      'inline': false,
-      'timestamp': false,
-    },
-    'advanced':{
-      'before': '',
-      'after': '',
-      'class': '',
-      'attributes': [],
-      'datePicker': []
-    }
-  },
-
-  'datetime': {
-    'general':{
-      'id': '',
-      'type': 'datetime',
-      'name': 'Date Time Picker',
-      'std': '',
-      'desc': '',
-      'js_options': [],
-      'clone': false,
-      'class': '',
-      'size': '',
-      'inline': false,
-      'timestamp': false,
-    },
-    'advanced':{
-      'before': '',
-      'after': '',
-      'class': '',
-      'attributes': [],
-      'datetimePicker': []
-    }
-  },
-
-  'time': {
+  'autocomplete': {
     'general': {
       'id': '',
-      'name': 'Time Picker',
-      'type': 'time',
-      'std': '',
+      'type': 'autocomplete',
+      'name': 'Auto Complete',
       'desc': '',
-      'js_options': [],
-      'class': '',
+      'size': '',
+      'options': [],
+      'multiple': false,
       'clone': false,
-      'size': ''
     },
-    'advanced':{
+    'advanced': {
       'before': '',
       'after': '',
       'class': '',
       'attributes': [],
-      'timePicker': []
     }
   },
-
-  'divider': {
-    'id': 'uniqid',
-    'type': 'divider',
-    'name': 'Divider',
-  }, // khong co 2 tab general va advanced
-
   'fieldset_text': {
     'general': {
       'id': '',
@@ -519,55 +486,13 @@ export const fields = {
       'options': [],
       'clone': false
     },
-    'advanced':{
+    'advanced': {
       'before': '',
       'after': '',
       'class': '',
       'attributes': [],
     }
   },
-
-  'button': {
-    'general': {
-      'id': '',
-      'type': 'button',
-      'name': 'Button',
-      'desc': '',
-      'std': '',
-      'class': '',
-      'clone': false,
-    },
-    'advanced':{
-      'before': '',
-      'after': '',
-      'class': '',
-      'attributes': [],
-    }
-  },
-
-  'oembed': {
-    'general': {
-      'id': '',
-      'type': 'oembed',
-      'name': 'oEmbed',
-      'std': '',
-      'desc': 'oEmbed description',
-      'size': '',
-      'placeholder': '',
-      'clone': false
-    },
-    'advanced':{
-      'before': '',
-      'after': '',
-      'class': '',
-      'attributes': [],
-      'datalist': {
-        'id': '',
-        'items': []
-      }
-    }
-  },
-
   'map': {
     'general': {
       'id': '',
@@ -576,43 +501,121 @@ export const fields = {
       'std': '',
       'desc': '',
       'address_field': '',
-      'class': '',
       'api_key': '',
       'region': '',
       'clone': false
     },
-    'advanced':{
+    'advanced': {
       'before': '',
       'after': '',
       'class': '',
       'attributes': [],
     }
   },
-
-  'slider': {
-    'general':{
+  'heading': {
+    'general': {
       'id': '',
-      'type': 'slider',
-      'name': 'Slider',
-      'std': '',
+      'type': 'heading',
+      'name': 'Heading',
       'desc': '',
-      'js_options': [],
-      'prefix': '',
-      'suffix': '',
+      'std': '',
       'clone': false
     },
-    'advanced':{
+    'advanced': {
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': []
+    }
+  },
+  'divider': {
+    'id': 'uniqid',
+    'type': 'divider',
+    'name': 'Divider',
+  },
+  'date': {
+    'general': {
+      'id': '',
+      'type': 'date',
+      'name': 'Date Picker',
+      'std': '',
+      'desc': '',
+      'class': '',
+      'size': '',
+      'inline': false,
+      'timestamp': false,
+      'clone': false,
+    },
+    'advanced': {
       'before': '',
       'after': '',
       'class': '',
       'attributes': [],
-      'slider': []
+      'js_options': []
     }
   },
-
-
+  'datetime': {
+    'general': {
+      'id': '',
+      'type': 'datetime',
+      'name': 'Date Time Picker',
+      'std': '',
+      'desc': '',
+      'class': '',
+      'size': '',
+      'inline': false,
+      'timestamp': false,
+      'clone': false,
+    },
+    'advanced': {
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+      'js_options': []
+    }
+  },
+  'time': {
+    'general': {
+      'id': '',
+      'name': 'Time Picker',
+      'type': 'time',
+      'std': '',
+      'desc': '',
+      'size': '',
+      'clone': false,
+    },
+    'advanced': {
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+      'js_options': []
+    }
+  },
+  'post': {
+    'general': {
+      'id': '',
+      'type': 'post',
+      'name': 'Post',
+      'std': '',
+      'desc': '',
+      'post_type': 'post',
+      'field_type': 'select_advanced', // select, select_advanced
+      'placeholder': '',
+      'parent': false,
+      'clone': false,
+    },
+    'advanced': {
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+      'query_args': []
+    }
+  },
   'taxonomy': {
-    'general':{
+    'general': {
       'id': '',
       'type': 'taxonomy',
       'name': 'Taxonomy',
@@ -625,7 +628,7 @@ export const fields = {
       'parent': false,
       'clone': false
     },
-    'advanced':{
+    'advanced': {
       'before': '',
       'after': '',
       'class': '',
@@ -633,7 +636,6 @@ export const fields = {
       'query_args': []
     }
   },
-
   'taxonomy_advanced': {
     'general': {
       'id': '',
@@ -641,12 +643,13 @@ export const fields = {
       'name': 'Taxonomy Advanced',
       'std': '',
       'desc': '',
-      'placeholder': '',
-      'query_args': '',
       'taxonomy': 'category',
       'field_type': 'select',
+      'placeholder': '',
+      'parent': false,
+      'clone': false
     },
-    'advanced':{
+    'advanced': {
       'before': '',
       'after': '',
       'class': '',
@@ -654,22 +657,19 @@ export const fields = {
       'query_args': []
     }
   },
-
-  'post': {
-    'general':{
+  'user': {
+    'general': {
       'id': '',
-      'type': 'post',
-      'name': 'Post',
+      'type': 'user',
+      'name': 'User',
       'std': '',
       'desc': '',
-      'post_type': 'post',
-      'field_type': 'select_advanced', // select, select_advanced
-      'parent': false,
-      'query_args': '',
-      'clone': false,
-      'placeholder': ''
+      'class': '',
+      'field_type': 'select_advanced', // select, select_advanced,
+      'placeholder': '',
+      'clone': false
     },
-    'advanced':{
+    'advanced': {
       'before': '',
       'after': '',
       'class': '',
@@ -677,7 +677,6 @@ export const fields = {
       'query_args': []
     }
   },
-
   'file': {
     'general': {
       'id': '',
@@ -685,44 +684,20 @@ export const fields = {
       'name': 'File',
       'std': '',
       'desc': '',
-      'force_delete': false,
       'max_file_uploads': '',
-      'mime_type': '',
-      'clone': false,
-      'size': ''
-    },
-    'advanced':{
-      'before': '',
-      'after': '',
-      'class': '',
-      'attributes': [],
-    }
-  },
-
-  'file_advanced': {
-    'general':{
-      'id': '',
-      'type': 'file_advanced',
-      'name': 'File Advanced',
-      'std': '',
-      'desc': '',
+      'size': '',
       'force_delete': false,
-      'mime_type': '',
-      'max_file_uploads': 4,
-      'max_status': true,
-      'clone': false,
-      'size': ''
+      'clone': false
     },
-    'advanced':{
+    'advanced': {
       'before': '',
       'after': '',
       'class': '',
       'attributes': [],
     }
   },
-
   'file_input': {
-   'general': {
+    'general': {
       'id': '',
       'type': 'file_input',
       'name': 'File Input',
@@ -732,7 +707,7 @@ export const fields = {
       'std': '',
       'clone': false,
     },
-    'advanced':{
+    'advanced': {
       'before': '',
       'after': '',
       'class': '',
@@ -743,28 +718,65 @@ export const fields = {
       }
     }
   },
-
-  'image': {
+  'file_advanced': {
     'general': {
       'id': '',
-      'type': 'image',
-      'name': 'Image Upload',
+      'type': 'file_advanced',
+      'name': 'File Advanced',
       'std': '',
-      'clone': false,
       'desc': '',
-      //			'force_delete' : false,
-      //			'max_file_uploads': 4,
+      'size': '',
+      'max_file_uploads': 4,
+      'force_delete': false,
+      'mime_type': '',
+      'max_status': true,
+      'clone': false,
     },
-    'advanced':{
+    'advanced': {
       'before': '',
       'after': '',
       'class': '',
       'attributes': [],
     }
   },
-
+  'image_advanced': {
+    'general': {
+      'id': '',
+      'type': 'image_advanced',
+      'name': 'Image Advanced',
+      'desc': '',
+      'max_file_uploads': '',
+      'force_delete': false,
+      'clone': false,
+      'max_status': false,
+    },
+    'advanced': {
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+    }
+  },
+  'image': {
+    'general': {
+      'id': '',
+      'type': 'image',
+      'name': 'Image Upload',
+      'std': '',
+      'desc': '',
+      'clone': false,
+      //			'force_delete' : false,
+      //			'max_file_uploads': 4,
+    },
+    'advanced': {
+      'before': '',
+      'after': '',
+      'class': '',
+      'attributes': [],
+    }
+  },
   'video': {
-    'general':{
+    'general': {
       'id': '',
       'type': 'video',
       'name': 'Video',
@@ -774,14 +786,13 @@ export const fields = {
       'max_file_uploads': 4,
       'clone': false,
     },
-    'advanced':{
+    'advanced': {
       'before': '',
       'after': '',
       'class': '',
       'attributes': [],
     }
   },
-
   'plupload_image': {
     'id': '',
     'type': 'plupload_image',
@@ -792,47 +803,6 @@ export const fields = {
     'max_file_uploads': 4,
     'js_options': [],
   },
-
-  'image_advanced': {
-    'general': {
-      'id': '',
-      'type': 'image_advanced',
-      'name': 'Image Advanced',
-      'desc': '',
-      'max_file_uploads': '',
-      'force_delete' : false,
-      'clone': false,
-      'max_status': false,
-    },
-    'advanced':{
-      'before': '',
-      'after': '',
-      'class': '',
-      'attributes': [],
-    }
-  },
-
-  'image_select': {
-    'general':{
-      'id': '',
-      'type': 'image_select',
-      'name': 'Image Select',
-      'std': '',
-      'desc': '',
-      // 'force_delete': false,
-      // 'max_file_uploads': 4,
-      'options': [],
-      'clone': false,
-      'multiple': false,
-    },
-    'advanced':{
-      'before': '',
-      'after': '',
-      'class': '',
-      'attributes': [],
-    }
-  },
-
   'thickbox_image': {
     'id': '',
     'type': 'thickbox_image',
@@ -842,28 +812,6 @@ export const fields = {
     'class': '',
     'force_delete': false,
     'max_file_uploads': 4,
-  },
-
-  'user': {
-    'general':{
-      'id': '',
-      'type': 'user',
-      'name': 'User',
-      'std': '',
-      'desc': '',
-      'class': '',
-      'query_args': '',
-      'field_type': 'select_advanced', // select, select_advanced,
-      'placeholder': '',
-      'clone': false
-    },
-    'advanced':{
-      'before': '',
-      'after': '',
-      'class': '',
-      'attributes': [],
-      'query_args': []
-    }
   },
 }
 

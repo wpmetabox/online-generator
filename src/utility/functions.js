@@ -1,6 +1,6 @@
 import { TEXT_INPUT, NUMBER_INPUT, CHECKBOX, fields } from '../constants/constants';
 
-export const getLabel = (keyName) => {
+export const getLabel = (keyName, type) => {
     let result = '';
     switch (keyName) {
         case 'id':
@@ -13,7 +13,11 @@ export const getLabel = (keyName) => {
             result = 'Description'
             break;
         case 'std':
-            result = 'Default'
+            if (type === 'checkbox') {
+                result = 'Checked?'
+            } else {
+                result = 'Default'
+            }
             break;
         case 'size':
             result = 'Size'
@@ -30,15 +34,60 @@ export const getLabel = (keyName) => {
         case 'max':
             result = 'Max'
             break;
+        case 'step':
+            result = 'Step'
+            break;
+        case 'inline':
+            result = 'Inline'
+            break;
+        case 'multiple':
+            result = 'Multiple?'
+            break;
+        case 'rows':
+            result = 'Rows'
+            break;
+        case 'cols':
+            result = 'Columns'
+            break;
+        case 'prefix':
+            result = 'Prefix'
+            break;
+        case 'suffix':
+            result = 'Suffix'
+            break;
+        case 'address_field':
+            result = 'Address Field'
+            break;
+        case 'api_key':
+            result = 'Api Key'
+            break;
+        case 'region':
+            result = 'Region'
+            break;
+        case 'timestamp':
+            result = 'Timestamp'
+            break;
+        case 'max_file_uploads':
+            result = 'Max File Uploads'
+            break;
+        case 'force_delete':
+            result = 'Force Delete?'
+            break;
+        case 'mime_type':
+            result = 'Mime Type'
+            break;
+        case 'max_status':
+            result = 'Max Status'
+            break;
     }
+
     return result;
 }
 
 export const getElementType = (name) => {
-    const inputsText = ['id', 'name', 'desc', 'std', 'placeholder', 'min', 'max'];
-    const inputsNumber = ['size'];
-    const checkboxes = ['clone'];
-
+    const inputsText = ['id', 'name', 'desc', 'std', 'placeholder', 'min', 'max', 'rows', 'cols', 'prefix', 'suffix', 'address_field', 'api_key', 'region', 'mime_type'];
+    const inputsNumber = ['size', 'step', 'max_file_uploads'];
+    const checkboxes = ['clone', 'inline', 'multiple', 'timestamp', 'force_delete', 'max_status'];
     let type = ''
     if (inputsText.includes(name)) {
         type = TEXT_INPUT
@@ -56,13 +105,13 @@ export const getElementType = (name) => {
 export const getDataCopiedItem = (type, index) => {
     let data = fields[type];
     let result = {}
-    result.general = getGenralData(data.general, index);
+    result.general = getGeneralData(data.general, index);
     result.advanced = getAdvancedData(data.advanced, index)
 
     return result
 }
 
-const getGenralData = (generalItems, index) => {
+const getGeneralData = (generalItems, index) => {
     let result = {}
     Object.keys(generalItems).map(item => {
         const elementName = `fields_${index}_${item}`;
@@ -79,6 +128,7 @@ const getAdvancedData = (advancedItems, index) => {
     Object.keys(advancedItems).map(item => {
         const elementName = `fields_${index}_${item}`;
         let value = document.getElementsByName(elementName)[0]?.value;
+        console.log('zzz', value)
         value = value ? value : advancedItems[item]
         if (item === 'attributes') {
             let attributes = []
@@ -89,10 +139,9 @@ const getAdvancedData = (advancedItems, index) => {
             }
             result[item] = attributes;
         } else {
-            result[item] = value
+            result[item] = value;
         }
-
     })
-
+    console.log('zzzz', result)
     return result
 }

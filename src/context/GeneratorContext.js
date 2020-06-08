@@ -28,6 +28,7 @@ const formatParams = (params) => {
             result[keyName] = Object.values(params)[keyIndex]
         }
         else {
+            // create params for selected fields
             const keys = keyName.split('_');
             keys.reduce((result, value, index) => {
                 if (!result[value]) {
@@ -43,8 +44,6 @@ const formatParams = (params) => {
 
     return result
 }
-
-
 
 export const { Provider, Context, actions } = createDataContext(
     generatorReducer,
