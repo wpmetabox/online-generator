@@ -68,7 +68,17 @@ const getGenralData = (generalItems, index) => {
         const elementName = `fields_${index}_${item}`;
         let value = document.getElementsByName(elementName)[0]?.value;
         value = value ? value : generalItems[item]
-        result[item] = value
+        if (item === 'options') {
+            let options = []
+            for (let i = 0; i < value; i++) {
+                options[i] = {}
+                options[i]['key'] = document.getElementsByName(`fields_${index}_${item}_${i}_key`)[0]?.value;
+                options[i]['label'] = document.getElementsByName(`fields_${index}_${item}_${i}_label`)[0]?.value;
+            }
+            result[item] = options;
+        } else {
+            result[item] = value
+        }
     })
 
     return result

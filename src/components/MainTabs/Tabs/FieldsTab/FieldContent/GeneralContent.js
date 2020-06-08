@@ -7,6 +7,7 @@ import { getLabel, getElementType } from '../../../../../utility/functions';
 import { NUMBER_INPUT, TEXT_INPUT, CHECKBOX } from '../../../../../constants/constants';
 
 const GeneralContent = (props) => {
+  console.log('TYPE: ', props.fieldData.type);
   const getElement = name => {
     const fieldData = props.fieldData;
     const elementName = `fields_${props.index}_${name}`
@@ -40,7 +41,7 @@ const GeneralContent = (props) => {
       {
         Object.keys(props.fieldData).map((keyName, keyIndex) =>
           isOptionElement(keyName)
-            ? <Options key={keyName + keyIndex} register={props.register} index={props.index} defaultValue={[]} />
+            ? <Options key={keyName + keyIndex} register={props.register} index={props.index}  data={props.fieldData} />
             : <RowContainer label={getLabel(keyName)} key={getLabel(keyName) + keyIndex} >
               {
                 getElement(keyName)

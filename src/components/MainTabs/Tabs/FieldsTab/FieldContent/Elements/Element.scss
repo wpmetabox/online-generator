@@ -81,6 +81,15 @@
 
             tr{
                 border-bottom: 1px solid #ddd;
+
+                th {
+                    text-align: left;
+                    font-size: 14px;
+                    font-weight: normal;
+                }
+                #center {
+                    text-align: center;
+                }
             }
     
             td{
