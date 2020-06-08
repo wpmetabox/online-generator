@@ -13,40 +13,51 @@ const GeneralContent = (props) => {
     const elementName = `fields_${props.index}_${name}`
     const elementType = getElementType(name)
     let defaultValue = fieldData[name];
-
     let result = ''
-    if (elementType === TEXT_INPUT) {
-      result = <Input type='text' name={elementName} defaultValue={defaultValue} ref={props.register} keyValue={elementName} />
-    }
-    if (elementType === NUMBER_INPUT) {
-      result = <Input type='number' name={elementName} keyValue={elementName} defaultValue={defaultValue} />
-    }
-    if (elementType === CHECKBOX) {
+    // custom std for check box
+    if (name === 'std' && props.type === 'checkbox') {
       result = <Checkbox name={elementName} ref={props.register} keyValue={elementName} defaultValue={defaultValue} />
+    } else {
+      if (elementType === TEXT_INPUT) {
+        result = <Input type='text' name={elementName} defaultValue={defaultValue} ref={props.register} keyValue={elementName} />
+      }
+      if (elementType === NUMBER_INPUT) {
+        result = <Input type='number' name={elementName} keyValue={elementName} defaultValue={defaultValue} />
+      }
+      if (elementType === CHECKBOX) {
+        result = <Checkbox name={elementName} ref={props.register} keyValue={elementName} defaultValue={defaultValue} />
+      }
     }
+
 
     return result;
   }
 
-  const isIdInput = (name) => {
-    return name === 'id'
-  }
+  const renderElement = (keyName, keyIndex) => {
+    let element;
+    if (keyName === 'options') {
+      element = <Options key={keyName + keyIndex} register={props.register} index={props.index}  data={props.fieldData} />
+    }
+    if (keyName === 'type') {
+      element = null;
+    }
+    else {
+      element = <RowContainer label={getLabel(keyName, props.type)} key={getLabel(keyName) + keyIndex} >
+        {
+          getElement(keyName)
+        }
+      </RowContainer>
+    }
+    console.log('111', keyName, element)
 
-  const isOptionElement = (keyName) => {
-    return keyName === 'options';
+    return element
   }
 
   return (
     <div className="field_content">
       {
         Object.keys(props.fieldData).map((keyName, keyIndex) =>
-          isOptionElement(keyName)
-            ? <Options key={keyName + keyIndex} register={props.register} index={props.index}  data={props.fieldData} />
-            : <RowContainer label={getLabel(keyName)} key={getLabel(keyName) + keyIndex} >
-              {
-                getElement(keyName)
-              }
-            </RowContainer>
+          renderElement(keyName, keyIndex)
         )
       }
     </div>
