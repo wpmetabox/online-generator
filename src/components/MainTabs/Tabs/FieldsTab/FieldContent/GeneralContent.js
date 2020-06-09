@@ -9,9 +9,6 @@ import DropDown from './Elements/DropDown';
 import RadioCheckbox from './Elements/RadioCheckbox';
 
 const GeneralContent = (props) => {
-  // console.log('FIELD DATA: ', props.fieldData);
-  // console.log('KEYs: ', Object.keys(props.fieldData));
-  console.log('TYPE: ', (props));
   const getElement = name => {
     const fieldData = props.fieldData;
     const elementName = `fields-${props.index}-${name}`

@@ -169,9 +169,7 @@ const getAdvancedData = (advancedItems, index) => {
             for (let i = 0; i < value; i++) {
                 attributes[i] = {}
                 attributes[i]['key'] = document.getElementsByName(`fields-${index}-${item}-${i}-key`)[0]?.value;
-                console.log('aaaaaaaa ', attributes[i]['key']);
-                attributes[i]['label'] = document.getElementsByName(`fields-${index}-${item}-${i}-label`)[0]?.value;
-                console.log('bbbbbb', attributes[i]['label']);
+                attributes[i]['label'] = document.getElementsByName(`fields-${index}-${item}-${i}-value`)[0]?.value;
             }
             result[item] = attributes;
         } else {

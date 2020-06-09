@@ -3,9 +3,7 @@ import generatorReducer from './GeneratorReducer';
 import { GENERATE_PHP_CODE } from './GeneratorActions';
 
 const generatePHPCode = dispatch => params => {
-    console.log('params: ', params);
     const paramsFormatted = formatParams(params);
-    console.log('paramsFormatted: ', paramsFormatted);
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
