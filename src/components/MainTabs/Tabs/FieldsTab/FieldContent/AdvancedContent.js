@@ -18,8 +18,8 @@ const AdvancedContent = (props) => {
       <RowContainer label="Custom CSS class" >
         <Input name={`fields-${props.index}-class`} defaultValue={props.data.class} ref={props.register} type="text" />
       </RowContainer>
-      <AdvancedAdditional type="attribute" data={props.data} index={props.index}/>
-      {options.length ? <AdvancedAdditional type={options[0].type} data={props.data} index={props.index}/> : null}
+      <AdvancedAdditional type="attribute" data={props.data} index={props.index} register={props.register}/>
+      {options.length ? <AdvancedAdditional type={options[0].type} data={props.data} index={props.index} register={props.register}/> : null}
     </div>
   );
 }
