@@ -163,22 +163,19 @@ const getAdvancedData = (advancedItems, index) => {
     Object.keys(advancedItems).map(item => {
         const elementName = `fields-${index}-${item}`;
         let value = document.getElementsByName(elementName)[0]?.value;
-        console.log('zzz', value)
         value = value ? value : advancedItems[item]
         if (item === 'attributes') {
             let attributes = []
             for (let i = 0; i < value; i++) {
                 attributes[i] = {}
                 attributes[i]['key'] = document.getElementsByName(`fields-${index}-${item}-${i}-key`)[0]?.value;
-                console.log('aaaaaaaa ', attributes[i]['key']);
-                attributes[i]['label'] = document.getElementsByName(`fields-${index}-${item}-${i}-label`)[0]?.value;
-                console.log('bbbbbb', attributes[i]['label']);
+                attributes[i]['label'] = document.getElementsByName(`fields-${index}-${item}-${i}-value`)[0]?.value;
             }
             result[item] = attributes;
         } else {
             result[item] = value;
         }
     })
-    console.log('zzzz', result)
+
     return result
 }

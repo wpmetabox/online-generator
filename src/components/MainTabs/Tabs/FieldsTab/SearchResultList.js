@@ -6,7 +6,7 @@ const SearchResultList = (props) => {
     let searchResult = []
     Object.values(fieldTypes).map(list => {
       Object.keys(list).map(item => {
-        if (list[item].includes(param)) searchResult.push({ type: item, title: list[item] })
+        if (list[item].toLowerCase().includes(param.toLowerCase())) searchResult.push({ type: item, title: list[item] })
       })
     })
 

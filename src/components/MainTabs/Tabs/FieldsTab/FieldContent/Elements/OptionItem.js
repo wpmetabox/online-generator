@@ -2,7 +2,6 @@ import React from 'react';
 import SmallInput from './SmallInput';
 
 export const OptionItem = (props) => {
-    console.log('ITEM: ', props);
     const WIDTH = props.hasSelect ? '35%' : '45%';
     const isImageSelect = props.type === "image_select";
     const label = isImageSelect ? "Image URL" : "Label";

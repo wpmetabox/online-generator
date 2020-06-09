@@ -17,7 +17,7 @@ const GeneralContent = (props) => {
     let result = ''
     // custom std for check box
     if (name === 'std' && props.type === 'checkbox') {
-      
+
       result = <Checkbox name={elementName} ref={props.register} keyValue={elementName} defaultValue={defaultValue} />
     } else {
       if (elementType === TEXT_INPUT) {
@@ -44,13 +44,11 @@ const GeneralContent = (props) => {
   
 
   const renderElement = (keyName, keyIndex) => {
-    let element;
-
-    element = <RowContainer label={getLabel(keyName, props.type)} key={getLabel(keyName) + keyIndex} >
-    {
-      getElement(keyName)
-    }
-  </RowContainer>
+    let element = <RowContainer label={getLabel(keyName, props.type)} key={getLabel(keyName) + keyIndex} >
+      {
+        getElement(keyName)
+      }
+    </RowContainer>
 
     if (keyName === 'options') {
       element = <Options 
@@ -64,9 +62,9 @@ const GeneralContent = (props) => {
     if (keyName === 'type') {
       element = null;
     }
-    
+
     return element
-    
+
   }
 
   return (
