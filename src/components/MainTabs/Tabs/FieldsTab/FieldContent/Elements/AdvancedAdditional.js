@@ -3,6 +3,7 @@ import AdvancedAdditionalItem from './AdvancedAdditionalItem.js';
 import { ADVANCED_ADDITIONAL } from "../../../../../../constants/constants";
 
 const AdvancedAdditional = (props) => {
+  console.log('pro111111ps: ', props.register);
     const [attributes, setAttributes] = useState(props.data.attributes);
     const customData = ADVANCED_ADDITIONAL[props.type] ;
     
