@@ -3,14 +3,17 @@ import AdvancedAdditionalItem from './AdvancedAdditionalItem.js';
 import { ADVANCED_ADDITIONAL } from "../../../../../../constants/constants";
 
 const AdvancedAdditional = (props) => {
-  console.log('TYPEEEEEEEE: ', props.type);
     const [attributes, setAttributes] = useState(props.data.attributes);
     const customData = ADVANCED_ADDITIONAL[props.type] ;
-    console.log('customData: ', customData);
     
     return (
         <div className="custom_attributes">
-        <h3><a href={customData?.titleLink}>{customData?.title}</a></h3>
+        <h3>
+          {customData?.titleLink 
+            ? <a href={customData?.titleLink}>{customData?.title}</a>
+            : <p>{customData?.title}</p>
+          }
+        </h3>
         <table >
           <tbody>
             {

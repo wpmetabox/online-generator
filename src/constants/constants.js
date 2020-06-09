@@ -861,3 +861,16 @@ export const ADVANCED_ADDITIONAL = {
     "buttonName": "+ Option"
   }
 }
+
+export const LIST_OPTION = [
+  {type: 'select2', option: 'select_advanced'},
+  {type: 'query_args', option: 'post'},
+  {type: 'query_args', option: 'taxonomy'},
+  {type: 'query_args', option: 'taxonomy_advanced'},
+  {type: 'query_args', option: 'user'},
+  {type: 'slider', option: 'slider'},
+  {type: 'editor', option: 'wysiwyg'},
+  {type: 'date_picker', option: 'date'},
+  {type: 'datetime_picker', option: 'datetime'},
+  {type: 'time_picker', option: 'time'}
+]
