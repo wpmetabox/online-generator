@@ -21,12 +21,12 @@ export const OptionItem = (props) => {
                     <SmallInput placeholder="Enter value" defaultValue={props.data.key} ref={props.register} name={`${props.name}-options-${props.index}-key`} />
                 </td>
                 <td width={WIDTH}>
-                    <SmallInput placeholder={placeholder} defaultValue={props.data.label} ref={props.register} name={`${props.name}-options-${props.index}-label`} />
+                    <SmallInput placeholder={placeholder} defaultValue={props.data.label} ref={props.register} name={`${props.name}-options-${props.index}-value`} />
                 </td>
                 { props.hasSelect && 
                     (
                         <td width="15%">
-                            <input type="checkbox" name={`${props.name}-options-${props.index}-label`} />
+                            <input type="checkbox" defaultChecked={props.data.selected} ref={props.register} name={`${props.name}-options-${props.index}-selected`} />
                         </td>
                     ) 
                 }

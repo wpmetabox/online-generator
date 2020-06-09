@@ -4,14 +4,11 @@ import Input from './Elements/Input';
 import Checkbox from './Elements/Checkbox';
 import Options from './Elements/Options';
 import { getLabel, getElementType } from '../../../../../utility/functions';
-import { NUMBER_INPUT, TEXT_INPUT, CHECKBOX, RADIO_CHECKBOX, DROPDOWN_MENU, LIST_ADD_SELECT, LIST_NO_HEADING } from '../../../../../constants/constants';
+import { NUMBER_INPUT, TEXT_INPUT, CHECKBOX, RADIO_CHECKBOX, DROPDOWN_MENU } from '../../../../../constants/constants';
 import DropDown from './Elements/DropDown';
 import RadioCheckbox from './Elements/RadioCheckbox';
 
 const GeneralContent = (props) => {
-  // console.log('FIELD DATA: ', props.fieldData);
-  // console.log('KEYs: ', Object.keys(props.fieldData));
-  console.log('TYPE: ', (props));
   const getElement = name => {
     const fieldData = props.fieldData;
     const elementName = `fields-${props.index}-${name}`
@@ -44,12 +41,7 @@ const GeneralContent = (props) => {
     return result;
   }
 
-  const checkHasSelect = () => {
-    return LIST_ADD_SELECT.includes(props.fieldData.type)
-}
-  const checkHasHeading = () => {
-      return !LIST_NO_HEADING.includes(props.fieldData.type)
-  }
+  
 
   const renderElement = (keyName, keyIndex) => {
     let element;
@@ -66,8 +58,7 @@ const GeneralContent = (props) => {
                   register={props.register} 
                   index={props.index}  
                   data={props.fieldData} 
-                  hasSelect={checkHasSelect()}
-                  noHeading={checkHasHeading()}
+
                 />
     }
     if (keyName === 'type') {
