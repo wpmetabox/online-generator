@@ -18,15 +18,15 @@ export const OptionItem = (props) => {
             }
             <tr>
                 <td width={WIDTH}>
-                    <SmallInput placeholder="Enter value" defaultValue={props.data.key} ref={props.register} name={`${props.name}_options_${props.index}_key`} />
+                    <SmallInput placeholder="Enter value" defaultValue={props.data.key} ref={props.register} name={`${props.name}-options-${props.index}-key`} />
                 </td>
                 <td width={WIDTH}>
-                    <SmallInput placeholder={placeholder} defaultValue={props.data.label} ref={props.register} name={`${props.name}_options_${props.index}_label`} />
+                    <SmallInput placeholder={placeholder} defaultValue={props.data.label} ref={props.register} name={`${props.name}-options-${props.index}-label`} />
                 </td>
                 { props.hasSelect && 
                     (
                         <td width="15%">
-                            <input type="checkbox" name={`${props.name}_options_${props.index}_label`} />
+                            <input type="checkbox" name={`${props.name}-options-${props.index}-label`} />
                         </td>
                     ) 
                 }

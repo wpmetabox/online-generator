@@ -15,7 +15,17 @@
 
     .right{
         width: 60%;
-
+        label {
+            font-size: 15px;
+            margin-left: 2px;
+        }
+        .dropdown {
+            width: 100%;
+            color: #2c3e50;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: .5em 1em;
+        }
         .input_filed{
             width: 100%;
             color: #2c3e50;

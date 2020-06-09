@@ -24,10 +24,10 @@ const MetaBoxTab = (props) => {
       <DivRow label="Post types" >
         <div className="checkbox-group">
           <label className="check_box_post">
-            <input type="checkbox" ref={props.register} name="post_type" value="post" defaultChecked /> post
+            <input type="checkbox" ref={props.register} name="post-type" value="post" defaultChecked /> post
           </label>
           <label className="check_box_page">
-            <input type="checkbox" ref={props.register} name="post_type" value="page" /> page
+            <input type="checkbox" ref={props.register} name="post-type" value="page" /> page
           </label>
         </div>
       </DivRow>

@@ -4,18 +4,23 @@ import Input from './Elements/Input';
 import Checkbox from './Elements/Checkbox';
 import Options from './Elements/Options';
 import { getLabel, getElementType } from '../../../../../utility/functions';
-import { NUMBER_INPUT, TEXT_INPUT, CHECKBOX } from '../../../../../constants/constants';
+import { NUMBER_INPUT, TEXT_INPUT, CHECKBOX, RADIO_CHECKBOX, DROPDOWN_MENU, LIST_ADD_SELECT, LIST_NO_HEADING } from '../../../../../constants/constants';
+import DropDown from './Elements/DropDown';
+import RadioCheckbox from './Elements/RadioCheckbox';
 
 const GeneralContent = (props) => {
-  console.log('TYPE: ', props.fieldData.type);
+  // console.log('FIELD DATA: ', props.fieldData);
+  // console.log('KEYs: ', Object.keys(props.fieldData));
+  console.log('TYPE: ', (props));
   const getElement = name => {
     const fieldData = props.fieldData;
-    const elementName = `fields_${props.index}_${name}`
+    const elementName = `fields-${props.index}-${name}`
     const elementType = getElementType(name)
     let defaultValue = fieldData[name];
     let result = ''
     // custom std for check box
     if (name === 'std' && props.type === 'checkbox') {
+      
       result = <Checkbox name={elementName} ref={props.register} keyValue={elementName} defaultValue={defaultValue} />
     } else {
       if (elementType === TEXT_INPUT) {
@@ -27,6 +32,12 @@ const GeneralContent = (props) => {
       if (elementType === CHECKBOX) {
         result = <Checkbox name={elementName} ref={props.register} keyValue={elementName} defaultValue={defaultValue} />
       }
+      if (elementType === RADIO_CHECKBOX) {
+        result = <RadioCheckbox name={elementName} ref={props.register} keyValue={elementName} defaultValue={defaultValue} type={props.type} />
+      }
+      if (elementType === DROPDOWN_MENU) {
+        result = <DropDown name={elementName} ref={props.register} keyValue={elementName} defaultValue={defaultValue} />
+      }
     }
 
 
@@ -34,12 +45,10 @@ const GeneralContent = (props) => {
   }
 
   const checkHasSelect = () => {
-    const listAddSelect = ["checkbox_list", "radio", "select", "select_advanced", "image select",  "autocomplete"];
-    return listAddSelect.includes(props.fieldData.type)
+    return LIST_ADD_SELECT.includes(props.fieldData.type)
 }
   const checkHasHeading = () => {
-      const listNoHeading = ["text_list", "fieldset_text"];
-      return !listNoHeading.includes(props.fieldData.type)
+      return !LIST_NO_HEADING.includes(props.fieldData.type)
   }
 
   const renderElement = (keyName, keyIndex) => {

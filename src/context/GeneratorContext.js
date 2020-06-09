@@ -4,6 +4,7 @@ import { GENERATE_PHP_CODE } from './GeneratorActions';
 
 const generatePHPCode = dispatch => params => {
     const paramsFormatted = formatParams(params);
+    console.log('paramsFormatted: ', paramsFormatted);
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -29,7 +30,7 @@ const formatParams = (params) => {
         }
         else {
             // create params for selected fields
-            const keys = keyName.split('_');
+            const keys = keyName.split('-');
             keys.reduce((result, value, index) => {
                 if (!result[value]) {
                     result[value] = {}
