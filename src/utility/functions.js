@@ -1,4 +1,4 @@
-import { TEXT_INPUT, NUMBER_INPUT, CHECKBOX, fields } from '../constants/constants';
+import { TEXT_INPUT, NUMBER_INPUT, CHECKBOX, fields, DROPDOWN_MENU, RADIO_CHECKBOX } from '../constants/constants';
 
 export const getLabel = (keyName, type) => {
     let result = '';
@@ -82,6 +82,19 @@ export const getLabel = (keyName, type) => {
         case 'options':
             result = 'Options'
             break;
+        case 'parent':
+            result = 'Parent'
+            break;
+        case 'field_type':
+            result = 'Field Type'
+            break;
+        case 'post_type':
+            result = 'Post Type'
+            break;
+        case 'taxonomy':
+            result = 'Taxonomy'
+            break;
+        
     }
 
     return result;
@@ -90,7 +103,9 @@ export const getLabel = (keyName, type) => {
 export const getElementType = (name) => {
     const inputsText = ['id', 'name', 'desc', 'std', 'placeholder', 'min', 'max', 'rows', 'cols', 'prefix', 'suffix', 'address_field', 'api_key', 'region', 'mime_type'];
     const inputsNumber = ['size', 'step', 'max_file_uploads'];
-    const checkboxes = ['clone', 'inline', 'multiple', 'timestamp', 'force_delete', 'max_status'];
+    const checkboxes = ['clone', 'inline', 'multiple', 'timestamp', 'force_delete', 'max_status', 'parent'];
+    const ratioCheckbox = ['field_type'];
+    const dropdownMenu = ['post_type', 'taxonomy']
     let type = ''
     if (inputsText.includes(name)) {
         type = TEXT_INPUT
@@ -101,6 +116,13 @@ export const getElementType = (name) => {
     if (checkboxes.includes(name)) {
         type = CHECKBOX
     }
+    if (ratioCheckbox.includes(name)) {
+        type = RADIO_CHECKBOX
+    }
+    if (dropdownMenu.includes(name)) {
+        type = DROPDOWN_MENU
+    }
+
 
     return type
 }
@@ -117,15 +139,15 @@ export const getDataCopiedItem = (type, index) => {
 const getGeneralData = (generalItems, index) => {
     let result = {}
     Object.keys(generalItems).map(item => {
-        const elementName = `fields_${index}_${item}`;
+        const elementName = `fields-${index}-${item}`;
         let value = document.getElementsByName(elementName)[0]?.value;
         value = value ? value : generalItems[item]
         if (item === 'options') {
             let options = []
             for (let i = 0; i < value; i++) {
                 options[i] = {}
-                options[i]['key'] = document.getElementsByName(`fields_${index}_${item}_${i}_key`)[0]?.value;
-                options[i]['label'] = document.getElementsByName(`fields_${index}_${item}_${i}_label`)[0]?.value;
+                options[i]['key'] = document.getElementsByName(`fields-${index}-${item}-${i}-key`)[0]?.value;
+                options[i]['label'] = document.getElementsByName(`fields-${index}-${item}-${i}-label`)[0]?.value;
             }
             result[item] = options;
         } else {
@@ -139,15 +161,15 @@ const getGeneralData = (generalItems, index) => {
 const getAdvancedData = (advancedItems, index) => {
     let result = {}
     Object.keys(advancedItems).map(item => {
-        const elementName = `fields_${index}_${item}`;
+        const elementName = `fields-${index}-${item}`;
         let value = document.getElementsByName(elementName)[0]?.value;
         value = value ? value : advancedItems[item]
         if (item === 'attributes') {
             let attributes = []
             for (let i = 0; i < value; i++) {
                 attributes[i] = {}
-                attributes[i]['key'] = document.getElementsByName(`fields_${index}_${item}_${i}_key`)[0]?.value;
-                attributes[i]['label'] = document.getElementsByName(`fields_${index}_${item}_${i}_label`)[0]?.value;
+                attributes[i]['key'] = document.getElementsByName(`fields-${index}-${item}-${i}-key`)[0]?.value;
+                attributes[i]['label'] = document.getElementsByName(`fields-${index}-${item}-${i}-label`)[0]?.value;
             }
             result[item] = attributes;
         } else {

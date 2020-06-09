@@ -11,13 +11,13 @@ const Options = (props) => {
                 <tbody>
                     {
                         options?.map((item, index) => (
-                            <OptionItem data={item} index={index} register={props.register}  name={`fields_${props.index}`} hasSelect={props.hasSelect} noHeading={props.noHeading} type={props.data.type} />
+                            <OptionItem data={item} index={index} register={props.register}  name={`fields-${props.index}`} hasSelect={props.hasSelect} noHeading={props.noHeading} type={props.data.type} />
                         ))
                     }
                 </tbody>
             </table>
             <button type="button" className="og-button--small" onClick={() => setOptions(options.concat({ key: '', label: '' }))} >+ Option</button>
-            <input type='hidden' name={`fields_${props.index}_options`} value={options.length} />
+            <input type='hidden' name={`fields-${props.index}-options`} value={options.length} />
         </div>
     );
 }

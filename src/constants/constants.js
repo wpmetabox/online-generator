@@ -818,6 +818,8 @@ export const fields = {
 export const TEXT_INPUT = 'TEXT_INPUT'
 export const NUMBER_INPUT = 'NUMBER_INPUT'
 export const CHECKBOX = 'CHECKBOX'
+export const RADIO_CHECKBOX = 'RADIO_CHECKBOX'
+export const DROPDOWN_MENU = 'DROPDOWN_MENU'
 export const LIST_WORDPRESS_FIELDS = ["post", "taxonomy", "taxonomy_advanced", "user"];
 export const ADVANCED_ADDITIONAL = {
   "attribute" : {
@@ -874,3 +876,17 @@ export const LIST_OPTION = [
   {type: 'datetime_picker', option: 'datetime'},
   {type: 'time_picker', option: 'time'}
 ]
+
+export const LIST_ADD_SELECT = ["checkbox_list", "radio", "select", "select_advanced", "image select",  "autocomplete"];
+export const LIST_NO_HEADING = ["text_list", "fieldset_text"];
+
+export const LIST_FIELD_TYPE = {
+  "post": [
+    {type: "select", value: "Select"},
+    {type: "select_tree", value: "Select tree"},
+    {type: "select_advanced", value: "Select advanced"},
+    {type: "checkbox_list", value: "Checkbox list"},
+    {type: "checkbox_tree", value: "Checkbox tree"},
+    {type: "radio_list", value: "Radio list"},
+  ]
+}

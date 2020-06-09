@@ -28,7 +28,7 @@ const FieldsTab = (props) => {
   const onSelect = (item) => {
     setIsShow(selectedList.length + 1);
     let dataItem = fields[item];
-    dataItem.general.id = `${item}_${selectedList.length + 1}`
+    dataItem.general.id = `${item}-${selectedList.length + 1}`
     setListSelected(selectedList.concat({ type: item, data: dataItem }));
 
   }

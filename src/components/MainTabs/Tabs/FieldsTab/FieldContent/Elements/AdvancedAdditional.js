@@ -18,13 +18,13 @@ const AdvancedAdditional = (props) => {
           <tbody>
             {
               attributes?.map((item, index) => (
-                <AdvancedAdditionalItem data={item} key={index} index={index} register={props.register} name={`fields_${props.index}`} />
+                <AdvancedAdditionalItem data={item} key={index} index={index} register={props.register} name={`fields-${props.index}`} />
               ))
             }
           </tbody>
         </table>
         <button type="button" className="og-button--small" onClick={() => setAttributes(attributes.concat({ key: '', label: '' }))} >{customData?.buttonName}</button>
-        <input type='hidden' name={`fields_${props.index}_attributes`} value={attributes?.length} />
+        <input type='hidden' name={`fields-${props.index}-attributes`} value={attributes?.length} />
       </div>
     )
 }
