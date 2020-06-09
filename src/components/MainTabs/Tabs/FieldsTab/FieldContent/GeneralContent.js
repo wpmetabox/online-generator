@@ -32,23 +32,38 @@ const GeneralContent = (props) => {
     return result;
   }
 
+  const checkHasSelect = () => {
+    const listAddSelect = ["checkbox_list", "radio", "select", "select_advanced", "image select", "autocomplete"];
+    return listAddSelect.includes(props.fieldData.type)
+  }
+  const checkHasHeading = () => {
+    const listNoHeading = ["text_list", "fieldset_text"];
+    return !listNoHeading.includes(props.fieldData.type)
+  }
+
   const renderElement = (keyName, keyIndex) => {
-    let element;
+    let element = <RowContainer label={getLabel(keyName, props.type)} key={getLabel(keyName) + keyIndex} >
+      {
+        getElement(keyName)
+      }
+    </RowContainer>
+
     if (keyName === 'options') {
-      element = <Options key={keyName + keyIndex} register={props.register} index={props.index} defaultValue={[]} />
+      element = <Options
+        key={getLabel(keyName) + keyIndex}
+        register={props.register}
+        index={props.index}
+        data={props.fieldData}
+        hasSelect={checkHasSelect()}
+        noHeading={checkHasHeading()}
+      />
     }
     if (keyName === 'type') {
       element = null;
     }
-    else {
-      element = <RowContainer label={getLabel(keyName, props.type)} key={getLabel(keyName) + keyIndex} >
-        {
-          getElement(keyName)
-        }
-      </RowContainer>
-    }
 
     return element
+
   }
 
   return (
