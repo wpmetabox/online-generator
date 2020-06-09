@@ -20,8 +20,7 @@ const generatePHPCode = dispatch => params => {
 };
 
 const formatParams = (params) => {
-    let result = {};
-
+    let result = new Map();
     // format fields params
     Object.keys(params).map((keyName, keyIndex) => {
         if (!keyName.includes('fields')) {

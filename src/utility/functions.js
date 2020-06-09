@@ -128,7 +128,6 @@ const getAdvancedData = (advancedItems, index) => {
     Object.keys(advancedItems).map(item => {
         const elementName = `fields_${index}_${item}`;
         let value = document.getElementsByName(elementName)[0]?.value;
-        console.log('zzz', value)
         value = value ? value : advancedItems[item]
         if (item === 'attributes') {
             let attributes = []
@@ -142,6 +141,6 @@ const getAdvancedData = (advancedItems, index) => {
             result[item] = value;
         }
     })
-    console.log('zzzz', result)
+
     return result
 }

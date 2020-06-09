@@ -7,7 +7,6 @@ import { getLabel, getElementType } from '../../../../../utility/functions';
 import { NUMBER_INPUT, TEXT_INPUT, CHECKBOX } from '../../../../../constants/constants';
 
 const GeneralContent = (props) => {
-  console.log('ppp', props.type)
   const getElement = name => {
     const fieldData = props.fieldData;
     const elementName = `fields_${props.index}_${name}`
@@ -48,7 +47,6 @@ const GeneralContent = (props) => {
         }
       </RowContainer>
     }
-    console.log('111', keyName, element)
 
     return element
   }
