@@ -1,4 +1,4 @@
-import { TEXT_INPUT, NUMBER_INPUT, CHECKBOX, fields, DROPDOWN_MENU, RADIO_CHECKBOX } from '../constants/constants';
+import { TEXT_INPUT, NUMBER_INPUT, CHECKBOX, fields, DROPDOWN_MENU, RADIO_CHECKBOX, LIST_OPTION_TYPE } from '../constants/constants';
 
 export const getLabel = (keyName, type) => {
     let result = '';
@@ -164,14 +164,15 @@ const getAdvancedData = (advancedItems, index) => {
         const elementName = `fields-${index}-${item}`;
         let value = document.getElementsByName(elementName)[0]?.value;
         value = value ? value : advancedItems[item]
-        if (item === 'attributes') {
-            let attributes = []
+       
+        if (LIST_OPTION_TYPE.includes(item)) {
+            let optionalList = []
             for (let i = 0; i < value; i++) {
-                attributes[i] = {}
-                attributes[i]['key'] = document.getElementsByName(`fields-${index}-${item}-${i}-key`)[0]?.value;
-                attributes[i]['label'] = document.getElementsByName(`fields-${index}-${item}-${i}-value`)[0]?.value;
+                optionalList[i] = {}
+                optionalList[i]['key'] = document.getElementsByName(`fields-${index}-${item}-${i}-key`)[0]?.value;
+                optionalList[i]['label'] = document.getElementsByName(`fields-${index}-${item}-${i}-value`)[0]?.value;
             }
-            result[item] = attributes;
+            result[item] = optionalList;
         } else {
             result[item] = value;
         }

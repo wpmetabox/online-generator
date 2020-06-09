@@ -822,7 +822,7 @@ export const RADIO_CHECKBOX = 'RADIO_CHECKBOX'
 export const DROPDOWN_MENU = 'DROPDOWN_MENU'
 export const LIST_WORDPRESS_FIELDS = ["post", "taxonomy", "taxonomy_advanced", "user"];
 export const ADVANCED_ADDITIONAL = {
-  "attribute" : {
+  "attributes" : {
     "title": "Custom attributes",
     "titleLink": "https://docs.metabox.io/extensions/meta-box-builder/#custom-attributes",
     "buttonName": "+ Attribute"
@@ -875,6 +875,19 @@ export const LIST_OPTION = [
   {type: 'date_picker', option: 'date'},
   {type: 'datetime_picker', option: 'datetime'},
   {type: 'time_picker', option: 'time'}
+]
+
+export const DATA_LIST = ['text', 'oembed', 'file_input'];
+
+export const LIST_OPTION_TYPE = [
+  'attributes',
+  'select2',
+  'query_args',
+  'slider',
+  'editor',
+  'date_picker',
+  'datetime_picker',
+  'time_picker',
 ]
 
 export const LIST_ADD_SELECT = ["checkbox_list", "radio", "select", "select_advanced", "image select",  "autocomplete"];

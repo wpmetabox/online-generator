@@ -3,8 +3,8 @@ import OptionItem from './OptionItem';
 import { LIST_ADD_SELECT, LIST_NO_HEADING} from "../../../../../../constants/constants"
 
 const Options = (props) => {
-    console.log('props: ', props);
     const [options, setOptions] = useState(props.data.options);
+    console.log('options: ', options);
     const checkHasSelect = () => {
         return LIST_ADD_SELECT.includes(props.data.type)
       }

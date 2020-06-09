@@ -5,10 +5,10 @@ const AdvancedAdditionalItem = (props) => {
     return (
         <tr>
             <td width="45%">
-                <SmallInput placeholder="Enter value" ref={props.register} name={`${props.name}-attributes-${props.index}-key`} defaultValue={props.data.key} />
+                <SmallInput placeholder="Enter value" ref={props.register} name={`${props.name}-${props.type}-${props.index}-key`} defaultValue={props.data.key} />
             </td>
             <td width="45%">
-                <SmallInput placeholder="Enter label" ref={props.register} name={`${props.name}-attributes-${props.index}-value`} defaultValue={props.data.label} />
+                <SmallInput placeholder="Enter label" ref={props.register} name={`${props.name}-${props.type}-${props.index}-value`} defaultValue={props.data.label} />
             </td>
             <td width="10%">
                 <button type="button" className="og-button--small">

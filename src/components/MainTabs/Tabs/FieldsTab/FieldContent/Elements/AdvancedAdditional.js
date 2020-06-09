@@ -3,7 +3,7 @@ import AdvancedAdditionalItem from './AdvancedAdditionalItem.js';
 import { ADVANCED_ADDITIONAL } from "../../../../../../constants/constants";
 
 const AdvancedAdditional = (props) => {
-    const [attributes, setAttributes] = useState(props.data.attributes);
+    const [optionalList, setAttributes] = useState(props.data[props.type]);
     const customData = ADVANCED_ADDITIONAL[props.type] ;
     
     return (
@@ -17,14 +17,14 @@ const AdvancedAdditional = (props) => {
         <table >
           <tbody>
             {
-              attributes?.map((item, index) => (
-                <AdvancedAdditionalItem data={item} key={index} index={index} register={props.register} name={`fields-${props.index}`} />
+              optionalList?.map((item, index) => (
+                <AdvancedAdditionalItem data={item} key={index} index={index} register={props.register} name={`fields-${props.index}`} type={props.type}/>
               ))
             }
           </tbody>
         </table>
-        <button type="button" className="og-button--small" onClick={() => setAttributes(attributes.concat({ key: '', label: '' }))} >{customData?.buttonName}</button>
-        <input type='hidden' name={`fields-${props.index}-attributes`} value={attributes?.length} />
+        <button type="button" className="og-button--small" onClick={() => setAttributes(optionalList.concat({ key: '', label: '' }))} >{customData?.buttonName}</button>
+        <input type='hidden' name={`fields-${props.index}-${props.type}`} value={optionalList?.length} />
       </div>
     )
 }

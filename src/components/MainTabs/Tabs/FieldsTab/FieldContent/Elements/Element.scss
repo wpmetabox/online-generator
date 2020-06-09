@@ -96,7 +96,10 @@
         margin: 0 0 1.5em;
         font-size: 1em;
         width: 100%;
-
+        #title-datalist {
+            text-align: left;
+            font-size: 14px;
+        }
         tbody{
             img{
                 height: 12px;
