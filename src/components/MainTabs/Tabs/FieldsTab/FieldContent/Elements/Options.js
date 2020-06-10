@@ -1,16 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import OptionItem from './OptionItem';
-import { LIST_ADD_SELECT, LIST_NO_HEADING} from "../../../../../../constants/constants"
+import { LIST_ADD_SELECT, LIST_NO_HEADING } from "../../../../../../constants/constants"
 
 const Options = (props) => {
-    console.log('props: ', props);
     const [options, setOptions] = useState(props.data.options);
-    const checkHasSelect = () => {
+
+    const isIncludeSelect = () => {
         return LIST_ADD_SELECT.includes(props.data.type)
-      }
-      const checkHasHeading = () => {
-          return !LIST_NO_HEADING.includes(props.data.type)
-      }
+    }
+
+    const includeHeader = () => {
+        return !LIST_NO_HEADING.includes(props.data.type)
+    }
+
+    const deleteOption = (index) => {
+        let newList = options;
+        newList = newList.splice(index, 1)
+        setOptions(newList)
+    }
+
     return (
         <div className="builder-options" >
             <h3>Options</h3>
@@ -18,7 +26,16 @@ const Options = (props) => {
                 <tbody>
                     {
                         options?.map((item, index) => (
-                            <OptionItem data={item} index={index} register={props.register}  name={`fields-${props.index}`} hasSelect={checkHasSelect()} noHeading={checkHasHeading()} type={props.data.type} />
+                            <OptionItem
+                                data={item}
+                                key={index}
+                                index={index}
+                                register={props.register}
+                                name={`fields-${props.index}`}
+                                deleteOption={deleteOption}
+                                includeSelect={isIncludeSelect()}
+                                noHeading={includeHeader()}
+                                type={props.data.type} />
                         ))
                     }
                 </tbody>
