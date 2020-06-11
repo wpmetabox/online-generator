@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
-import DataListItem from './DataListItem';
+import DataItem from './DataItem';
 
 const DataList = ({ type, data, index, register }) => {
-    console.log('props: ', data);
-    const [valueLength, setValueLength] = useState(0);
-    const [dataList, setDataList] = useState(data.datalist.items)
-    console.log('dataList: ', dataList);
+    console.log('DATA : ', data);
+    const [valueLength, setValueLength] = useState(data.datalist.id.length);
+    const [dataItem, setDataItem] = useState(data.datalist.items)
+    const idDataList = data.datalist.id;
     const showDataItem = valueLength > 0;
-
+    const addDataItem = () => {
+        setDataItem(dataItem.concat(''))
+    }
     return (
         <div className="builder-options" >
             <h3>Datalist</h3>
@@ -16,7 +18,7 @@ const DataList = ({ type, data, index, register }) => {
                     <label for="text_1_datalist" className="label">Datalist ID</label>
                 </div>
                 <div className="right">
-                    <input type="text" defaultValue="" className="input_filed" name placeholder="Set ID to begin creating datalist" ref={register} onChange={(value) => setValueLength(value.target.value.length) }/>
+                    <input type="text" defaultValue={idDataList} className="input_filed" name={`fields-${index}-datalist-id`} placeholder="Set ID to begin creating datalist" ref={register} onChange={(value) => setValueLength(value.target.value.length) }/>
                 </div>
             </div>
             {showDataItem && 
@@ -25,15 +27,11 @@ const DataList = ({ type, data, index, register }) => {
                     <th id="title-datalist" >Datalist Items</th>
                 </tr>
                 <tbody>
-                    {
-                        dataList?.map( item => {
-                            return <DataListItem ref={register} />
-                        })
-                    }
+                {dataItem?.map( value => <DataItem ref={register} index={index} dataItem={value} /> )}
                 </tbody>
             </table>}
-            {showDataItem && <button type="button" className="og-button--small" onClick={() => setDataList(dataList.concat({item: ''}))}>+ Add Item</button>}
-            <input type='hidden' name={`fields-${index}-options`} value={dataList.length} />
+            {showDataItem && <button type="button" className="og-button--small" onClick={addDataItem}>+ Add Item</button>}
+            <input type='hidden' name={`fields-${index}-datalist`} value={dataItem.length} />
         </div>
     )
 }

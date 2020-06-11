@@ -1,4 +1,4 @@
-import { TEXT_INPUT, NUMBER_INPUT, CHECKBOX, fields, DROPDOWN_MENU, RADIO_CHECKBOX, LIST_OPTION_TYPE } from '../constants/constants';
+import { TEXT_INPUT, NUMBER_INPUT, CHECKBOX, fields, DROPDOWN_MENU, RADIO_CHECKBOX, LIST_OPTION_TYPE, DATA_LIST, DATA_LIST_TYPE } from '../constants/constants';
 
 export const getLabel = (keyName, type) => {
     let result = '';
@@ -132,6 +132,7 @@ export const getDataCopiedItem = (type, index) => {
     let result = {}
     result.general = getGeneralData(data.general, index);
     result.advanced = getAdvancedData(data.advanced, index)
+    console.log('result: ', result);
 
     return result
 }
@@ -164,7 +165,6 @@ const getAdvancedData = (advancedItems, index) => {
         const elementName = `fields-${index}-${item}`;
         let value = document.getElementsByName(elementName)[0]?.value;
         value = value ? value : advancedItems[item]
-       
         if (LIST_OPTION_TYPE.includes(item)) {
             let optionalList = []
             for (let i = 0; i < value; i++) {
@@ -172,11 +172,26 @@ const getAdvancedData = (advancedItems, index) => {
                 optionalList[i]['key'] = document.getElementsByName(`fields-${index}-${item}-${i}-key`)[0]?.value;
                 optionalList[i]['label'] = document.getElementsByName(`fields-${index}-${item}-${i}-value`)[0]?.value;
             }
+
             result[item] = optionalList;
+        } else if (DATA_LIST_TYPE.includes(item)) {
+            let dataList = []
+            let idDataList = document.getElementsByName(`fields-${index}-datalist-id`)[0]?.value
+            const listValue = document.getElementsByName(`fields-${index}-datalist-options-0`);
+
+            listValue.forEach( input => {
+                dataList.push(input.value);
+            });
+
+            result[item] = {id: idDataList, items: dataList};
         } else {
+
             result[item] = value;
         }
+
+        
     })
 
     return result
+    
 }

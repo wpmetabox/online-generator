@@ -6,7 +6,6 @@ import DataList from "./Elements/DataList"
 import { LIST_OPTION, DATA_LIST } from "../../../../../constants/constants";
 
 const AdvancedContent = (props) => {
-  console.log('TYPE: ', props.type);
   const options = LIST_OPTION.filter(item => item.option === props.type)
   const dataLists = DATA_LIST.filter(item => item === props.type)
   
