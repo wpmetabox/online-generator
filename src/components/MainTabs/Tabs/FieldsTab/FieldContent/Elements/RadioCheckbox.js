@@ -6,12 +6,12 @@ const RadioCheckbox = React.forwardRef(({ defaultValue, type, name, keyValue }, 
     return (
         <div>
             {
-                listFieldType.map( item => {
+                listFieldType.map( (item, key) => {
                     return (
-                            <>
+                            <div key={key}>
                                 <input type="radio" name={name} key={keyValue} ref={ref} value={item.type} defaultChecked={item.type === defaultValue && "checked" } />
-                                <label for={name}>{item.value}</label><br></br>
-                            </>
+                                <label htmlFor={name}>{item.value}</label><br></br>
+                            </div>
                         )
                     }
                 )

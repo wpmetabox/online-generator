@@ -238,7 +238,6 @@ export const fields = {
       'name': 'Button',
       'desc': '',
       'std': '',
-      'class': '',
       'clone': false,
     },
     'advanced': {
@@ -312,7 +311,6 @@ export const fields = {
       'placeholder': 'Select an Item',
       'options': [],
       'multiple': false,
-      'js_options': [],
       'clone': false
     },
     'advanced': {
@@ -387,7 +385,6 @@ export const fields = {
       'std': '',
       'desc': '',
       'clone': false,
-      'class': '',
     },
     'advanced': {
       'before': '',
@@ -481,7 +478,6 @@ export const fields = {
       'name': 'Fieldset Text',
       'std': '',
       'desc': '',
-      'class': '',
       'rows': 2,
       'options': [],
       'clone': false
@@ -540,7 +536,6 @@ export const fields = {
       'name': 'Date Picker',
       'std': '',
       'desc': '',
-      'class': '',
       'size': '',
       'inline': false,
       'timestamp': false,
@@ -561,7 +556,6 @@ export const fields = {
       'name': 'Date Time Picker',
       'std': '',
       'desc': '',
-      'class': '',
       'size': '',
       'inline': false,
       'timestamp': false,
@@ -622,7 +616,6 @@ export const fields = {
       'std': '',
       'desc': '',
       'placeholder': '',
-      'query_args': '',
       'taxonomy': 'category',
       'field_type': 'select',
       'parent': false,
@@ -664,7 +657,6 @@ export const fields = {
       'name': 'User',
       'std': '',
       'desc': '',
-      'class': '',
       'field_type': 'select_advanced', // select, select_advanced,
       'placeholder': '',
       'clone': false
@@ -902,5 +894,27 @@ export const LIST_FIELD_TYPE = {
     { type: "checkbox_list", value: "Checkbox list" },
     { type: "checkbox_tree", value: "Checkbox tree" },
     { type: "radio_list", value: "Radio list" },
-  ]
+  ],
+  "taxonomy": [
+    { type: "select", value: "Select" },
+    { type: "select_tree", value: "Select tree" },
+    { type: "select_advanced", value: "Select advanced" },
+    { type: "checkbox_list", value: "Checkbox list" },
+    { type: "checkbox_tree", value: "Checkbox tree" },
+    { type: "radio_list", value: "Radio list" },
+  ],
+  "taxonomy_advanced": [
+    { type: "select", value: "Select" },
+    { type: "select_tree", value: "Select tree" },
+    { type: "select_advanced", value: "Select advanced" },
+    { type: "checkbox_list", value: "Checkbox list" },
+    { type: "checkbox_tree", value: "Checkbox tree" },
+    { type: "radio_list", value: "Radio list" },
+  ],
+  "user": [
+    { type: "select", value: "Select" },
+    { type: "select_advanced", value: "Select advanced" },
+    { type: "checkbox_list", value: "Checkbox list" },
+    { type: "radio_list", value: "Radio list" },
+  ],
 }

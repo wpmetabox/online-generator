@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import DataItem from './DataItem';
 
 const DataList = ({ type, data, index, register }) => {
-    console.log('DATA : ', data);
     const [valueLength, setValueLength] = useState(data.datalist.id.length);
     const [dataItem, setDataItem] = useState(data.datalist.items)
     const idDataList = data.datalist.id;
@@ -15,7 +14,7 @@ const DataList = ({ type, data, index, register }) => {
             <h3>Datalist</h3>
             <div className="row_container">
                 <div className="left">
-                    <label for="text_1_datalist" className="label">Datalist ID</label>
+                    <label htmlFor="text_1_datalist" className="label">Datalist ID</label>
                 </div>
                 <div className="right">
                     <input type="text" defaultValue={idDataList} className="input_filed" name={`fields-${index}-datalist-id`} placeholder="Set ID to begin creating datalist" ref={register} onChange={(value) => setValueLength(value.target.value.length) }/>

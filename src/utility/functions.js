@@ -103,7 +103,7 @@ export const getLabel = (keyName, type) => {
 export const getElementType = (name) => {
     const inputsText = ['id', 'name', 'desc', 'std', 'placeholder', 'min', 'max', 'rows', 'cols', 'prefix', 'suffix', 'address_field', 'api_key', 'region', 'mime_type'];
     const inputsNumber = ['size', 'step', 'max_file_uploads'];
-    const checkboxes = ['clone', 'inline', 'multiple', 'timestamp', 'force_delete', 'max_status', 'parent'];
+    const checkboxes = ['clone', 'inline', 'multiple', 'timestamp', 'force_delete', 'max_status', 'parent', 'raw'];
     const ratioCheckbox = ['field_type'];
     const dropdownMenu = ['post_type', 'taxonomy']
     let type = ''

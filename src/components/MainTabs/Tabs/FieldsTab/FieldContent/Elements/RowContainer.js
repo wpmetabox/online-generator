@@ -1,9 +1,9 @@
 import React from 'react';
 import './Element.scss';
 
-const RowContainer = ({ label, children }) => {
+const RowContainer = ({ label, children, keyValue }) => {
     return (
-        <div className="row_container" >
+        <div className="row_container" key={keyValue} >
             <div className="left">
                 <label className="label">{label}</label>
             </div>
