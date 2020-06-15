@@ -1,9 +1,10 @@
 import React from 'react';
 
-const Input = React.forwardRef(({ defaultValue, type, name, keyValue, index }, ref) => {
+const Input = React.forwardRef(({ defaultValue, type, name }, ref) => {
+    console.log('asdasd', name)
     return (
         <>
-            <input className="input_filed" defaultValue={defaultValue} type={type} ref={ref} name={name} key={keyValue} />
+            <input className="input_filed" defaultValue={defaultValue} type={type} ref={ref} name={name} key={name} />
             {
                 // notice for step input
                 name.includes('step') && <span className="og-form__desc">Enter <code>any</code> to use float values</span>

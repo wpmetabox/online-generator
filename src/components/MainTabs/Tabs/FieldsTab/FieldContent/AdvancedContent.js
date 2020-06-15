@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import RowContainer from './Elements/RowContainer';
 import Input from './Elements/Input';
 import AdvancedAdditional from './Elements/AdvancedAdditional';
@@ -27,4 +27,4 @@ const AdvancedContent = (props) => {
   );
 }
 
-export default AdvancedContent;
+export default memo(AdvancedContent);

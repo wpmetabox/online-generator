@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { memo } from 'react';
 import { trashIcon, copyIcon, arrowDownIcon, arrowUpIcon } from '../../../../constants/icons';
 import { TabPanel, Tabs, TabList, Tab } from 'react-tabs';
 import GeneralContent from './FieldContent/GeneralContent';
 import AdvancedContent from './FieldContent/AdvancedContent';
 
 const FieldSelected = (props) => {
-
+  console.log(props.index)
   return (
     <div
       data-position={props.index}
