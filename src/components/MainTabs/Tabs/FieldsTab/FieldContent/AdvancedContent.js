@@ -1,28 +1,40 @@
-import React, { useState, memo } from 'react';
+import React, { useState, memo, Suspense, lazy } from 'react';
 import RowContainer from './Elements/RowContainer';
 import Input from './Elements/Input';
-import AdvancedAdditional from './Elements/AdvancedAdditional';
-import DataList from "./Elements/DataList"
+import Attributes from './Elements/Attributes';
+import Datalist from "./Elements/Datalist"
 import { LIST_OPTION, DATA_LIST } from "../../../../../constants/constants";
+import { getLabel } from '../../../../../utility/functions';
 
 const AdvancedContent = (props) => {
-  const options = LIST_OPTION.filter(item => item.option === props.type)
-  const dataLists = DATA_LIST.filter(item => item === props.type)
-  
+  const getElement = (name) => {
+    const advancedData = props.data;
+    const elementName = `fields-${props.index}-${name}`;
+    let defaultValue = advancedData[name];
+    let componentName = name.charAt(0).toUpperCase() + name.slice(1);
+    let Element = lazy(() => import(`./Elements/${componentName}`))
+
+    return <Element 
+              name={elementName}
+              label={name}
+              register={props.register}
+              defaultValue={defaultValue}
+              data={advancedData}
+              type={props.type}
+              index={props.index}
+            />
+  }
+
   return (
     <div className="advanced_content">
-      <RowContainer label="Before" >
-        <Input name={`fields-${props.index}-before`} defaultValue={props.data.before} ref={props.register} type="text" />
-      </RowContainer>
-      <RowContainer label="After" >
-        <Input name={`fields-${props.index}-after`} defaultValue={props.data.after} ref={props.register} type="text" />
-      </RowContainer>
-      <RowContainer label="Custom CSS class" >
-        <Input name={`fields-${props.index}-class`} defaultValue={props.data.class} ref={props.register} type="text" />
-      </RowContainer>
-      <AdvancedAdditional type="attributes" data={props.data} index={props.index} register={props.register}/>
-      {options.length ? <AdvancedAdditional type={options[0].type} data={props.data} index={props.index} register={props.register}/> : null}
-      {dataLists.length ? <DataList type={dataLists[0].type} data={props.data} index={props.index} register={props.register} /> : null}
+      {
+        Object.keys(props.data).map( (keyName, keyIndex) => 
+            <Suspense fallback={null} key={getLabel(keyName) + keyIndex}>
+              {
+                getElement(keyName, keyIndex)
+              }
+            </Suspense> )
+      }
     </div>
   );
 }

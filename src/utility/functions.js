@@ -3,6 +3,15 @@ import { TEXT_INPUT, NUMBER_INPUT, CHECKBOX, fields, DROPDOWN_MENU, RADIO_CHECKB
 export const getLabel = (keyName, type) => {
     let result = '';
     switch (keyName) {
+        case 'before':
+            result = 'Before'
+            break;
+        case 'after':
+            result = 'After'
+            break;
+        case 'class':
+            result = 'Custom CSS class'
+            break;
         case 'id':
             result = 'ID'
             break;

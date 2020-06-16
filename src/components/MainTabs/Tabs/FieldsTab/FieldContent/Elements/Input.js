@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Input = React.forwardRef(({ defaultValue, type, name }, ref) => {
-    console.log('asdasd', name)
     return (
         <>
             <input className="input_filed" defaultValue={defaultValue} type={type} ref={ref} name={name} key={name} />

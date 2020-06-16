@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import DataItem from './DataItem';
 
-const DataList = ({ type, data, index, register }) => {
+const Datalist = ({ type, data, index, register }) => {
     const [valueLength, setValueLength] = useState(data.datalist.id.length);
     const [dataItem, setDataItem] = useState(data.datalist.items)
     const idDataList = data.datalist.id;
@@ -35,4 +35,4 @@ const DataList = ({ type, data, index, register }) => {
     )
 }
 
-export default DataList;
+export default Datalist;

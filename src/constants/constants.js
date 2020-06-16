@@ -546,7 +546,7 @@ export const fields = {
       'after': '',
       'class': '',
       'attributes': [],
-      'js_options': []
+      'date_picker': []
     }
   },
   'datetime': {
@@ -566,7 +566,7 @@ export const fields = {
       'after': '',
       'class': '',
       'attributes': [],
-      'js_options': []
+      'datetime_picker': []
     }
   },
   'time': {
@@ -584,7 +584,7 @@ export const fields = {
       'after': '',
       'class': '',
       'attributes': [],
-      'js_options': []
+      'time_picker': []
     }
   },
   'post': {
