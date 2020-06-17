@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './App.scss';
 import MainTabs from './components/MainTabs/MainTabs';
 import { Provider } from './context/GeneratorContext';

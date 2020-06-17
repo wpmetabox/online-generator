@@ -8,7 +8,7 @@ const GeneralContent = (props) => {
     const elementName = `fields-${props.index}-${name}`
     let defaultValue = fieldData[name];
     let componentName = name.charAt(0).toUpperCase() + name.slice(1);
-    let Element = lazy(() => import(`./Elements/${componentName}`))
+    let Element = lazy(() => import(`../../../../Common/Elements/${componentName}`))
     return <Element
       name={elementName}
       label={name}

@@ -4,8 +4,8 @@ import { fieldTypes } from '../../../../constants/constants';
 const SearchResultList = (props) => {
   const getSearchResult = (param) => {
     let searchResult = []
-    Object.values(fieldTypes).map(list => {
-      Object.keys(list).map(item => {
+    Object.values(fieldTypes).forEach(list => {
+      Object.keys(list).forEach(item => {
         if (list[item].toLowerCase().includes(param.toLowerCase())) searchResult.push({ type: item, title: list[item] })
       })
     })

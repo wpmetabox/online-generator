@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import './ResultCode.scss'
-import Highlight from 'react-highlight.js'
+import Highlight from 'react-highlight'
 import Clipboard from 'react-clipboard.js';
 import { copyIcon } from '../../constants/icons';
 import { Context } from '../../context/GeneratorContext';
@@ -23,10 +23,8 @@ const ResultCode = () => {
                     {data}
                 </Highlight>
                 <Clipboard title="Click to copy the code" data-clipboard-text={data} onSuccess={() => setCopied(true)}>
-                    <button id="result-copy" className="og-result__button-copy">
-                        {!copied && copyIcon}
-                        {copied ? 'Copied' : 'Copy'}
-                    </button>
+                    {!copied && copyIcon}
+                    {copied ? 'Copied' : 'Copy'}
                 </Clipboard>
             </div>
             <input type="hidden" id="result-code-raw" />

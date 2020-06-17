@@ -1,9 +1,4 @@
-import React, { useState, memo, Suspense, lazy } from 'react';
-import RowContainer from './Elements/RowContainer';
-import Input from './Elements/Input';
-import Attributes from './Elements/Attributes';
-import Datalist from "./Elements/Datalist"
-import { LIST_OPTION, DATA_LIST } from "../../../../../constants/constants";
+import React, { memo, Suspense, lazy } from 'react';
 import { getLabel } from '../../../../../utility/functions';
 
 const AdvancedContent = (props) => {
@@ -12,28 +7,28 @@ const AdvancedContent = (props) => {
     const elementName = `fields-${props.index}-${name}`;
     let defaultValue = advancedData[name];
     let componentName = name.charAt(0).toUpperCase() + name.slice(1);
-    let Element = lazy(() => import(`./Elements/${componentName}`))
+    let Element = lazy(() => import(`../../../../Common/Elements/${componentName}`))
 
-    return <Element 
-              name={elementName}
-              label={name}
-              register={props.register}
-              defaultValue={defaultValue}
-              data={advancedData}
-              type={props.type}
-              index={props.index}
-            />
+    return <Element
+      name={elementName}
+      label={name}
+      register={props.register}
+      defaultValue={defaultValue}
+      data={advancedData}
+      type={props.type}
+      index={props.index}
+    />
   }
 
   return (
     <div className="advanced_content">
       {
-        Object.keys(props.data).map( (keyName, keyIndex) => 
-            <Suspense fallback={null} key={getLabel(keyName) + keyIndex}>
-              {
-                getElement(keyName, keyIndex)
-              }
-            </Suspense> )
+        Object.keys(props.data).map((keyName, keyIndex) =>
+          <Suspense fallback={null} key={getLabel(keyName) + keyIndex}>
+            {
+              getElement(keyName, keyIndex)
+            }
+          </Suspense>)
       }
     </div>
   );

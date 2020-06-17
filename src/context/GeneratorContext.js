@@ -3,7 +3,6 @@ import generatorReducer from './GeneratorReducer';
 import { GENERATE_PHP_CODE } from './GeneratorActions';
 
 const generatePHPCode = dispatch => params => {
-    console.log('params: ', params);
     const paramsFormatted = formatParams(params);
     const requestOptions = {
         method: 'POST',
@@ -23,7 +22,7 @@ const generatePHPCode = dispatch => params => {
 const formatParams = (params) => {
     let result = new Map();
     // format fields params
-    Object.keys(params).map((keyName, keyIndex) => {
+    Object.keys(params).forEach((keyName, keyIndex) => {
         if (!keyName.includes('fields')) {
             result[keyName] = Object.values(params)[keyIndex]
         }

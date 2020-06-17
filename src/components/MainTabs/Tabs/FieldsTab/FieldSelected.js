@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { trashIcon, copyIcon, arrowDownIcon, arrowUpIcon } from '../../../../constants/icons';
 import { TabPanel, Tabs, TabList, Tab } from 'react-tabs';
 import GeneralContent from './FieldContent/GeneralContent';

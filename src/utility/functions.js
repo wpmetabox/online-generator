@@ -1,4 +1,4 @@
-import { TEXT_INPUT, NUMBER_INPUT, CHECKBOX, fields, DROPDOWN_MENU, RADIO_CHECKBOX, LIST_OPTION_TYPE, DATA_LIST, DATA_LIST_TYPE } from '../constants/constants';
+import { TEXT_INPUT, NUMBER_INPUT, CHECKBOX, fields, DROPDOWN_MENU, RADIO_CHECKBOX, LIST_OPTION_TYPE, DATA_LIST_TYPE } from '../constants/constants';
 
 export const getLabel = (keyName, type) => {
     let result = '';
@@ -103,7 +103,9 @@ export const getLabel = (keyName, type) => {
         case 'taxonomy':
             result = 'Taxonomy'
             break;
-        
+        default:
+            break;
+
     }
 
     return result;
@@ -141,14 +143,13 @@ export const getDataCopiedItem = (type, index) => {
     let result = {}
     result.general = getGeneralData(data.general, index);
     result.advanced = getAdvancedData(data.advanced, index)
-    console.log('result: ', result);
 
     return result
 }
 
 const getGeneralData = (generalItems, index) => {
     let result = {}
-    Object.keys(generalItems).map(item => {
+    Object.keys(generalItems).forEach(item => {
         const elementName = `fields-${index}-${item}`;
         let value = document.getElementsByName(elementName)[0]?.value;
         value = value ? value : generalItems[item]
@@ -170,7 +171,7 @@ const getGeneralData = (generalItems, index) => {
 
 const getAdvancedData = (advancedItems, index) => {
     let result = {}
-    Object.keys(advancedItems).map(item => {
+    Object.keys(advancedItems).forEach(item => {
         const elementName = `fields-${index}-${item}`;
         let value = document.getElementsByName(elementName)[0]?.value;
         value = value ? value : advancedItems[item]
@@ -188,19 +189,19 @@ const getAdvancedData = (advancedItems, index) => {
             let idDataList = document.getElementsByName(`fields-${index}-datalist-id`)[0]?.value
             const listValue = document.getElementsByName(`fields-${index}-datalist-options-0`);
 
-            listValue.forEach( input => {
+            listValue.forEach(input => {
                 dataList.push(input.value);
             });
 
-            result[item] = {id: idDataList, items: dataList};
+            result[item] = { id: idDataList, items: dataList };
         } else {
 
             result[item] = value;
         }
 
-        
+
     })
 
     return result
-    
+
 }
