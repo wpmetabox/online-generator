@@ -11,12 +11,10 @@ import { actions } from '../../context/GeneratorContext';
 
 export const MainTabs = () => {
   const { handleSubmit, register } = useForm();
-  const onSubmit = data => {
-    actions.generatePHPCode(data)
-  }
+  const onSubmit = data => actions.generatePHPCode(data)
 
   return (
-    <div className="main_tab">
+    <>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Tabs forceRenderTabPanel={true}>
           <TabList>
@@ -41,7 +39,7 @@ export const MainTabs = () => {
         </Tabs>
         <button type="submit">Generate Code</button>
       </form>
-    </div>
+    </>
   );
 }
 

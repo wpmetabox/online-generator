@@ -1,39 +1,36 @@
-.main_tab{
-  margin-top: 48px;
-  .react-tabs__tab-list{
-    padding-left: 36px;
-    height: 36px;
-    margin-bottom: 24px;
+.react-tabs__tab-list{
+  padding-left: 36px;
+  height: 36px;
+  margin-bottom: 24px;
 
-    .react-tabs__tab {
-      height: 23px;
+  .react-tabs__tab {
+    height: 23px;
 
-      svg{
-        position: inherit;
-        top: 2px;
-      }
-      span{
-        margin-left: 6px;
-      }
+    svg{
+      position: inherit;
+      top: 2px;
     }
-    .react-tabs__tab:hover{
-      background-color: #f8f8f8;
+    span{
+      margin-left: 6px;
     }
   }
-
-  .check_box_page{
-    margin-left: 12px;
+  .react-tabs__tab:hover{
+    background-color: #f8f8f8;
   }
+}
 
-  #meta-box-context{
-    padding: 12px 1.5em;
-    width: 100%;
-    border: 1px solid #ddd;
-  }
+.check_box_page{
+  margin-left: 12px;
+}
 
-  .radio-group{
-    label{
-      margin-right: 8px;
-    }
+#meta-box-context{
+  padding: 12px 1.5em;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+.radio-group{
+  label{
+    margin-right: 8px;
   }
 }

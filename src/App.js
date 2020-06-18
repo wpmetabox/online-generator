@@ -5,10 +5,8 @@ import { Provider } from './context/GeneratorContext';
 import ResultCode from './components/ResultCode/ResultCode';
 
 function App() {
-
-
   return (
-    <div className="App">
+    <div className="og">
       <Provider>
         <MainTabs />
         <ResultCode />
