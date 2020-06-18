@@ -39,7 +39,7 @@ export const MainTabs = () => {
             <FieldsTab register={register} />
           </TabPanel>
         </Tabs>
-        <input type="submit" value="Generate code" className="btn_submit" />
+        <button type="submit">Generate Code</button>
       </form>
     </div>
   );
