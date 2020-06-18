@@ -1,15 +1,13 @@
 import React from 'react';
 import './Input.scss';
 
-const Input = React.forwardRef(({ data }, ref) => {
+const Input = React.forwardRef(({data}, ref) => {
   return (
-    <div className="input_container">
-      <div className="left_col">
-        <span>{data.label}</span>
-      </div>
-      <div className="right_col">
-        <input placeholder={data.placeholder} name={data.name} ref={ref} defaultValue={data.defaultValue} />
-        <span>{data?.description}</span>
+    <div className="og-field">
+      <label className="og-label" htmlFor={data.name}>{data.label}</label>
+      <div className="og-input">
+        <input type="text" id={data.name} placeholder={data.placeholder} name={data.name} ref={ref} defaultValue={data.defaultValue} />
+        {data.description && <div class="og-description">{data.description}</div>}
       </div>
     </div>
   )
