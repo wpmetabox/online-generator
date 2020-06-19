@@ -7,7 +7,7 @@ const Input = React.forwardRef(({data}, ref) => {
       <label className="og-label" htmlFor={data.name}>{data.label}</label>
       <div className="og-input">
         <input type="text" id={data.name} placeholder={data.placeholder} name={data.name} ref={ref} defaultValue={data.defaultValue} />
-        {data.description && <div class="og-description">{data.description}</div>}
+        {data.description && <div className="og-description">{data.description}</div>}
       </div>
     </div>
   )

@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import './App.scss';
-import MainTabs from './components/MainTabs/MainTabs';
 import { Provider } from './context/GeneratorContext';
-import ResultCode from './components/ResultCode/ResultCode';
 
 function App() {
+  const ResultCode = lazy(() => import('./components/ResultCode/ResultCode'))
+  const MainTabs = lazy(() => import('./components/MainTabs/MainTabs'))
   return (
     <div className="og">
       <Provider>
-        <MainTabs />
-        <ResultCode />
+        <Suspense fallback={null}>
+          <MainTabs />
+          <ResultCode />
+        </Suspense>
       </Provider>
     </div>
   );
