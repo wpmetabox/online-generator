@@ -106,15 +106,13 @@ const FieldsTab = (props) => {
   }
 
   return (
-    <div className="fields_container" >
-      <div className="left_fields">
-        <input type="search" id="fields-search-input" className="search_input" placeholder="Enter field type here" onChange={e => setSearchParam(e.target.value)} />
-        {
-          searchParam ? <SearchResultList onSelectField={onSelect} searchParam={searchParam} /> : <FieldMenu onSelectField={onSelect} />
-        }
-
+    <div className="og-fields-wrapper">
+      <div className="og-sidebar">
+        <input type="search" className="og-search" placeholder="Enter field type here" onChange={e => setSearchParam(e.target.value)} />
+        {searchParam ? <SearchResultList onSelectField={onSelect} searchParam={searchParam} /> : <FieldMenu onSelectField={onSelect} />}
       </div>
-      <div className="right_fields">
+
+      <div className="og-main">
         <p className="title">{
           selectedList.length > 0
             ? 'Drag each item into the order you prefer. Click the arrow on the right of the item to reveal additional configuration options.'

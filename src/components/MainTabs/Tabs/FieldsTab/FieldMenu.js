@@ -1,33 +1,29 @@
 import React, { useState } from 'react';
 import { fieldTypes } from '../../../../constants/constants';
-import FieldItem from './FieldItem';
 
-const FieldMenu = (props) => {
-  const [active, setActive] = useState([]);
-
-  const onSelect = value => {
-    setActive([value]);
-  }
+const FieldMenu = ({onSelectField}) => {
+  const [active, setActive] = useState('');
 
   return (
-    <div className="field_menu">
+    <>
       {
         Object.keys(fieldTypes).map((keyName, keyIndex) =>
-          <div className="field_menu_item" key={keyIndex}>
-            <h4 className="title" onClick={() => onSelect(keyName)}>{keyName}</h4>
-            <div className="online-generator__accordion-collapse" style={{ display: active.includes(keyName) ? 'initial' : 'none' }} >
-              <div className="og-panel__body">
+          <div className="og-panel" key={keyIndex}>
+            <h4 onClick={() => setActive(keyName)}>{keyName}</h4>
+            {
+              keyName === active &&
+                <div className="og-panel__body">
                 {
                   Object.keys(fieldTypes[keyName]).map((key, index) =>
-                    <FieldItem title={fieldTypes[keyName][key]} type={key} key={index} onSelectField={props.onSelectField} />
+                    <button key={index} type="button" onClick={() => onSelectField(key)}>{fieldTypes[keyName][key]}</button>
                   )
                 }
-              </div>
-            </div>
+                </div>
+            }
           </div>
         )
       }
-    </div>
+    </>
   )
 }
 
