@@ -29,7 +29,6 @@ const FieldsTab = (props) => {
     let dataItem = {...fields[item]}
     dataItem.general = { ...fields[item].general, id: `${item}-${selectedList.length + 1}` }
     setListSelected([...selectedList, { type: item, data: dataItem }]);
-
   }
 
   const onDragStart = (event) => {
@@ -113,10 +112,10 @@ const FieldsTab = (props) => {
       </div>
 
       <div className="og-main">
-        <p className="title">{
+        <p>{
           selectedList.length > 0
-            ? 'Drag each item into the order you prefer. Click the arrow on the right of the item to reveal additional configuration options.'
-            : 'Add meta box fields from the column on the left'
+            ? 'Drag and drop fields to reorder. Click the title bar to reveal field settings.'
+            : 'No fields. Select fields on the left to add them to this field group.'
         }
         </p>
         {
