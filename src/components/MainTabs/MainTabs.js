@@ -18,14 +18,7 @@ export const MainTabs = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <Tabs forceRenderTabPanel={true}>
           <TabList>
-            {
-              mainTabs.map((item, index) =>
-                <Tab key={index}>
-                  {item.icon}
-                  <span>{item.label}</span>
-                </Tab>
-              )
-            }
+            {mainTabs.map((item, index) => <Tab key={index}>{item.icon} {item.label}</Tab>)}
           </TabList>
           <TabPanel>
             <GeneralTab register={register} />

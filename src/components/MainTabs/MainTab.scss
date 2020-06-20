@@ -1,21 +1,24 @@
-.react-tabs__tab-list{
-  padding-left: 36px;
-  height: 36px;
+.react-tabs {
   margin-bottom: 24px;
 
+  & &__tab-list{
+    border-bottom-color: #ddd;
+    padding-left: 24px;
+    margin-bottom: 24px;
+  }
   .react-tabs__tab {
-    height: 34px;
+    font-weight: bold;
 
-    svg{
-      position: inherit;
+    svg {
+      position: relative;
       top: 2px;
-    }
-    span{
-      margin-left: 6px;
+      margin-right: 4px;
     }
   }
-  .react-tabs__tab:hover{
-    background-color: #f8f8f8;
+  & &__tab--selected {
+    border-color: #ddd;
+    border-radius: 4px 4px 0 0;
+    color: inherit;
   }
 }
 

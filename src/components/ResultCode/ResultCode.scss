@@ -2,32 +2,6 @@
     margin-top: 50px;
     position: relative;
 
-    .alert-info{
-        background-color: #d9edf7;
-        color: #31708f;
-        padding: .75em 1.25em;
-        margin-bottom: 1.5em;
-        border: none;
-        border-left: 4px solid;
-        border-radius: 0;
-
-        code {
-            background: #f8f8f8;
-            padding: 2px 4px;
-            color: #d14;
-            font-size: .8125em;
-            text-transform: none;
-            font-weight: 400;
-        }
-
-        a{
-            font-weight: 700;
-            color: inherit;
-            text-decoration: none;
-            margin-left: 4px;
-        }
-    }
-
     .result_wrapper{
         position: relative;
 
