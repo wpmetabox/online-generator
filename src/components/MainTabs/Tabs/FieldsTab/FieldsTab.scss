@@ -3,6 +3,15 @@
 }
 .og-sidebar {
   width: 32%;
+
+  button {
+    color: inherit;
+    border: 1px solid #ddd;
+    background: #f5f5f5;
+    text-transform: none;
+    font-weight: 400;
+    padding: 8px;
+  }
 }
 .og-search {
   width: 100%;
@@ -25,18 +34,13 @@
   }
   &__body {
     padding: 12px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 12px;
   }
-  button {
-    color: inherit;
-    border: 1px solid #ddd;
-    background: #f5f5f5;
-    text-transform: none;
-    font-weight: 400;
-    padding: 8px;
-  }
+}
+.og-panel__body,
+.og-search-results {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 12px;
 }
 .og-main {
   flex: 1;

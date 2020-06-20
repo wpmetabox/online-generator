@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { fieldTypes } from '../../../../constants/constants';
 
 const FieldMenu = ({onSelectField}) => {
-  const [active, setActive] = useState('');
+  const [active, setActive] = useState('Input Fields');
 
   return (
     <>
