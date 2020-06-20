@@ -1,14 +1,10 @@
 import React from 'react';
 
-const DivRow = ({ label, children }) => {
+const DivRow = ({ label, children, className = '', htmlFor = ''}) => {
   return (
-    <div className="inline_element">
-      <div className="left_col">
-        <label className="label">{label}</label>
-      </div>
-      <div className="right_col">
-        {children}
-      </div>
+    <div className={`og-field ${className}`}>
+      <label className="og-label" htmlFor={htmlFor}>{label}</label>
+      <div className="og-input">{children}</div>
     </div>
   )
 }

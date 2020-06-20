@@ -7,32 +7,26 @@ const MetaBoxTab = (props) => {
     <div>
       <Input ref={props.register} data={{ placeholder: "Enter ID here", name: "id_meta_box", label: "ID", defaultValue: "untitled" }} />
       <Input ref={props.register} data={{ placeholder: "Enter title here", name: "title_meta_box", label: "Title", defaultValue: "Untitled Metabox" }} />
-      <DivRow label="Priority" >
-        <div className="radio-group">
-          <label><input ref={props.register} type="radio" name="priority" value="default" defaultChecked />Default</label>
+      <DivRow label="Priority" className="og-field--check">
+          <label><input ref={props.register} type="radio" name="priority" value="default" defaultChecked /> Default</label>
           <label><input ref={props.register} type="radio" name="priority" value="high" /> High</label>
           <label><input ref={props.register} type="radio" name="priority" value="low" /> Low</label>
-        </div>
       </DivRow>
-      <DivRow label="Context" >
-        <select ref={props.register} id="meta-box-context" name="context" defaultValue="advanced" >
-          {
-            contextOptions.map(item => <option key={item.id} value={item.value}>{item.title}</option>)
-          }
+      <DivRow label="Context" htmlFor="context">
+        <select ref={props.register} id="context" name="context" defaultValue="advanced" >
+          {contextOptions.map(item => <option key={item.value} value={item.value}>{item.label}</option>)}
         </select>
       </DivRow>
-      <DivRow label="Post types" >
-        <div className="checkbox-group">
-          <label className="check_box_post">
-            <input type="checkbox" ref={props.register} name="post-type" value="post" defaultChecked /> post
+      <DivRow label="Post Types" className="og-field--check">
+          <label>
+            <input type="checkbox" ref={props.register} name="post-type" value="post" defaultChecked /> Post
           </label>
-          <label className="check_box_page">
-            <input type="checkbox" ref={props.register} name="post-type" value="page" /> page
+          <label>
+            <input type="checkbox" ref={props.register} name="post-type" value="page" /> Page
           </label>
-        </div>
       </DivRow>
-      <DivRow label="Autosave" >
-        <input ref={props.register} name="autosave" type="checkbox" />
+      <DivRow label="Autosave" htmlFor="autosave">
+        <input ref={props.register} id="autosave" name="autosave" type="checkbox" />
       </DivRow>
     </div>
   )
@@ -40,39 +34,32 @@ const MetaBoxTab = (props) => {
 
 const contextOptions = [
   {
-    id: 1,
     value: 'normal',
-    title: 'Normal'
+    label: 'Normal'
   },
   {
-    id: 2,
     value: 'advanced',
-    title: 'Advanced'
+    label: 'Advanced'
   },
   {
-    id: 3,
     value: 'side',
-    title: 'Side'
+    label: 'Side'
   },
   {
-    id: 4,
     value: 'form_top',
-    title: 'Before post title'
+    label: 'Before post title'
   },
   {
-    id: 5,
     value: 'after_title',
-    title: 'After post title'
+    label: 'After post title'
   },
   {
-    id: 6,
     value: 'after_editor',
-    title: 'After the post content editor'
+    label: 'After the post content editor'
   },
   {
-    id: 7,
     value: 'before_permalink',
-    title: 'Before permalink'
+    label: 'Before permalink'
   },
 ]
 

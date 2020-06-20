@@ -2,17 +2,34 @@
   margin-top: 12px;
   display: flex;
   justify-content: space-between;
+
+  &--check .og-input {
+    label {
+      display: inline-block;
+      margin-right: 24px;
+    }
+    input {
+      vertical-align: baseline;
+      margin-right: 4px;
+      top: -1px;
+    }
+  }
 }
 .og-label {
-  width: 33%;
+  width: 25%;
   font-weight: 700;
-  cursor: pointer;
 }
 .og-input {
   flex: 1;
 
-  input {
+  input[type="text"],
+  select {
     width: 100%;
+  }
+  select {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 11px 18px;
   }
 }
 .og-description {
