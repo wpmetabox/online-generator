@@ -11,7 +11,7 @@
   button {
     color: inherit;
     border: 1px solid var(--color-light);
-    background: var(--color-gray);
+    background: var(--color-lighter);
     text-transform: none;
     font-weight: 400;
     padding: 8px;
@@ -32,7 +32,7 @@
 
   h4 {
     cursor: pointer;
-    background-color: var(--color-gray);
+    background-color: var(--color-lighter);
     padding: 12px 16px;
     margin: 0;
   }

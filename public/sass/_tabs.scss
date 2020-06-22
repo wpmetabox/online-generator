@@ -1,6 +1,11 @@
 .react-tabs {
   margin-bottom: 24px;
 
+  svg {
+    fill: var(--color-gray);
+    width: 16px;
+  }
+
   &__tab-list{
     border-bottom-color: var(--color-light);
     margin-bottom: 24px;

@@ -13,26 +13,14 @@ const FieldSelected = (props) => {
       onDragOver={props.onDragOver}
       onDrop={props.onDrop}
       onDragLeave={props.onDragLeave}
-      className={`field_selected ${props.dragAndDrop && props.dragAndDrop.draggedTo === Number(props.index) && "dropArea"}`}>
-      <div className="og-builder__field-heading" onClick={() => props.handleShow(props.index + 1)}>
-        <span >{props.data?.general?.name}</span>
-        <span className="actions">
-          <span className="type">{props.data?.general?.type}</span>
-          <span className="item-remove" title="Remove" onClick={() => props.removeItem(props.index)}>
-            {
-              trashIcon
-            }
-          </span>
-          <span className="item-copy" title="copy" onClick={() => props.copyItem(props.data?.general?.type, props.index)} >
-            {
-              copyIcon
-            }
-          </span>
-          <span className="item-arrow" title="arrow">
-            {
-              props.isShow ? arrowUpIcon : arrowDownIcon
-            }
-          </span>
+      className={`og-item ${props.dragAndDrop && props.dragAndDrop.draggedTo === Number(props.index) && "dropArea"}`}>
+      <div className="og-item__heading" onClick={() => props.handleShow(props.index + 1)}>
+        {props.data?.general?.name}
+        <span className="og-item__actions">
+          <span className="og-item__type">{props.data?.general?.type}</span>
+          <span className="og-item__action og-item__action--remove" title="Remove" onClick={() => props.removeItem(props.index)}>{trashIcon}</span>
+          <span className="og-item__action og-item__action--duplicate" title="Duplicate" onClick={() => props.copyItem(props.data?.general?.type, props.index)} >{copyIcon}</span>
+          <span className="og-item__action og-item__action--toggle" title="Toggle Settings">{props.isShow ? arrowUpIcon : arrowDownIcon}</span>
         </span>
       </div >
       <div className="og-builder__field-body" style={{ display: props.isShow ? 'block' : 'none' }}>
