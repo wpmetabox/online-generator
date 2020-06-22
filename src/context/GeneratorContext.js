@@ -3,6 +3,7 @@ import generatorReducer from './GeneratorReducer';
 import { GENERATE_PHP_CODE } from './GeneratorActions';
 
 const generatePHPCode = dispatch => params => {
+    console.log('ppp',params)
     const paramsFormatted = formatParams(params);
     const requestOptions = {
         method: 'POST',

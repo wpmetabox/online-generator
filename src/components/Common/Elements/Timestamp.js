@@ -3,8 +3,8 @@ import Checkbox from './Checkbox'
 import { getLabel } from '../../../utility/functions';
 import DivRow from '../DivRow';
 
-const Timestamp = ({ name, defaultValue, ref, label, type }) => {
-    return <DivRow label={getLabel(label, type)}><Checkbox name={name} ref={ref} keyValue={name} defaultValue={defaultValue} /></DivRow>
+const Timestamp = ({ name, defaultValue, register, label, type }) => {
+    return <DivRow label={getLabel(label, type)}><Checkbox name={name} ref={register} keyValue={name} defaultValue={defaultValue} /></DivRow>
 }
 
 export default Timestamp;

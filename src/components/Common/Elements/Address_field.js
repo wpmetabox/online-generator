@@ -3,10 +3,10 @@ import Input from './Input';
 import DivRow from '../DivRow';
 import { getLabel } from '../../../utility/functions';
 
-const Address_field = ({ name, defaultValue, ref, label, type }) => {
+const Address_field = ({ name, defaultValue, register, label, type }) => {
     return (
         <DivRow label={getLabel(label, type)}  >
-            <Input type='text' name={name} defaultValue={defaultValue} ref={ref} keyValue={name} />
+            <Input type='text' name={name} defaultValue={defaultValue} ref={register} keyValue={name} />
         </DivRow>
     )
 }
