@@ -1,5 +1,4 @@
 import React from 'react';
-import './MainTab.scss';
 import 'react-tabs/style/react-tabs.css';
 import { useForm } from "react-hook-form";
 import { TabPanel, Tabs, TabList, Tab } from 'react-tabs';

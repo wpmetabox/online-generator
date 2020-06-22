@@ -1,11 +1,11 @@
 .react-tabs {
   margin-bottom: 24px;
 
-  & &__tab-list{
-    border-bottom-color: #ddd;
+  &__tab-list{
+    border-bottom-color: var(--color-light);
     margin-bottom: 24px;
   }
-  .react-tabs__tab {
+  &__tab {
     font-weight: bold;
 
     svg {
@@ -14,8 +14,8 @@
       margin-right: 4px;
     }
   }
-  & &__tab--selected {
-    border-color: #ddd;
+  &__tab--selected {
+    border-color: var(--color-light);
     border-radius: 4px 4px 0 0;
     color: inherit;
   }

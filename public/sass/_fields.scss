@@ -1,57 +1,10 @@
-.og-fields-wrapper {
-  display: flex;
-}
-.og-sidebar {
-  width: 32%;
-
-  button {
-    color: inherit;
-    border: 1px solid #ddd;
-    background: #f5f5f5;
-    text-transform: none;
-    font-weight: 400;
-    padding: 8px;
-  }
-}
-.og-search {
-  width: 100%;
-  margin-bottom: 12px;
-}
-
-.og-panel {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-  margin-bottom: 12px;
-  overflow: hidden;
-
-  h4 {
-    cursor: pointer;
-    background-color: #f5f5f5;
-    padding: 12px 16px;
-    margin: 0;
-  }
-  &__body {
-    padding: 12px;
-  }
-}
-.og-panel__body,
-.og-search-results {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 12px;
-}
-.og-main {
-  flex: 1;
-  margin-left: 36px;
-
+&-main {
   .field_selected {
     margin-top: 12px;
     .og-builder__field-heading {
       display: block;
-      background-color: #fafafa;
-      border: 1px solid #ddd;
+      background-color: #5e5050;
+      border: 1px solid var(--color-light);
       padding: 10px 15px;
       cursor: move;
 
@@ -175,7 +128,7 @@
       padding: 0.5em 1em !important;
       margin-top: 0;
       color: #2c3e50;
-      border: 1px solid #ddd;
+      border: 1px solid var(--color-light);
       border-radius: 4px;
     }
 
@@ -183,7 +136,7 @@
       padding: 0.5em 1em !important;
       margin-top: 0;
       color: #2c3e50;
-      border: 1px solid #ddd;
+      border: 1px solid var(--color-light);
       border-radius: 4px;
     }
 
@@ -198,7 +151,7 @@
         }
 
         tr {
-          border-bottom: 1px solid #ddd;
+          border-bottom: 1px solid var(--color-light);
         }
 
         td {
@@ -208,7 +161,7 @@
 
           input {
             color: #2c3e50;
-            border: 1px solid #ddd;
+            border: 1px solid var(--color-light);
             border-radius: 4px;
             padding: 0.5em 1em !important;
             margin-top: 0;

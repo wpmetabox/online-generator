@@ -1,0 +1,16 @@
+.og {
+  --color-light: #ddd;
+  --color-gray: #f5f5f5;
+  --shadow-md: 0 1px 1px rgba(0, 0, 0, 0.05);
+
+  font-size: 14px;
+
+  label {
+    cursor: pointer;
+  }
+
+  @import "tabs";
+  @import "input";
+  @import "sidebar";
+  @import "fields";
+}

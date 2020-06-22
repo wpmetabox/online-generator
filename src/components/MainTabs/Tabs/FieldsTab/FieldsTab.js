@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import './FieldsTab.scss'
 import FieldMenu from './FieldMenu';
 import FieldSelected from './FieldSelected';
 import { fields } from '../../../../constants/constants';
