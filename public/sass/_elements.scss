@@ -1,58 +1,3 @@
-.row_container{
-    display: flex;
-    margin-top: 12px;
-    .left{
-        width: 33%;
-
-        .label{
-            font-weight: 700;
-            cursor: pointer;
-            font-size: 0.9em;
-            top: 8px;
-            position: relative;
-        }
-    }
-
-    .right{
-        width: 60%;
-        label {
-            font-size: 15px;
-            margin-left: 2px;
-        }
-        .dropdown {
-            width: 100%;
-            color: #2c3e50;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            padding: .5em 1em;
-        }
-        .input_filed{
-            width: 100%;
-            color: #2c3e50;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            padding: .5em 1em;
-        }
-
-        .checkbox{
-            margin-top: 8px;
-        }
-
-        .og-form__desc{
-            font-size: 14px;
-            code {
-                background: #f8f8f8;
-                padding: 2px 4px;
-                color: #d14;
-                font-size: .8125em;
-                text-transform: none;
-                font-weight: 400;
-            }
-        }
-       
-    }
-}
-
 .builder-options{
     h3{
         margin-bottom: 8px;
@@ -117,7 +62,7 @@
                     text-align: center;
                 }
             }
-    
+
             td{
                 padding: 5px 20px 5px 0;
                 text-align: left;
@@ -156,5 +101,5 @@
             }
         }
     }
-    
+
 }

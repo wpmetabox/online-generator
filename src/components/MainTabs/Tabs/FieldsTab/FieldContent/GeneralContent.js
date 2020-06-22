@@ -19,13 +19,11 @@ const GeneralContent = (props) => {
   }
 
   return (
-    <div className="field_content">
+    <div className="og-item__content">
       {
         Object.keys(props.fieldData).map((keyName, keyIndex) =>
           <Suspense fallback={null} key={getLabel(keyName) + keyIndex}>
-            {
-              getElement(keyName, keyIndex)
-            }
+            {getElement(keyName, keyIndex)}
           </Suspense>
         )
       }

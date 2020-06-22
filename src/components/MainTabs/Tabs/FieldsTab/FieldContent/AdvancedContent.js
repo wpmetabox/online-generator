@@ -21,13 +21,11 @@ const AdvancedContent = (props) => {
   }
 
   return (
-    <div className="advanced_content">
+    <div className="og-item__content">
       {
         Object.keys(props.data).map((keyName, keyIndex) =>
           <Suspense fallback={null} key={getLabel(keyName) + keyIndex}>
-            {
-              getElement(keyName, keyIndex)
-            }
+            {getElement(keyName, keyIndex)}
           </Suspense>)
       }
     </div>

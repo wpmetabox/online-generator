@@ -23,7 +23,7 @@ const FieldSelected = (props) => {
           <span className="og-item__action og-item__action--toggle" title="Toggle Settings">{props.isShow ? arrowUpIcon : arrowDownIcon}</span>
         </span>
       </div >
-      <div className="og-builder__field-body" style={{ display: props.isShow ? 'block' : 'none' }}>
+      <div className="og-item__body" style={{ display: props.isShow ? 'block' : 'none' }}>
         <Tabs forceRenderTabPanel={true}>
           <TabList>
             <Tab>General</Tab>

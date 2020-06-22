@@ -1,6 +1,6 @@
 import React from 'react';
 import Input from '../../Common/Input';
-import DivRow from '../DivRow';
+import DivRow from '../../Common/DivRow';
 
 const MetaBoxTab = (props) => {
   return (
