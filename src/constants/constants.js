@@ -2,28 +2,28 @@ import { infoIcon, settingIcon, fieldIcon } from './icons';
 
 export const mainTabs = [
   { id: 1, label: 'General', icon: infoIcon },
-  { id: 1, label: 'MetaBox', icon: settingIcon },
-  { id: 1, label: 'Fields', icon: fieldIcon },
+  { id: 2, label: 'MetaBox', icon: settingIcon },
+  { id: 3, label: 'Fields', icon: fieldIcon },
 ]
 
 export const generalInputs = [
   {
     id: 1,
     placeholder: "Enter function name here",
-    label: "Function name",
+    label: "Function Name",
     name: "function_name",
     defaultValue: "your_prefix_get_meta_box"
   },
   {
     id: 2,
     placeholder: "Enter text domain here",
-    label: "Text domain",
-    name: "metabox-online-generator",
+    label: "Text Domain",
+    name: "text_domain",
     defaultValue: "metabox-online-generator"
   },
   {
     id: 3,
-    placeholder: "Enter prefix for field ID here",
+    placeholder: "Enter prefix for all fields' IDs here",
     label: "Field ID Prefix",
     name: "prefix",
     defaultValue: "prefix-",

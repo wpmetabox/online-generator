@@ -5,8 +5,8 @@ import DivRow from '../../Common/DivRow';
 const MetaBoxTab = (props) => {
   return (
     <div>
-      <Input ref={props.register} data={{ placeholder: "Enter ID here", name: "id_meta_box", label: "ID", defaultValue: "untitled" }} />
-      <Input ref={props.register} data={{ placeholder: "Enter title here", name: "title_meta_box", label: "Title", defaultValue: "Untitled Metabox" }} />
+      <Input ref={props.register} data={{ placeholder: "Enter ID here", name: "id", label: "ID", defaultValue: "untitled" }} />
+      <Input ref={props.register} data={{ placeholder: "Enter title here", name: "title", label: "Title", defaultValue: "Untitled Metabox" }} />
       <DivRow label="Priority" className="og-field--check">
           <label><input ref={props.register} type="radio" name="priority" value="default" defaultChecked /> Default</label>
           <label><input ref={props.register} type="radio" name="priority" value="high" /> High</label>
@@ -19,10 +19,10 @@ const MetaBoxTab = (props) => {
       </DivRow>
       <DivRow label="Post Types" className="og-field--check">
           <label>
-            <input type="checkbox" ref={props.register} name="post-type" value="post" defaultChecked /> Post
+            <input type="checkbox" ref={props.register} name="post_type" value="post" defaultChecked /> Post
           </label>
           <label>
-            <input type="checkbox" ref={props.register} name="post-type" value="page" /> Page
+            <input type="checkbox" ref={props.register} name="post_type" value="page" /> Page
           </label>
       </DivRow>
       <DivRow label="Autosave" htmlFor="autosave">
