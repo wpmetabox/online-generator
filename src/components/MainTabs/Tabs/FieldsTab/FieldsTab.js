@@ -19,15 +19,12 @@ const FieldsTab = (props) => {
   const [searchParam, setSearchParam] = useState('');
   const [dragAndDrop, setDragAndDrop] = useState(initialDnDState);
 
-  useEffect(() => {
-    setIsShow(selectedList.length);
-    return
-  }, [selectedList.length]);
+  useEffect(() => setIsShow(selectedList.length), [selectedList.length]);
 
-  const onSelect = (item) => {
-    let dataItem = {...fields[item]}
-    dataItem.general = { ...fields[item].general, id: `${item}-${selectedList.length + 1}` }
-    setListSelected([...selectedList, { type: item, data: dataItem }]);
+  const onSelect = type => {
+    let data = {...fields[type]}
+    data.general = { ...fields[type].general, id: `${type}-${selectedList.length + 1}` }
+    setListSelected([...selectedList, { type, data }]);
   }
 
   const onDragStart = (event) => {
@@ -90,7 +87,6 @@ const FieldsTab = (props) => {
     item.data.general.id = item.data.general.id + `_copy_${sameTypeItems.length}`
     setListSelected([...selectedList, item])
   }
-
 
   const onDragLeave = () => {
     setDragAndDrop({

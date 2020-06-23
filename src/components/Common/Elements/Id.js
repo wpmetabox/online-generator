@@ -1,14 +1,6 @@
 import React from 'react';
-import Input from './Input';
-import DivRow from '../DivRow';
+import Input from '../Input';
 import { getLabel } from '../../../utility/functions';
 
-const Id = ({ name, defaultValue, register, label, type }) => {
-    return (
-        <DivRow label={getLabel(label, type)} htmlFor={name} >
-            <input type='text' defaultValue={defaultValue} ref={register} name={name} id={name} />
-        </DivRow>
-    )
-}
-
+const Id = ({ label, type, ...rest }) => <Input {...rest} label={getLabel(label, type)} />
 export default Id;
