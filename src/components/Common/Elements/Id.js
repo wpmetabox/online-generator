@@ -5,8 +5,8 @@ import { getLabel } from '../../../utility/functions';
 
 const Id = ({ name, defaultValue, register, label, type }) => {
     return (
-        <DivRow label={getLabel(label, type)} >
-            <Input type='text' name={name} defaultValue={defaultValue} ref={register} />
+        <DivRow label={getLabel(label, type)} htmlFor={name} >
+            <input type='text' defaultValue={defaultValue} ref={register} name={name} id={name} />
         </DivRow>
     )
 }
