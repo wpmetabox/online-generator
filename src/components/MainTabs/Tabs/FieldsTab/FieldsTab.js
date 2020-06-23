@@ -21,12 +21,6 @@ const FieldsTab = (props) => {
 
   useEffect(() => setIsShow(selectedList.length), [selectedList.length]);
 
-  const onSelect = type => {
-    let data = {...fields[type]}
-    data.general = { ...fields[type].general, id: `${type}-${selectedList.length + 1}` }
-    setListSelected([...selectedList, { type, data }]);
-  }
-
   const onDragStart = (event) => {
     const initialPosition = Number(event.currentTarget.dataset.position);
 
@@ -63,6 +57,8 @@ const FieldsTab = (props) => {
     }
   }
 
+  const onDragLeave = () => setDragAndDrop({...dragAndDrop, draggedTo: null});
+
   const onDrop = (event) => {
     setListSelected(dragAndDrop.updatedOrder);
 
@@ -74,25 +70,24 @@ const FieldsTab = (props) => {
     });
   }
 
+  const addItem = type => {
+    let data = {...fields[type]};
+    data.general = { ...fields[type].general, id: `${type}-${selectedList.length + 1}` };
+    setListSelected([...selectedList, { type, data }]);
+  }
+
   const removeItem = (index) => {
     let newList = selectedList;
-    newList.splice(index, 1)
+    newList.splice(index, 1);
     setListSelected(newList);
   }
 
   const copyItem = (type, index) => {
-    const sameTypeItems = selectedList.filter(item => item.type === type)
-    let item = { type }
+    const sameTypeItems = selectedList.filter(item => item.type === type);
+    let item = { type };
     item.data = getDataCopiedItem(type, index);
-    item.data.general.id = item.data.general.id + `_copy_${sameTypeItems.length}`
-    setListSelected([...selectedList, item])
-  }
-
-  const onDragLeave = () => {
-    setDragAndDrop({
-      ...dragAndDrop,
-      draggedTo: null
-    });
+    item.data.general.id = item.data.general.id + `_copy_${sameTypeItems.length}`;
+    setListSelected([...selectedList, item]);
   }
 
   const handleShow = index => setIsShow(index === isShow ? -isShow : index)
@@ -101,7 +96,7 @@ const FieldsTab = (props) => {
     <div className="og-fields-wrapper">
       <div className="og-sidebar">
         <input type="search" className="og-search" placeholder="Enter field type here" onChange={e => setSearchParam(e.target.value)} />
-        {searchParam ? <SearchResultList onSelectField={onSelect} searchParam={searchParam} /> : <FieldMenu onSelectField={onSelect} />}
+        {searchParam ? <SearchResultList onSelectField={addItem} searchParam={searchParam} /> : <FieldMenu onSelectField={addItem} />}
       </div>
 
       <div className="og-main">
