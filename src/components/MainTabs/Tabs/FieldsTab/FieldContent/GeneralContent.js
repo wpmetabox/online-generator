@@ -4,16 +4,13 @@ import { getLabel } from '../../../../../utility/functions';
 const GeneralContent = (props) => {
 
   const getElement = (name) => {
-    const fieldData = props.fieldData;
-    const elementName = `fields-${props.index}-${name}`
-    let defaultValue = fieldData[name];
     let componentName = name.charAt(0).toUpperCase() + name.slice(1);
     let Element = lazy(() => import(`../../../../Common/Elements/${componentName}`))
     return <Element
-      name={elementName}
+      name={`fields-${props.index}-${name}`}
       label={name}
       register={props.register}
-      defaultValue={defaultValue}
+      defaultValue={props.fieldData[name]}
       data={props.fieldData}
       type={props.type} />
   }
