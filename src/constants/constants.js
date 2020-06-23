@@ -6,31 +6,6 @@ export const mainTabs = [
   { id: 3, label: 'Fields', icon: fieldIcon },
 ]
 
-export const generalInputs = [
-  {
-    id: 1,
-    placeholder: "Enter function name here",
-    label: "Function Name",
-    name: "function_name",
-    defaultValue: "your_prefix_get_meta_box"
-  },
-  {
-    id: 2,
-    placeholder: "Enter text domain here",
-    label: "Text Domain",
-    name: "text_domain",
-    defaultValue: "metabox-online-generator"
-  },
-  {
-    id: 3,
-    placeholder: "Enter prefix for all fields' IDs here",
-    label: "Field ID Prefix",
-    name: "prefix",
-    defaultValue: "prefix-",
-    description: "Leave empty to ignore this or use _ to make the fields hidden."
-  }
-]
-
 export const fieldTypes = {
   'Input Fields': {
     'text': 'Text',

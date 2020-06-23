@@ -1,15 +1,10 @@
 import React from 'react';
+import DivRow from './DivRow';
 
-const Input = React.forwardRef(({data}, ref) => {
-  return (
-    <div className="og-field">
-      <label className="og-label" htmlFor={data.name}>{data.label}</label>
-      <div className="og-input">
-        <input type="text" id={data.name} placeholder={data.placeholder} name={data.name} ref={ref} defaultValue={data.defaultValue} />
-        {data.description && <div className="og-description">{data.description}</div>}
-      </div>
-    </div>
-  )
-})
+const Input = ({label, name, defaultValue, description, register}) => (
+  <DivRow label={label} htmlFor={name} description={description}>
+    <input type="text" id={name} name={name} ref={register} defaultValue={defaultValue} />
+  </DivRow>
+)
 
 export default Input;
