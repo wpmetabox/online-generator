@@ -1,25 +1,25 @@
-.og-field {
+&-field {
   margin-top: 12px;
   display: flex;
   justify-content: space-between;
 
-  &--check .og-input {
-    label {
-      display: inline-block;
-      margin-right: 24px;
-    }
-    input {
-      vertical-align: baseline;
-      margin-right: 4px;
-      top: -1px;
-    }
+}
+&-field--check &-input {
+  label {
+    display: inline-block;
+    margin-right: 24px;
+  }
+  input {
+    vertical-align: baseline;
+    margin-right: 4px;
+    top: -1px;
   }
 }
-.og-label {
+&-label {
   width: 25%;
   font-weight: 700;
 }
-.og-input {
+&-input {
   flex: 1;
 
   input[type="text"],
@@ -37,7 +37,7 @@
     padding: 11px 18px;
   }
 }
-.og-description {
+&-description {
   color: var(--color-gray);
   margin-top: 6px;
   font-style: italic;

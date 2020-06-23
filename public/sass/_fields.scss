@@ -41,6 +41,14 @@
     border-top: none;
   }
 
+  input[type="text"],
+  input[type="number"] {
+    padding: 8px 12px;
+  }
+  select {
+    padding: 7px 12px;
+  }
+
   .react-tabs {
     &__tab-list {
       border: none;

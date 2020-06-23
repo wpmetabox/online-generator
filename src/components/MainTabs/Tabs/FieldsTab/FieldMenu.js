@@ -10,16 +10,7 @@ const FieldMenu = ({onSelectField}) => {
         Object.keys(fieldTypes).map((keyName, keyIndex) =>
           <div className="og-panel" key={keyIndex}>
             <h4 onClick={() => setActive(keyName)}>{keyName}</h4>
-            {
-              keyName === active &&
-                <div className="og-panel__body">
-                {
-                  Object.keys(fieldTypes[keyName]).map((key, index) =>
-                    <button key={index} type="button" onClick={() => onSelectField(key)}>{fieldTypes[keyName][key]}</button>
-                  )
-                }
-                </div>
-            }
+            {keyName === active && <div className="og-panel__body">{Object.keys(fieldTypes[keyName]).map((key, index) => <button key={index} type="button" onClick={() => onSelectField(key)}>{fieldTypes[keyName][key]}</button>)}</div>}
           </div>
         )
       }
