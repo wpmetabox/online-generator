@@ -22,21 +22,23 @@ const FieldSelected = (props) => {
           <span className="og-item__action og-item__action--duplicate" title="Duplicate" onClick={() => props.copyItem(props.data?.general?.type, props.index)} >{copyIcon}</span>
           <span className="og-item__action og-item__action--toggle" title="Toggle Settings">{props.isShow ? arrowUpIcon : arrowDownIcon}</span>
         </span>
-      </div >
-      <div className="og-item__body" style={{ display: props.isShow ? 'block' : 'none' }}>
-        <Tabs forceRenderTabPanel={true}>
-          <TabList>
-            <Tab>General</Tab>
-            <Tab>Advanced</Tab>
-          </TabList>
-          <TabPanel>
-            <GeneralContent register={props.register} type={props.data?.general?.type} index={props.index} fieldData={props.data.general} />
-          </TabPanel>
-          <TabPanel>
-            <AdvancedContent register={props.register} type={props.data?.general?.type} index={props.index} data={props.data.advanced} />
-          </TabPanel>
-        </Tabs>
       </div>
+      { props.isShow &&
+        <div className="og-item__body">
+          <Tabs forceRenderTabPanel={true}>
+            <TabList>
+              <Tab>General</Tab>
+              <Tab>Advanced</Tab>
+            </TabList>
+            <TabPanel>
+              <GeneralContent register={props.register} type={props.data?.general?.type} index={props.index} fieldData={props.data.general} />
+            </TabPanel>
+            <TabPanel>
+              <AdvancedContent register={props.register} type={props.data?.general?.type} index={props.index} data={props.data.advanced} />
+            </TabPanel>
+          </Tabs>
+        </div>
+      }
     </div>
   )
 }

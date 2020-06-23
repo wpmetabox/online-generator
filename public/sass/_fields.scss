@@ -1,6 +1,5 @@
 &-item {
   margin-top: 12px;
-  border: 1px solid var(--color-light);
 
   &__heading {
     background-color: var(--color-lighter);
@@ -8,6 +7,11 @@
     cursor: move;
     display: flex;
     justify-content: space-between;
+    border: 1px solid var(--color-light);
+
+    &:hover {
+      border-color: var(--color-gray);
+    }
   }
   &__actions {
     font-size: 12px;
@@ -33,6 +37,8 @@
   }
   &__body {
     padding: 12px;
+    border: 1px solid var(--color-light);
+    border-top: none;
   }
 
   .react-tabs {

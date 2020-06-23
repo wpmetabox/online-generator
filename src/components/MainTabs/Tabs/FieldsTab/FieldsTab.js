@@ -99,9 +99,7 @@ const FieldsTab = (props) => {
     });
   }
 
-  const handleShow = index => {
-    index === isShow ? setIsShow(-isShow) : setIsShow(index)
-  }
+  const handleShow = index => setIsShow(index === isShow ? -isShow : index)
 
   return (
     <div className="og-fields-wrapper">
