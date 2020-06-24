@@ -1,114 +1,60 @@
 import { TEXT_INPUT, NUMBER_INPUT, CHECKBOX, fields, DROPDOWN_MENU, RADIO_CHECKBOX, LIST_OPTION_TYPE, DATA_LIST_TYPE } from '../constants/constants';
 
-export const getLabel = (keyName, type) => {
-    let result = '';
-    switch (keyName) {
-        case 'before':
-            result = 'Before'
-            break;
-        case 'after':
-            result = 'After'
-            break;
-        case 'class':
-            result = 'Custom CSS class'
-            break;
-        case 'id':
-            result = 'ID'
-            break;
-        case 'name':
-            result = 'Name'
-            break;
-        case 'desc':
-            result = 'Description'
-            break;
-        case 'std':
-            if (type === 'checkbox') {
-                result = 'Checked?'
-            } else {
-                result = 'Default'
-            }
-            break;
-        case 'size':
-            result = 'Size'
-            break;
-        case 'placeholder':
-            result = 'Placeholder'
-            break;
-        case 'clone':
-            result = 'Clone'
-            break;
-        case 'min':
-            result = 'Min'
-            break;
-        case 'max':
-            result = 'Max'
-            break;
-        case 'step':
-            result = 'Step'
-            break;
-        case 'inline':
-            result = 'Inline'
-            break;
-        case 'multiple':
-            result = 'Multiple?'
-            break;
-        case 'rows':
-            result = 'Rows'
-            break;
-        case 'cols':
-            result = 'Columns'
-            break;
-        case 'prefix':
-            result = 'Prefix'
-            break;
-        case 'suffix':
-            result = 'Suffix'
-            break;
-        case 'address_field':
-            result = 'Address Field'
-            break;
-        case 'api_key':
-            result = 'Api Key'
-            break;
-        case 'region':
-            result = 'Region'
-            break;
-        case 'timestamp':
-            result = 'Timestamp'
-            break;
-        case 'max_file_uploads':
-            result = 'Max File Uploads'
-            break;
-        case 'force_delete':
-            result = 'Force Delete?'
-            break;
-        case 'mime_type':
-            result = 'Mime Type'
-            break;
-        case 'max_status':
-            result = 'Max Status'
-            break;
-        case 'options':
-            result = 'Options'
-            break;
-        case 'parent':
-            result = 'Parent'
-            break;
-        case 'field_type':
-            result = 'Field Type'
-            break;
-        case 'post_type':
-            result = 'Post Type'
-            break;
-        case 'taxonomy':
-            result = 'Taxonomy'
-            break;
-        default:
-            break;
+export const getLabel = (name, type) => {
+  const labels = {
+    before: "Before",
+    after: "After",
+    class: "Custom CSS class",
+    id: "ID",
+    name: "Name",
+    desc: "Description",
+    std: "Default value",
+    size: "Size of the input box",
+    placeholder: "Placeholder",
+    clone: "Clone",
+    min: "Min",
+    max: "Max",
+    step: "Step",
+    inline: "Inline",
+    multiple: "Multiple?",
+    rows: "Rows",
+    cols: "Columns",
+    prefix: "Prefix",
+    suffix: "Suffix",
+    address_field: "Address Field",
+    api_key: "Api Key",
+    region: "Region",
+    timestamp: "Timestamp",
+    max_file_uploads: "Max File Uploads",
+    force_delete: "Force Delete?",
+    mime_type: "Mime Type",
+    max_status: "Max Status",
+    options: "Options",
+    parent: "Parent",
+    field_type: "Field Type",
+    post_type: "Post Type",
+    taxonomy: "Taxonomy",
+  };
 
-    }
+  return (name === 'std' && type === 'checkbox') ? "Checked?" : labels[name];
+};
 
-    return result;
+export const getElementControlName = name => {
+  switch (name) {
+    case 'id':
+    case 'desc':
+    case 'name':
+    case 'std':
+    case 'placeholder':
+    case 'before':
+    case 'after':
+    case 'class':
+      return 'TextInput';
+    case 'size':
+      return 'NumberInput';
+    default:
+      return name.charAt(0).toUpperCase() + name.slice(1);
+  }
 }
 
 export const getElementType = (name) => {
@@ -133,7 +79,6 @@ export const getElementType = (name) => {
     if (dropdownMenu.includes(name)) {
         type = DROPDOWN_MENU
     }
-
 
     return type
 }
@@ -195,7 +140,6 @@ const getAdvancedData = (advancedItems, index) => {
 
             result[item] = { id: idDataList, items: dataList };
         } else {
-
             result[item] = value;
         }
 

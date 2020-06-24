@@ -1,10 +1,10 @@
 import React, { lazy, Suspense, memo } from 'react';
-import { getLabel } from '../../../../../utility/functions';
+import {getLabel, getElementControlName} from '../../../../../utility/functions';
 
 const GeneralContent = (props) => {
 
   const getElement = (name) => {
-    let componentName = name.charAt(0).toUpperCase() + name.slice(1);
+    let componentName = getElementControlName(name);
     let Element = lazy(() => import(`../../../../Common/Elements/${componentName}`))
     return <Element
       name={`fields-${props.index}-${name}`}

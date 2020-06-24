@@ -1,20 +1,17 @@
 import React, { memo, Suspense, lazy } from 'react';
-import { getLabel } from '../../../../../utility/functions';
+import {getLabel, getElementControlName} from '../../../../../utility/functions';
 
 const AdvancedContent = (props) => {
   const getElement = (name) => {
-    const advancedData = props.data;
-    const elementName = `fields-${props.index}-${name}`;
-    let defaultValue = advancedData[name];
-    let componentName = name.charAt(0).toUpperCase() + name.slice(1);
+    let componentName = getElementControlName(name);
     let Element = lazy(() => import(`../../../../Common/Elements/${componentName}`))
 
     return <Element
-      name={elementName}
+      name={`fields-${props.index}-${name}`}
       label={name}
       register={props.register}
-      defaultValue={defaultValue}
-      data={advancedData}
+      defaultValue={props.data[name]}
+      data={props.data}
       type={props.type}
       index={props.index}
     />
