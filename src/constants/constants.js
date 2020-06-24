@@ -76,10 +76,6 @@ export const fields = {
       'after': '',
       'class': '',
       'attributes': [],
-      'datalist': {
-        'id': '',
-        'items': []
-      }
     }
   },
   'number': {

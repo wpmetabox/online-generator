@@ -21,7 +21,8 @@
 }
 &-input {
   flex: 1;
-
+}
+& {
   input[type="text"],
   input[type="number"],
   select {

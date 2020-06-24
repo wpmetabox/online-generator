@@ -1,21 +1,13 @@
 import React from 'react';
-import SmallInput from './SmallInput';
+import {xIcon} from '../../../constants/icons';
 
-const AdvancedAdditionalItem = (props) => {
+const AdvancedAdditionalItem = ({register, name, type, index, data, removeItem}) => {
     return (
-        <tr>
-            <td width="45%">
-                <SmallInput placeholder="Enter value" ref={props.register} name={`${props.name}-${props.type}-${props.index}-key`} defaultValue={props.data.key} />
-            </td>
-            <td width="45%">
-                <SmallInput placeholder="Enter label" ref={props.register} name={`${props.name}-${props.type}-${props.index}-value`} defaultValue={props.data.label} />
-            </td>
-            <td width="10%">
-                <button type="button" className="og-button--small">
-                    <img src="./trash.png" alt="trash_icon" />
-                </button>
-            </td>
-        </tr>
+        <div className="og-attribute">
+            <input type="text" placeholder="Enter key" ref={register} name={`${name}-${type}-${index}-key`} defaultValue={data.key} />
+            <input type="text" placeholder="Enter value" ref={register} name={`${name}-${type}-${index}-value`} defaultValue={data.label} />
+            <button type="button" onClick={() => removeItem(index)}>{xIcon}</button>
+        </div>
     )
 }
 
