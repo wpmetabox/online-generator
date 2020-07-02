@@ -1,3 +1,12 @@
+button[disabled] {
+	background: #ddd;
+	border-color: #ddd;
+	color: #2c3e50;
+}
+&-loading {
+    margin-left: 12px;
+    font-style: italic;
+}
 .builder-options{
     h3{
         margin-bottom: 8px;

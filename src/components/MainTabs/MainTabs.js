@@ -19,9 +19,7 @@ export const MainTabs = () => {
     actions.generatePHPCode(data)
   }
 
-  useEffect(() => {
-    setLoading(false);
-  }, [state.state.responseTime])
+  useEffect(() => setLoading(false), [state.state.responseTime])
 
   return (
     <>
@@ -40,11 +38,8 @@ export const MainTabs = () => {
             <FieldsTab register={register} />
           </TabPanel>
         </Tabs>
-        <button type="submit">Generate Code</button>
+        <button type="submit" disabled={loading}>Generate Code</button> {loading && <span className="og-loading">Generating code. Please wait...</span>}
       </form>
-      {
-        loading && <p style={{ fontSize: 48 }}>Loading.......</p>
-      }
     </>
   );
 }
