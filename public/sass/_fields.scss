@@ -1,17 +1,11 @@
 &-item {
   margin-top: 12px;
 
-  &__heading {
-    background-color: var(--color-lighter);
+  &__header {
     padding: 8px 12px;
     cursor: move;
     display: flex;
     justify-content: space-between;
-    border: 1px solid var(--color-light);
-
-    &:hover {
-      border-color: var(--color-gray);
-    }
   }
   &__title {
     font-weight: bold;
@@ -37,11 +31,6 @@
     &--remove:hover {
       color: var(--color-red);
     }
-  }
-  &__body {
-    padding: 12px;
-    border: 1px solid var(--color-light);
-    border-top: none;
   }
 
   input[type="text"],
