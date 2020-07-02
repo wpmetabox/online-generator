@@ -1,6 +1,6 @@
 import createDataContext from './createDataContext';
 import generatorReducer from './GeneratorReducer';
-import { GENERATE_PHP_CODE } from './GeneratorActions';
+import { GENERATE_PHP_CODE, ERROR } from './GeneratorActions';
 
 const generatePHPCode = dispatch => params => {
     const paramsFormatted = formatParams(params);
@@ -12,8 +12,11 @@ const generatePHPCode = dispatch => params => {
     console.log(paramsFormatted);
     fetch('https://metabox.io/wp-json/meta-box-online-generator/generator', requestOptions)
         .then(response => response.json())
-        .then(data => dispatch({ type: GENERATE_PHP_CODE, payload: data }))
-        .catch(err => console.error(err));
+        .then(data => dispatch({ type: GENERATE_PHP_CODE, payload: data, responseTime: (new Date()).getTime() }))
+        .catch(err => {
+            dispatch({ type: ERROR, responseTime: (new Date()).getTime() })
+            console.error(err)
+        });
 };
 
 const formatParams = (params) => {
@@ -43,5 +46,5 @@ const formatParams = (params) => {
 export const { Provider, Context, actions } = createDataContext(
     generatorReducer,
     { generatePHPCode },
-    { data: '' }
+    { data: '', responseTime: '' }
 );
