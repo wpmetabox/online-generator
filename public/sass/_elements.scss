@@ -43,6 +43,8 @@ button[disabled] {
     }
   }
 }
+
+// Tooltip
 &-tooltip-icon svg {
 	width: 14px;
 	height: 14px;
@@ -50,6 +52,9 @@ button[disabled] {
 	margin-left: 6px;
 	top: 2px;
 	position: relative;
+}
+.__react_component_tooltip {
+  font-weight: 400;
 }
 .builder-options {
   h3 {

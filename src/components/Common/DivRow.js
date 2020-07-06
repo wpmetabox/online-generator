@@ -10,7 +10,7 @@ const DivRow = ({label, children, className = '', htmlFor = '', description = ''
         {tooltip &&
         <>
           <span className="og-tooltip-icon" data-tip={tooltip}>{infoIcon}</span>
-          <ReactTooltip effect="solid" type="dark" place="top" />
+          <ReactTooltip effect="solid" />
         </>
         }
       </label>
