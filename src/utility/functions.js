@@ -41,7 +41,6 @@ export const getLabel = (name, type) => {
 
 export const getElementControlName = name => {
   switch (name) {
-    case 'id':
     case 'desc':
     case 'name':
     case 'std':

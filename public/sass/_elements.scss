@@ -3,6 +3,14 @@ button[disabled] {
   border-color: #ddd;
   color: #2c3e50;
 }
+svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--color-gray);
+}
+&-required {
+  color: var(--color-red);
+}
 &-loading {
   margin-left: 12px;
   font-style: italic;
@@ -55,6 +63,7 @@ button[disabled] {
 }
 .__react_component_tooltip {
   font-weight: 400;
+  max-width: 400px;
 }
 .builder-options {
   h3 {
