@@ -1,11 +1,3 @@
-import { infoIcon, settingIcon, fieldIcon } from './icons';
-
-export const mainTabs = [
-  { id: 1, label: 'General', icon: infoIcon },
-  { id: 2, label: 'Meta Box', icon: settingIcon },
-  { id: 3, label: 'Fields', icon: fieldIcon },
-]
-
 export const fieldTypes = {
   'Basic': {
     'button': 'Button',
