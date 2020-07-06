@@ -43,6 +43,14 @@ button[disabled] {
     }
   }
 }
+&-tooltip-icon svg {
+	width: 14px;
+	height: 14px;
+	fill: var(--color-light);
+	margin-left: 6px;
+	top: 2px;
+	position: relative;
+}
 .builder-options {
   h3 {
     margin-bottom: 8px;
