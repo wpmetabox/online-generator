@@ -175,7 +175,7 @@ export const fields = {
       'id': '',
       'name': 'Checkbox',
       'type': 'checkbox',
-      'desc': 'Default Description',
+      'desc': '',
       'std': false,
       'clone': false,
     },

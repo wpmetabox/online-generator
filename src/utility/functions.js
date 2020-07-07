@@ -11,7 +11,7 @@ export const getLabel = (name, type) => {
     std: "Default value",
     size: "Size of the input box",
     placeholder: "Placeholder",
-    clone: "Clone",
+    clone: "Cloneable",
     min: "Min",
     max: "Max",
     step: "Step",
@@ -42,7 +42,11 @@ export const getLabel = (name, type) => {
 export const getElementControlName = (name, type) => {
   switch (name) {
     case 'std':
-        return 'button' === type ? 'StdButton' : 'TextInput';
+        const types = {
+            'button': 'StdButton',
+            'checkbox': 'StdCheckbox',
+        };
+        return types[type] ? types[type] : 'TextInput';
     case 'placeholder':
     case 'class':
       return 'TextInput';
@@ -138,10 +142,7 @@ const getAdvancedData = (advancedItems, index) => {
         } else {
             result[item] = value;
         }
-
-
     })
 
     return result
-
 }

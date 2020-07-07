@@ -1,10 +1,5 @@
 import React from 'react';
-import Checkbox from './Checkbox';
-import DivRow from '../DivRow';
-import { getLabel } from '../../../utility/functions';
+import Checkbox from '../Checkbox';
 
-const Clone = ({ name, defaultValue, register, label, type }) => {
-    return <DivRow label={getLabel(label, type)}><Checkbox name={name} ref={register} keyValue={name} defaultValue={defaultValue} /></DivRow>
-}
-
+const Clone = props => <Checkbox {...props} label="Cloneable" />
 export default Clone;
