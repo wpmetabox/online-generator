@@ -1,8 +1,8 @@
 import React from 'react';
 import DivRow from './DivRow';
 
-const Input = ({label, name, defaultValue, description, register, type = 'text'}) => (
-  <DivRow label={label} htmlFor={name} description={description}>
+const Input = ({name, defaultValue, register, type = 'text', ...rest}) => (
+  <DivRow htmlFor={name} {...rest}>
     <input type={type} id={name} name={name} ref={register} defaultValue={defaultValue} />
   </DivRow>
 )

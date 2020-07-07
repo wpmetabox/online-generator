@@ -2,10 +2,9 @@ import React, { useState, useEffect, useContext } from 'react';
 import 'react-tabs/style/react-tabs.css';
 import { useForm } from "react-hook-form";
 import { TabPanel, Tabs, TabList, Tab } from 'react-tabs';
-import GeneralTab from './Tabs/GeneralTab';
-import MetaBoxTab from './Tabs/MetaBoxTab';
+import SettingsTab from './Tabs/SettingsTab';
 import FieldsTab from './Tabs/FieldsTab/FieldsTab';
-import { mainTabs } from '../../constants/constants';
+import { settingIcon, fieldIcon } from '../../constants/icons';
 import { actions, Context } from '../../context/GeneratorContext';
 
 export const MainTabs = () => {
@@ -19,32 +18,25 @@ export const MainTabs = () => {
     actions.generatePHPCode(data)
   }
 
-  useEffect(() => {
-    setLoading(false);
-  }, [state.state.responseTime])
+  useEffect(() => setLoading(false), [state.state.responseTime])
 
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Tabs forceRenderTabPanel={true}>
           <TabList>
-            {mainTabs.map((item, index) => <Tab key={index}>{item.icon} {item.label}</Tab>)}
+            <Tab>{fieldIcon} Fields</Tab>
+            <Tab>{settingIcon} Settings</Tab>
           </TabList>
-          <TabPanel>
-            <GeneralTab register={register} />
-          </TabPanel>
-          <TabPanel>
-            <MetaBoxTab register={register} />
-          </TabPanel>
           <TabPanel>
             <FieldsTab register={register} />
           </TabPanel>
+          <TabPanel>
+            <SettingsTab register={register} />
+          </TabPanel>
         </Tabs>
-        <button type="submit">Generate Code</button>
+        <button type="submit" disabled={loading}>Generate Code</button> {loading && <span className="og-loading">Generating code. Please wait...</span>}
       </form>
-      {
-        loading && <p style={{ fontSize: 48 }}>Loading.......</p>
-      }
     </>
   );
 }

@@ -13,8 +13,8 @@ const FieldSelected = (props) => {
       onDragOver={props.onDragOver}
       onDrop={props.onDrop}
       onDragLeave={props.onDragLeave}
-      className={`og-item ${props.dragAndDrop && props.dragAndDrop.draggedTo === Number(props.index) && "dropArea"}`}>
-      <div className="og-item__heading" onClick={() => props.handleShow(props.index + 1)}>
+      className={`og-item og-collapsible${props.isShow ? ' og-collapsible--expanded' : ''} ${props.dragAndDrop && props.dragAndDrop.draggedTo === Number(props.index) && "dropArea"}`}>
+      <div className="og-item__header og-collapsible__header" onClick={() => props.handleShow(props.index + 1)}>
         <div className="og-item__title">{props.data?.general?.name}</div>
         <div className="og-item__actions">
           <span className="og-item__type">{props.data?.general?.type}</span>
@@ -23,7 +23,7 @@ const FieldSelected = (props) => {
           <span className="og-item__action og-item__action--toggle" title="Toggle Settings">{props.isShow ? arrowUpIcon : arrowDownIcon}</span>
         </div>
       </div>
-      <div className="og-item__body" style={{ display: props.isShow ? 'block' : 'none' }}>
+      <div className="og-item__body og-collapsible__body">
         <Tabs forceRenderTabPanel={true}>
           <TabList>
             <Tab>General</Tab>

@@ -1,62 +1,62 @@
-import { infoIcon, settingIcon, fieldIcon } from './icons';
-
-export const mainTabs = [
-  { id: 1, label: 'General', icon: infoIcon },
-  { id: 2, label: 'MetaBox', icon: settingIcon },
-  { id: 3, label: 'Fields', icon: fieldIcon },
-]
-
 export const fieldTypes = {
-  'Input Fields': {
-    'text': 'Text',
-    'number': 'Number',
-    'url': 'URL',
-    'email': 'Email',
-    'range': 'Range',
-    'text_list': 'Text List',
-  },
-  'Basic Fields': {
+  'Basic': {
+    'button': 'Button',
+    // button_group
     'checkbox': 'Checkbox',
     'checkbox_list': 'Checkbox List',
-    'button': 'Button',
+    'email': 'Email',
+    'hidden': 'Hidden',
+    'number': 'Number',
     'password': 'Password',
     'radio': 'Radio',
+    'range': 'Range',
     'select': 'Select',
     'select_advanced': 'Select Advanced',
+    'text': 'Text',
     'textarea': 'Textarea',
-    'hidden': 'Hidden',
-    'image_select': 'Image Select',
+    'url': 'URL',
   },
-  'Advanced Fields': {
-    'color': 'Color picker',
-    'oembed': 'OEmbed',
-    'slider': 'Slider',
-    'wysiwyg': 'WYSIWYG',
+  'Advanced': {
     'autocomplete': 'Autocomplete',
-    'fieldset_text': 'Fieldset Text',
-    'map': 'Map',
-    'heading': 'Heading',
-    'divider': 'Divider',
-  },
-  'Date & Time Fields': {
+    // background
+    'color': 'Color Picker',
+    // custom_html
     'date': 'Date',
     'datetime': 'Date Time',
+    'fieldset_text': 'Fieldset Text',
+    'map': 'Google Maps',
+    // key_value
+    'image_select': 'Image Select',
+    'oembed': 'oEmbed',
+    // osm
+    'slider': 'Slider',
+    // switch
+    'text_list': 'Text List',
     'time': 'Time',
+    'wysiwyg': 'WYSIWYG',
   },
-  'WordPress Fields': {
+  'WordPress': {
     'post': 'Post',
+    // sidebar
     'taxonomy': 'Taxonomy',
     'taxonomy_advanced': 'Taxonomy Advanced',
     'user': 'User',
   },
-  'Media Fields': {
-    'file': 'HTML File',
-    'file_input': 'File Input',
+  'Upload': {
+    'file': 'File',
     'file_advanced': 'File Advanced',
+    // file_upload
+    'file_input': 'File Input',
+    'image': 'Image',
     'image_advanced': 'Image Advanced',
-    'image': 'HTML Image',
+    // image_upload
+    // single_image
     'video': 'Video',
   },
+  'Layout': {
+    'divider': 'Divider',
+    'heading': 'Heading',
+  }
 }
 
 export const fields = {
