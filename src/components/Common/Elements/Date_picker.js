@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import AdvancedAdditionalItem from './AdvancedAdditionalItem.js';
-import a from '../../../constants/constants'
 import { ADVANCED_ADDITIONAL } from '../../../constants/constants';
 
 const Date_picker = (props) => {

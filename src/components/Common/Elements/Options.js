@@ -14,8 +14,8 @@ const Options = (props) => {
     }
 
     const deleteOption = (index) => {
-        let newList = options;
-        newList = newList.splice(index, 1)
+        let newList = [...options];
+        newList.splice(index, 1)
         setOptions(newList)
     }
 
