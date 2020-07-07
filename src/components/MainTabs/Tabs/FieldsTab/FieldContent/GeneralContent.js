@@ -4,7 +4,7 @@ import {getLabel, getElementControlName} from '../../../../../utility/functions'
 const GeneralContent = (props) => {
 
   const getElement = (name) => {
-    let componentName = getElementControlName(name);
+    let componentName = getElementControlName(name, props.type);
     let Element = lazy(() => import(`../../../../Common/Elements/${componentName}`))
     return <Element
       name={`fields-${props.index}-${name}`}

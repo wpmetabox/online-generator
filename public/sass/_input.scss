@@ -25,7 +25,9 @@
 & {
   input[type="text"],
   input[type="number"],
+  textarea,
   select {
+    display: block;
     width: 100%;
 
     &:focus {
@@ -39,7 +41,7 @@
   }
 }
 &-description {
-  color: var(--color-gray);
-  margin-top: 6px;
   font-style: italic;
+  font-size: 12px;
+  margin-top: 2px;
 }

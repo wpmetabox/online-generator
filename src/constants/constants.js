@@ -209,7 +209,6 @@ export const fields = {
       'name': 'Button',
       'desc': '',
       'std': '',
-      'clone': false,
     },
     'advanced': {
       'before': '',

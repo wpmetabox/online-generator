@@ -6,7 +6,7 @@ export const getLabel = (name, type) => {
     after: "After",
     class: "Custom CSS class",
     id: "ID",
-    name: "Name",
+    name: "Label",
     desc: "Description",
     std: "Default value",
     size: "Size of the input box",
@@ -39,13 +39,11 @@ export const getLabel = (name, type) => {
   return (name === 'std' && type === 'checkbox') ? "Checked?" : labels[name];
 };
 
-export const getElementControlName = name => {
+export const getElementControlName = (name, type) => {
   switch (name) {
-    case 'desc':
     case 'std':
+        return 'button' === type ? 'StdButton' : 'TextInput';
     case 'placeholder':
-    case 'before':
-    case 'after':
     case 'class':
       return 'TextInput';
     case 'size':
