@@ -192,7 +192,8 @@ export const fields = {
       'name': 'Checkbox List',
       'type': 'checkbox_list',
       'desc': '',
-      'options': [],
+      'options': '',
+      'std': '',
       'clone': false,
     },
     'advanced': {

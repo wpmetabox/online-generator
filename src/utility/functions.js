@@ -45,6 +45,7 @@ export const getElementControlName = (name, type) => {
         const types = {
             'button': 'StdButton',
             'checkbox': 'StdCheckbox',
+            'checkbox_list': 'StdChoice',
         };
         return types[type] ? types[type] : 'TextInput';
     case 'placeholder':
