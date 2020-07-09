@@ -1,10 +1,5 @@
 import React from 'react';
-import Checkbox from './Checkbox'
-import { getLabel } from '../../../utility/functions';
-import DivRow from '../DivRow';
+import Checkbox from '../Checkbox';
 
-const Timestamp = ({ name, defaultValue, register, label, type }) => {
-    return <DivRow label={getLabel(label, type)}><Checkbox name={name} ref={register} keyValue={name} defaultValue={defaultValue} /></DivRow>
-}
-
+const Timestamp = props => <Checkbox {...props} label="Timestamp" tooltip="Save the date in the Unix timestamp format" />;
 export default Timestamp;

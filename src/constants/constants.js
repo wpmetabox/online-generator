@@ -288,8 +288,8 @@ export const fields = {
       'before': '',
       'after': '',
       'class': '',
+      'js_options': [],
       'attributes': [],
-      'select2': []
     }
   },
   'textarea': {
@@ -349,8 +349,8 @@ export const fields = {
       'id': '',
       'name': 'Color Picker',
       'type': 'color',
-      'std': '',
       'desc': '',
+      'std': '',
       'clone': false,
     },
     'advanced': {
@@ -424,11 +424,10 @@ export const fields = {
     'general': {
       'id': '',
       'type': 'autocomplete',
-      'name': 'Auto Complete',
+      'name': 'Autocomplete',
       'desc': '',
+      'options': '',
       'size': '',
-      'options': [],
-      'multiple': false,
       'clone': false,
     },
     'advanced': {
@@ -443,9 +442,7 @@ export const fields = {
       'id': '',
       'type': 'fieldset_text',
       'name': 'Fieldset Text',
-      'std': '',
       'desc': '',
-      'rows': 2,
       'options': [],
       'clone': false
     },
@@ -501,8 +498,8 @@ export const fields = {
       'id': '',
       'type': 'date',
       'name': 'Date Picker',
-      'std': '',
       'desc': '',
+      'std': '',
       'size': '',
       'inline': false,
       'timestamp': false,
@@ -521,8 +518,8 @@ export const fields = {
       'id': '',
       'type': 'datetime',
       'name': 'Date Time Picker',
-      'std': '',
       'desc': '',
+      'std': '',
       'size': '',
       'inline': false,
       'timestamp': false,
@@ -802,16 +799,6 @@ export const ADVANCED_ADDITIONAL = {
   "editor": {
     "title": "Editor options",
     "titleLink": 'https://codex.wordpress.org/Function_Reference/wp_editor',
-    "buttonName": "+ Option"
-  },
-  "date_picker": {
-    "title": "Date picker options",
-    "titleLink": 'https://api.jqueryui.com/datepicker/',
-    "buttonName": "+ Option"
-  },
-  "datetime_picker": {
-    "title": "Date picker options",
-    "titleLink": 'https://api.jqueryui.com/datepicker/',
     "buttonName": "+ Option"
   },
   "time_picker": {

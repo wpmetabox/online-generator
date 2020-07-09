@@ -31,9 +31,10 @@ export const getLabel = (name, type) => {
 };
 
 export const getElementControlName = (name, type) => {
+  let types;
   switch (name) {
     case 'std':
-        const types = {
+        types = {
             'button': 'StdButton',
             'checkbox': 'StdCheckbox',
             'checkbox_list': 'StdChoice',
@@ -50,8 +51,19 @@ export const getElementControlName = (name, type) => {
     case 'rows':
     case 'cols':
       return 'NumberInput';
+    case 'inline':
+        types = {
+            'date': 'InlineDate',
+            'datetime': 'InlineDate',
+        };
+        return types[type] ? types[type] : 'Inline';
+    case 'options':
+        types = {
+            'fieldset_text': 'OptionsFieldsetText',
+        };
+        return types[type] ? types[type] : 'Options';
     default:
-      return name.charAt(0).toUpperCase() + name.slice(1);
+      return toTitleCase(name);
   }
 }
 
@@ -146,3 +158,4 @@ const getAdvancedData = (advancedItems, index) => {
 }
 
 export const ucfirst = string => string.charAt(0).toUpperCase() + string.slice(1);
+const toTitleCase = string => string.split('_').map(ucfirst).join('');
