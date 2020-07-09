@@ -37,7 +37,8 @@ export const getElementControlName = (name, type) => {
             'button': 'StdButton',
             'checkbox': 'StdCheckbox',
             'checkbox_list': 'StdChoice',
-            'select': 'StdChoice'
+            'select': 'StdChoice',
+            'textarea': 'StdChoice',
         };
         return types[type] ? types[type] : 'TextInput';
     case 'placeholder':
@@ -46,6 +47,8 @@ export const getElementControlName = (name, type) => {
     case 'max':
       return 'TextInput';
     case 'size':
+    case 'rows':
+    case 'cols':
       return 'NumberInput';
     default:
       return name.charAt(0).toUpperCase() + name.slice(1);
