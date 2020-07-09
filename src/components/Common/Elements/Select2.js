@@ -2,31 +2,31 @@ import React, { useState } from 'react';
 import AdvancedAdditionalItem from './AdvancedAdditionalItem.js';
 import { ADVANCED_ADDITIONAL } from '../../../constants/constants';
 
-const Select2 = (props) => {
-    const [optionalList, setAttributes] = useState(props.data['select2']);
+const Select2 = props => {
+    const [list, setList] = useState(props.data['select2']);
     const customData = ADVANCED_ADDITIONAL['select2'] ;
-    
+    const removeItem = index => {
+      let newList = [...list];
+      newList.splice(index, 1);
+      setList(newList);
+    }
+
     return (
-        <div className="custom_attributes">
-        <h3>
-          {customData?.titleLink 
-            ? <a href={customData?.titleLink}>{customData?.title}</a>
-            : <p>{customData?.title}</p>
+      <div className="og-attributes">
+        <h4>
+          {
+            customData?.titleLink
+            ? <a href={customData?.titleLink} target="_blank" rel="noreferrer noopener">{customData?.title}</a>
+            : customData?.title
           }
-        </h3>
-        <table >
-          <tbody>
-            {
-              optionalList?.map((item, index) => (
-                <AdvancedAdditionalItem data={item} key={index} index={index} register={props.register} name={`fields-${props.index}`} type='select2'/>
-              ))
-            }
-          </tbody>
-        </table>
-        <button type="button" className="og-button--small" onClick={() => setAttributes(optionalList.concat({ key: '', label: '' }))} >{customData?.buttonName}</button>
-        <input type='hidden' name={`fields-${props.index}-select2`} value={optionalList?.length} />
+        </h4>
+        {
+          list.map((item, index) => (
+            <AdvancedAdditionalItem data={item} key={index} index={index} removeItem={removeItem} register={props.register} name={`fields-${props.index}`} type='js_options' />
+          ))
+        }
+        <button type="button" onClick={() => setList(list.concat({ key: '', label: '' }))}>+ Add Option</button>
       </div>
     )
 }
-
 export default Select2;

@@ -24,11 +24,10 @@ const Attributes = (props) => {
       </h4>
       {
         list.map((item, index) => (
-          <AdvancedAdditionalItem data={item} key={index} index={index} removeItem={removeItem} register={props.register} name={`fields-${props.index}`} type='attributes' />
+          <AdvancedAdditionalItem data={item} key={index} index={index} removeItem={removeItem} register={props.register} name={`fields-${props.index}`} type='attrs' />
         ))
       }
       <button type="button" onClick={() => setList(list.concat({ key: '', label: '' }))}>+ Add Attribute</button>
-      <input type='hidden' name={`fields-${props.index}-attributes`} value={list.length} />
     </div>
   )
 }

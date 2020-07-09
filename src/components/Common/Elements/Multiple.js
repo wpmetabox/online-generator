@@ -1,10 +1,5 @@
 import React from 'react';
-import Checkbox from './Checkbox'
-import { getLabel } from '../../../utility/functions';
-import DivRow from '../DivRow';
+import Checkbox from '../Checkbox';
 
-const Multiple = ({ name, defaultValue, register, label, type }) => {
-    return <DivRow label={getLabel(label, type)}><Checkbox name={name} ref={register} keyValue={name} defaultValue={defaultValue} /></DivRow>
-}
-
+const Multiple = props => <Checkbox {...props} label="Multiple" tooltip="Allow to select multiple choices"/>
 export default Multiple;

@@ -2,21 +2,12 @@ import { TEXT_INPUT, NUMBER_INPUT, CHECKBOX, fields, DROPDOWN_MENU, RADIO_CHECKB
 
 export const getLabel = (name, type) => {
   const labels = {
-    before: "Before",
-    after: "After",
     class: "Custom CSS class",
-    id: "ID",
-    name: "Label",
-    desc: "Description",
     std: "Default value",
     size: "Size of the input box",
     placeholder: "Placeholder",
-    clone: "Cloneable",
     min: "Minimum value",
     max: "Maximum value",
-    step: "Step",
-    inline: "Inline",
-    multiple: "Multiple?",
     rows: "Rows",
     cols: "Columns",
     prefix: "Prefix",
@@ -46,6 +37,7 @@ export const getElementControlName = (name, type) => {
             'button': 'StdButton',
             'checkbox': 'StdCheckbox',
             'checkbox_list': 'StdChoice',
+            'select': 'StdChoice'
         };
         return types[type] ? types[type] : 'TextInput';
     case 'placeholder':

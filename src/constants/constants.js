@@ -67,8 +67,8 @@ export const fields = {
       'name': 'Text',
       'desc': '',
       'std': '',
-      'size': '',
       'placeholder': '',
+      'size': '',
       'clone': false,
     },
     'advanced': {
@@ -105,8 +105,8 @@ export const fields = {
       'name': 'URL',
       'desc': '',
       'std': '',
-      'size': '',
       'placeholder': '',
+      'size': '',
       'clone': false,
     },
     'advanced': {
@@ -123,8 +123,8 @@ export const fields = {
       'type': 'email',
       'desc': '',
       'std': '',
-      'size': '',
       'placeholder': '',
+      'size': '',
       'clone': false,
     },
     'advanced': {
@@ -225,8 +225,8 @@ export const fields = {
       'name': 'Password',
       'desc': '',
       'std': '',
-      'size': '',
       'placeholder': '',
+      'size': '',
       'clone': false
     },
     'advanced': {
@@ -259,9 +259,9 @@ export const fields = {
       'name': 'Select',
       'type': 'select',
       'desc': '',
+      'options': '',
       'std': '',
-      'placeholder': 'Select an Item',
-      'options': [],
+      'placeholder': 'Select an item',
       'multiple': false,
       'clone': false
     },
@@ -278,9 +278,9 @@ export const fields = {
       'name': 'Select Advanced',
       'type': 'select_advanced',
       'desc': '',
+      'options': '',
       'std': '',
-      'placeholder': 'Select an Item',
-      'options': [],
+      'placeholder': 'Select an item',
       'multiple': false,
       'clone': false
     },
@@ -367,8 +367,8 @@ export const fields = {
       'name': 'oEmbed',
       'desc': 'oEmbed description',
       'std': '',
-      'size': '',
       'placeholder': '',
+      'size': '',
       'clone': false
     },
     'advanced': {
@@ -784,12 +784,10 @@ export const ADVANCED_ADDITIONAL = {
   "attributes": {
     "title": "Custom attributes",
     "titleLink": "https://docs.metabox.io/extensions/meta-box-builder/#custom-attributes",
-    "buttonName": "+ Attribute"
   },
   "select2": {
     "title": "Select2 options",
-    "titleLink": "https://select2.org/",
-    "buttonName": "+ Option"
+    "titleLink": "https://select2.org/configuration",
   },
   "query_args": {
     "title": "Query arguments",
