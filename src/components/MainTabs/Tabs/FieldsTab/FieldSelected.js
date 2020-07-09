@@ -3,8 +3,10 @@ import { trashIcon, copyIcon, arrowDownIcon, arrowUpIcon } from '../../../../con
 import { TabPanel, Tabs, TabList, Tab } from 'react-tabs';
 import GeneralContent from './FieldContent/GeneralContent';
 import AdvancedContent from './FieldContent/AdvancedContent';
+import {ucfirst} from '../../../../utility/functions';
 
-const FieldSelected = (props) => {
+const FieldSelected = props => {
+  const type = props.data.general.type;
   return (
     <div
       data-position={props.index}
@@ -14,13 +16,13 @@ const FieldSelected = (props) => {
       onDrop={props.onDrop}
       onDragLeave={props.onDragLeave}
       className={`og-item og-collapsible${props.isShow ? ' og-collapsible--expanded' : ''} ${props.dragAndDrop && props.dragAndDrop.draggedTo === Number(props.index) && "dropArea"}`}>
-      <input ref={props.register} type="hidden" name={`fields-${props.index}-type`} defaultValue={props.data.general.type} />
+      <input ref={props.register} type="hidden" name={`fields-${props.index}-type`} defaultValue={type} />
       <div className="og-item__header og-collapsible__header" onClick={() => props.handleShow(props.index + 1)}>
-        <div className="og-item__title">{props.data?.general?.name}</div>
+        <div className="og-item__title">{props.data?.general?.name || ucfirst(type)}</div>
         <div className="og-item__actions">
-          <span className="og-item__type">{props.data?.general?.type}</span>
+          <span className="og-item__type">{type}</span>
           <span className="og-item__action og-item__action--remove" title="Remove" onClick={() => props.removeItem(props.index)}>{trashIcon}</span>
-          <span className="og-item__action og-item__action--duplicate" title="Duplicate" onClick={() => props.copyItem(props.data?.general?.type, props.index)} >{copyIcon}</span>
+          <span className="og-item__action og-item__action--duplicate" title="Duplicate" onClick={() => props.copyItem(type, props.index)} >{copyIcon}</span>
           <span className="og-item__action og-item__action--toggle" title="Toggle Settings">{props.isShow ? arrowUpIcon : arrowDownIcon}</span>
         </div>
       </div>

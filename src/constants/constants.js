@@ -85,10 +85,10 @@ export const fields = {
       'name': 'Number',
       'desc': '',
       'std': '',
-      'placeholder': '',
-      'step': '',
       'min': '',
       'max': '',
+      'step': '',
+      'placeholder': '',
       'clone': false,
     },
     'advanced': {
@@ -315,11 +315,7 @@ export const fields = {
     'general': {
       'id': '',
       'type': 'hidden',
-      'name': 'Hidden',
-      'desc': '',
       'std': '',
-
-      'clone': false
     },
     'advanced': {
       'before': '',

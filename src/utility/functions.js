@@ -12,8 +12,8 @@ export const getLabel = (name, type) => {
     size: "Size of the input box",
     placeholder: "Placeholder",
     clone: "Cloneable",
-    min: "Min",
-    max: "Max",
+    min: "Minimum value",
+    max: "Maximum value",
     step: "Step",
     inline: "Inline",
     multiple: "Multiple?",
@@ -50,6 +50,8 @@ export const getElementControlName = (name, type) => {
         return types[type] ? types[type] : 'TextInput';
     case 'placeholder':
     case 'class':
+    case 'min':
+    case 'max':
       return 'TextInput';
     case 'size':
       return 'NumberInput';
@@ -147,3 +149,5 @@ const getAdvancedData = (advancedItems, index) => {
 
     return result
 }
+
+export const ucfirst = string => string.charAt(0).toUpperCase() + string.slice(1);

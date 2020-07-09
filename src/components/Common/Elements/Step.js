@@ -1,10 +1,5 @@
 import React from 'react';
-import Input from './Input';
-import { getLabel } from '../../../utility/functions';
-import DivRow from '../DivRow';
+import Input from '../Input';
 
-const Step = ({ name, defaultValue, register, label, type }) => {
-    return <DivRow label={getLabel(label, type)}><Input type='number' ref={register} name={name} keyValue={name} defaultValue={defaultValue} /></DivRow>
-}
-
+const Step = props => <Input {...props} label="Step" type="text" tooltip="Set the increments at which a numeric value can be set. It can be the string 'any' (for floating numbers) or a positive number." />
 export default Step;
