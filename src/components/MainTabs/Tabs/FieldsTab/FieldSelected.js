@@ -14,6 +14,7 @@ const FieldSelected = (props) => {
       onDrop={props.onDrop}
       onDragLeave={props.onDragLeave}
       className={`og-item og-collapsible${props.isShow ? ' og-collapsible--expanded' : ''} ${props.dragAndDrop && props.dragAndDrop.draggedTo === Number(props.index) && "dropArea"}`}>
+      <input ref={props.register} type="hidden" name={`fields-${props.index}-type`} defaultValue={props.data.general.type} />
       <div className="og-item__header og-collapsible__header" onClick={() => props.handleShow(props.index + 1)}>
         <div className="og-item__title">{props.data?.general?.name}</div>
         <div className="og-item__actions">
