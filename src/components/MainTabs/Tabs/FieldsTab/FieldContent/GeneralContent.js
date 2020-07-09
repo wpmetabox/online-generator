@@ -1,5 +1,5 @@
 import React, { lazy, Suspense, memo } from 'react';
-import {getLabel, getElementControlName} from '../../../../../utility/functions';
+import {getElementControlName} from '../../../../../utility/functions';
 
 const GeneralContent = (props) => {
 
@@ -19,7 +19,7 @@ const GeneralContent = (props) => {
     <div className="og-item__content">
       {
         Object.keys(props.fieldData).map((keyName, keyIndex) =>
-          <Suspense fallback={null} key={getLabel(keyName) + keyIndex}>
+          <Suspense fallback={null} key={keyName + keyIndex}>
             {getElement(keyName, keyIndex)}
           </Suspense>
         )

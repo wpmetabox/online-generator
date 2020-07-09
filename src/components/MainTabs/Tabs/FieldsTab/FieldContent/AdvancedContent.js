@@ -1,9 +1,9 @@
 import React, { memo, Suspense, lazy } from 'react';
-import {getLabel, getElementControlName} from '../../../../../utility/functions';
+import {getElementControlName} from '../../../../../utility/functions';
 
 const AdvancedContent = (props) => {
   const getElement = (name) => {
-    let componentName = getElementControlName(name);
+    let componentName = getElementControlName(name, props.type);
     let Element = lazy(() => import(`../../../../Common/Elements/${componentName}`))
 
     return <Element
@@ -21,7 +21,7 @@ const AdvancedContent = (props) => {
     <div className="og-item__content">
       {
         Object.keys(props.data).map((keyName, keyIndex) =>
-          <Suspense fallback={null} key={getLabel(keyName) + keyIndex}>
+          <Suspense fallback={null} key={keyName + keyIndex}>
             {getElement(keyName, keyIndex)}
           </Suspense>)
       }

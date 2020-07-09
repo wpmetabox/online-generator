@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import AdvancedAdditionalItem from './AdvancedAdditionalItem.js';
 
-const JsOptionsDate = props => {
+const JsOptionsTime= props => {
     const [list, setList] = useState([]);
     const removeItem = index => {
       let newList = [...list];
@@ -11,7 +11,7 @@ const JsOptionsDate = props => {
 
     return (
       <div className="og-attributes">
-        <h4><a href="https://api.jqueryui.com/datepicker/" target="_blank" rel="noreferrer noopener">Date picker options</a></h4>
+        <h4><a href="http://trentrichardson.com/examples/timepicker" target="_blank" rel="noreferrer noopener">Time picker options</a></h4>
         {
           list.map((item, index) => (
             <AdvancedAdditionalItem data={item} key={index} index={index} removeItem={removeItem} register={props.register} name={`fields-${props.index}`} type='js_options' />
@@ -21,4 +21,4 @@ const JsOptionsDate = props => {
       </div>
     )
 }
-export default JsOptionsDate;
+export default JsOptionsTime;

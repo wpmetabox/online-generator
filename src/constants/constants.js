@@ -509,8 +509,8 @@ export const fields = {
       'before': '',
       'after': '',
       'class': '',
+      'js_options': [],
       'attributes': [],
-      'date_picker': []
     }
   },
   'datetime': {
@@ -529,8 +529,8 @@ export const fields = {
       'before': '',
       'after': '',
       'class': '',
+      'js_options': [],
       'attributes': [],
-      'datetime_picker': []
     }
   },
   'time': {
@@ -547,8 +547,8 @@ export const fields = {
       'before': '',
       'after': '',
       'class': '',
+      'js_options': [],
       'attributes': [],
-      'time_picker': []
     }
   },
   'post': {

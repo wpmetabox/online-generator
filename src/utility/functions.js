@@ -35,13 +35,13 @@ export const getElementControlName = (name, type) => {
   switch (name) {
     case 'std':
         types = {
-            'button': 'StdButton',
-            'checkbox': 'StdCheckbox',
-            'checkbox_list': 'StdChoice',
-            'select': 'StdChoice',
-            'textarea': 'StdChoice',
+            button: 'StdButton',
+            checkbox: 'StdCheckbox',
+            checkbox_list: 'StdChoice',
+            select: 'StdChoice',
+            textarea: 'StdChoice',
         };
-        return types[type] ? types[type] : 'TextInput';
+        return types[type] || 'TextInput';
     case 'placeholder':
     case 'class':
     case 'min':
@@ -53,15 +53,22 @@ export const getElementControlName = (name, type) => {
       return 'NumberInput';
     case 'inline':
         types = {
-            'date': 'InlineDate',
-            'datetime': 'InlineDate',
+            date: 'InlineDate',
+            datetime: 'InlineDate',
         };
-        return types[type] ? types[type] : 'Inline';
+        return types[type] || 'Inline';
     case 'options':
         types = {
-            'fieldset_text': 'OptionsFieldsetText',
+            fieldset_text: 'OptionsFieldsetText',
         };
-        return types[type] ? types[type] : 'Options';
+        return types[type] || 'Options';
+    case 'js_options':
+        types = {
+            date: 'JsOptionsDate',
+            datetime: 'JsOptionsDate',
+            time: 'JsOptionsTime',
+        };
+        return types[type] || 'JsOptions';
     default:
       return toTitleCase(name);
   }
