@@ -12,6 +12,7 @@ const GeneralContent = (props) => {
       register={props.register}
       defaultValue={props.fieldData[name]}
       data={props.fieldData}
+      index={props.index}
       type={props.type} />
   }
 

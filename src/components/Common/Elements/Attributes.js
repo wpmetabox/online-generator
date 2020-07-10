@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
 import AdvancedAdditionalItem from './AdvancedAdditionalItem.js';
-import { ADVANCED_ADDITIONAL } from '../../../constants/constants';
 
-const Attributes = (props) => {
-  const customData = ADVANCED_ADDITIONAL['attributes'];
-
-  const [list, setList] = useState(props.data['attributes']);
-
+const Attributes = props => {
+  const [list, setList] = useState([]);
   const removeItem = index => {
     let newList = [...list];
     newList.splice(index, 1);
@@ -15,13 +11,7 @@ const Attributes = (props) => {
 
   return (
     <div className="og-attributes">
-      <h4>
-        {
-          customData?.titleLink
-            ? <a href={customData?.titleLink} target="_blank" rel="noreferrer noopener">{customData?.title}</a>
-            : customData?.title
-        }
-      </h4>
+      <h4><a href="https://docs.metabox.io/extensions/meta-box-builder/#custom-attributes" target="_blank" rel="noreferrer noopener">Custom attributes</a></h4>
       {
         list.map((item, index) => (
           <AdvancedAdditionalItem data={item} key={index} index={index} removeItem={removeItem} register={props.register} name={`fields-${props.index}`} type='attrs' />

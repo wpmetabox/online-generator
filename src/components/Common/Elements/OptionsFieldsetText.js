@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {xIcon} from '../../../constants/icons';
 
-const OptionsFieldsetText = (props) => {
+const OptionsFieldsetText = props => {
   const [list, setList] = useState(props.data['options']);
 
   const removeItem = index => {
