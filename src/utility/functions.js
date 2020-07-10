@@ -12,9 +12,6 @@ export const getLabel = (name, type) => {
     cols: "Columns",
     prefix: "Prefix",
     suffix: "Suffix",
-    address_field: "Address Field",
-    api_key: "Api Key",
-    region: "Region",
     timestamp: "Timestamp",
     max_file_uploads: "Max File Uploads",
     force_delete: "Force Delete?",
@@ -38,6 +35,7 @@ export const getElementControlName = (name, type) => {
             button: 'StdButton',
             checkbox: 'StdCheckbox',
             checkbox_list: 'StdChoice',
+            map: 'StdMap',
             select: 'StdChoice',
             textarea: 'StdChoice',
         };

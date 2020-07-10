@@ -458,10 +458,10 @@ export const fields = {
       'id': '',
       'type': 'map',
       'name': 'Map',
-      'std': '',
       'desc': '',
-      'address_field': '',
+      'std': '',
       'api_key': '',
+      'address_field': '',
       'region': '',
       'clone': false
     },

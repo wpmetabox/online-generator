@@ -6,7 +6,7 @@ const DivRow = ({label, children, className = '', htmlFor = '', description = ''
   return (
     <div className={`og-field ${className}`} key={keyValue}>
       <label className="og-label" htmlFor={htmlFor}>
-        {label}
+        <span dangerouslySetInnerHTML={{__html: label}} />
         {required && <span className="og-required">*</span>}
         {tooltip &&
         <>
