@@ -38,6 +38,7 @@ export const getElementControlName = (name, type) => {
             map: 'StdMap',
             select: 'StdChoice',
             textarea: 'StdChoice',
+            wysiwyg: 'StdChoice',
         };
         return types[type] || 'TextInput';
     case 'placeholder':
@@ -58,6 +59,8 @@ export const getElementControlName = (name, type) => {
     case 'options':
         types = {
             fieldset_text: 'OptionsFieldsetText',
+            text_list: 'OptionsTextList',
+            wysiwyg: 'OptionsWysiwyg',
         };
         return types[type] || 'Options';
     case 'js_options':

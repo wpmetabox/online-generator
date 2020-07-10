@@ -159,7 +159,6 @@ export const fields = {
       'type': 'text_list',
       'name': 'Text List',
       'desc': '',
-      'std': '',
       'options': [],
       'clone': false,
     },
@@ -404,14 +403,13 @@ export const fields = {
       'std': '',
       'raw': false,
       'clone': false,
-      'options': [],
     },
     'advanced': {
       'before': '',
       'after': '',
       'class': '',
+      'options': [],
       'attributes': [],
-      'editor': []
     }
   },
   'autocomplete': {
@@ -532,8 +530,8 @@ export const fields = {
       'id': '',
       'name': 'Time Picker',
       'type': 'time',
-      'std': '',
       'desc': '',
+      'std': '',
       'size': '',
       'clone': false,
     },
