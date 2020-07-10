@@ -1,12 +1,5 @@
 import React from 'react';
-import Input from './Input';
-import { getLabel } from '../../../utility/functions';
-import DivRow from '../DivRow';
+import Input from '../Input';
 
-const Prefix = ({ name, defaultValue, register, label, type }) => {
-    return (<DivRow label={getLabel(label, type)}>
-        <Input type='text' name={name} defaultValue={defaultValue} ref={register} keyValue={name} /></DivRow>
-    )
-}
-
+const Prefix = props => <Input {...props} type="text" label="Prefix" tooltip="Text displayed before the field value" />
 export default Prefix;

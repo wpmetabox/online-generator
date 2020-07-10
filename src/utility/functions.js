@@ -64,6 +64,7 @@ export const getElementControlName = (name, type) => {
         types = {
             date: 'JsOptionsDate',
             datetime: 'JsOptionsDate',
+            slider: 'JsOptionsSlider',
             time: 'JsOptionsTime',
         };
         return types[type] || 'JsOptions';

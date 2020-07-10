@@ -329,11 +329,9 @@ export const fields = {
       'id': '',
       'type': 'image_select',
       'name': 'Image Select',
-      'std': '',
       'desc': '',
-      // 'force_delete': false,
-      // 'max_file_uploads': 4,
-      'options': [],
+      'std': '',
+      'options': '',
       'multiple': false,
       'clone': false,
     },
@@ -365,7 +363,7 @@ export const fields = {
       'id': '',
       'type': 'oembed',
       'name': 'oEmbed',
-      'desc': 'oEmbed description',
+      'desc': '',
       'std': '',
       'placeholder': '',
       'size': '',
@@ -376,10 +374,6 @@ export const fields = {
       'after': '',
       'class': '',
       'attributes': [],
-      'datalist': {
-        'id': '',
-        'items': []
-      }
     }
   },
   'slider': {
@@ -387,8 +381,8 @@ export const fields = {
       'id': '',
       'type': 'slider',
       'name': 'Slider',
-      'std': '',
       'desc': '',
+      'std': '',
       'prefix': '',
       'suffix': '',
       'clone': false
@@ -397,8 +391,8 @@ export const fields = {
       'before': '',
       'after': '',
       'class': '',
+      'js_options': [],
       'attributes': [],
-      'slider': []
     }
   },
   'wysiwyg': {
