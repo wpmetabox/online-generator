@@ -1,3 +1,6 @@
+body {
+  background: #fff;
+}
 .og {
   --color-accent: #00b1b3;
   --color-gray: #999;
@@ -7,15 +10,22 @@
   --shadow-md: 0 1px 1px rgba(0, 0, 0, .05);
 
   font-size: 14px;
+  margin: 48px 0;
 
   label {
     cursor: pointer;
   }
 
+  &-intro {
+    font-size: 14px;
+    ul {
+      margin-bottom: 0;
+    }
+  }
+
+  @import "elements";
   @import "tabs";
-  @import "input";
   @import "sidebar";
   @import "fields";
-  @import "elements";
   @import "result";
 }

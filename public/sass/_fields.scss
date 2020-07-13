@@ -1,3 +1,32 @@
+&-field {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+&-field--check &-input {
+  label {
+    display: inline-block;
+    margin-right: 24px;
+  }
+  input {
+    vertical-align: baseline;
+    margin-right: 4px;
+    top: -1px;
+  }
+}
+&-label {
+  width: 25%;
+  font-weight: 700;
+}
+&-input {
+  flex: 1;
+}
+&-description {
+  font-style: italic;
+  font-size: 12px;
+  margin-top: 2px;
+}
 &-item {
   margin-top: 12px;
 
