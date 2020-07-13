@@ -15,7 +15,6 @@ const initialDnDState = {
 
 const FieldsTab = (props) => {
   const [selectedList, setListSelected] = useState([]);
-  const [isShow, setIsShow] = useState(0);
   const [searchParam, setSearchParam] = useState('');
   const [dragAndDrop, setDragAndDrop] = useState(initialDnDState);
 
@@ -74,7 +73,6 @@ const FieldsTab = (props) => {
       data.general.id = `${type}_${uniqid()}`;
     }
     setListSelected([...selectedList, {type, data}]);
-    setIsShow(selectedList.length);
   }
 
   const removeItem = (index) => {
@@ -95,10 +93,7 @@ const FieldsTab = (props) => {
     let newList = selectedList;
     newList.splice(index + 1, 0, item);
     setListSelected(newList);
-    setIsShow(index + 1);
   }
-
-  const toggleItemSettings = index => setIsShow(index === isShow ? -1 : index)
 
   return (
     <div className="og-fields-wrapper">
@@ -117,12 +112,10 @@ const FieldsTab = (props) => {
         {
           selectedList.map((item, index) =>
             <FieldSelected
-              toggleItemSettings={toggleItemSettings}
               register={props.register}
               data={item.data}
               key={item.type + index}
               index={index}
-              isShow={isShow === index}
               onDragStart={onDragStart}
               onDragOver={onDragOver}
               onDrop={onDrop}
