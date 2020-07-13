@@ -1,5 +1,2 @@
-const Type = () => {
-  return null;
-}
-
+const Type = () => null;
 export default Type;
