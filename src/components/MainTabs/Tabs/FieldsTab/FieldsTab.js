@@ -71,7 +71,7 @@ const FieldsTab = (props) => {
   const addItem = type => {
     let data = {...fields[type]};
     if (data.general.id !== undefined ) {
-      data.general.id = `${type}_${selectedList.length + 1}`;
+      data.general.id = `${type}_${uniqid()}`;
     }
     setListSelected([...selectedList, {type, data}]);
     setIsShow(selectedList.length);
@@ -87,7 +87,7 @@ const FieldsTab = (props) => {
     let item = {type};
     item.data = getDataCopiedItem(type, index);
     if (item.data.general.id !== undefined) {
-      item.data.general.id += '_copy';
+      item.data.general.id += `_${uniqid()}`;
     }
     if (item.data.general.name !== undefined) {
       item.data.general.name += ' Copy';
@@ -138,5 +138,7 @@ const FieldsTab = (props) => {
     </div>
   )
 }
+
+const uniqid = () => Math.random().toString( 36 ).substr( 2 );
 
 export default FieldsTab;
