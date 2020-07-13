@@ -628,10 +628,8 @@ export const fields = {
       'id': '',
       'type': 'file',
       'name': 'File',
-      'std': '',
       'desc': '',
       'max_file_uploads': '',
-      'size': '',
       'force_delete': false,
       'clone': false
     },

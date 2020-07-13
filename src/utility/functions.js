@@ -13,10 +13,10 @@ export const getLabel = (name, type) => {
     prefix: "Prefix",
     suffix: "Suffix",
     timestamp: "Timestamp",
-    max_file_uploads: "Max File Uploads",
-    force_delete: "Force Delete?",
-    mime_type: "Mime Type",
-    max_status: "Max Status",
+    max_file_uploads: "Maximum number of files",
+    force_delete: "Force delete?",
+    mime_type: "Mime type",
+    max_status: "Max status",
     options: "Options",
     parent: "Parent",
     field_type: "Field Type",
@@ -49,6 +49,7 @@ export const getElementControlName = (name, type) => {
     case 'size':
     case 'rows':
     case 'cols':
+    case 'max_file_uploads':
       return 'NumberInput';
     case 'inline':
         types = {
