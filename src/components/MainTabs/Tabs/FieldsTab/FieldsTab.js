@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState} from 'react';
 import FieldMenu from './FieldMenu';
 import FieldSelected from './FieldSelected';
-import { fields } from '../../../../constants/constants';
-import { getDataCopiedItem } from '../../../../utility/functions';
+import {fields} from '../../../../constants/constants';
+import {getDataCopiedItem} from '../../../../utility/functions';
 import SearchResultList from './SearchResultList';
 
 const initialDnDState = {
@@ -15,11 +15,9 @@ const initialDnDState = {
 
 const FieldsTab = (props) => {
   const [selectedList, setListSelected] = useState([]);
-  const [isShow, setIsShow] = useState('');
+  const [isShow, setIsShow] = useState(0);
   const [searchParam, setSearchParam] = useState('');
   const [dragAndDrop, setDragAndDrop] = useState(initialDnDState);
-
-  useEffect(() => setIsShow(selectedList.length), [selectedList.length]);
 
   const onDragStart = (event) => {
     const initialPosition = Number(event.currentTarget.dataset.position);
@@ -59,7 +57,7 @@ const FieldsTab = (props) => {
 
   const onDragLeave = () => setDragAndDrop({...dragAndDrop, draggedTo: null});
 
-  const onDrop = (event) => {
+  const onDrop = () => {
     setListSelected(dragAndDrop.updatedOrder);
 
     setDragAndDrop({
@@ -75,7 +73,8 @@ const FieldsTab = (props) => {
     if (data.general.id !== undefined ) {
       data.general.id = `${type}-${selectedList.length + 1}`;
     }
-    setListSelected([...selectedList, { type, data }]);
+    setListSelected([...selectedList, {type, data}]);
+    setIsShow(selectedList.length + 1);
   }
 
   const removeItem = (index) => {
@@ -85,16 +84,18 @@ const FieldsTab = (props) => {
   }
 
   const copyItem = (type, index) => {
-    const sameTypeItems = selectedList.filter(item => item.type === type);
-    let item = { type };
+    let item = {type};
     item.data = getDataCopiedItem(type, index);
     if (item.data.general.id !== undefined ) {
-      item.data.general.id += `_copy_${sameTypeItems.length}`;
+      item.data.general.id += `_copy_${selectedList.length}`;
     }
-    setListSelected([...selectedList, item]);
+    let newList = selectedList;
+    newList.splice(index + 1, 0, item);
+    setListSelected(newList);
+    setIsShow(index + 1);
   }
 
-  const handleShow = index => setIsShow(index === isShow ? -isShow : index)
+  const toggleItemSettings = index => setIsShow(index === isShow ? -1 : index)
 
   return (
     <div className="og-fields-wrapper">
@@ -113,12 +114,12 @@ const FieldsTab = (props) => {
         {
           selectedList.map((item, index) =>
             <FieldSelected
-              handleShow={handleShow}
+              toggleItemSettings={toggleItemSettings}
               register={props.register}
               data={item.data}
               key={item.type + index}
               index={index}
-              isShow={isShow === index + 1}
+              isShow={isShow === index}
               onDragStart={onDragStart}
               onDragOver={onDragOver}
               onDrop={onDrop}
