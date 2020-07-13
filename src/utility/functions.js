@@ -63,6 +63,12 @@ export const getElementControlName = (name, type) => {
             wysiwyg: 'OptionsWysiwyg',
         };
         return types[type] || 'Options';
+    case 'query_args':
+        types = {
+            taxonomy: 'QueryArgsTaxonomy',
+            taxonomy_advanced: 'QueryArgsTaxonomy',
+        };
+        return types[type] || 'QueryArgs';
     case 'js_options':
         types = {
             date: 'JsOptionsDate',

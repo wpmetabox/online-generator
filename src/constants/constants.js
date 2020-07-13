@@ -569,20 +569,19 @@ export const fields = {
       'id': '',
       'type': 'taxonomy',
       'name': 'Taxonomy',
-      'std': '',
       'desc': '',
-      'placeholder': '',
       'taxonomy': 'category',
-      'field_type': 'select',
-      'parent': false,
+      'field_type': 'select_advanced',
+      'std': '',
+      'placeholder': '',
       'clone': false
     },
     'advanced': {
       'before': '',
       'after': '',
       'class': '',
+      'query_args': [],
       'attributes': [],
-      'query_args': []
     }
   },
   'taxonomy_advanced': {
@@ -590,20 +589,19 @@ export const fields = {
       'id': '',
       'type': 'taxonomy_advanced',
       'name': 'Taxonomy Advanced',
-      'std': '',
       'desc': '',
       'taxonomy': 'category',
-      'field_type': 'select',
+      'field_type': 'select_advanced',
+      'std': '',
       'placeholder': '',
-      'parent': false,
       'clone': false
     },
     'advanced': {
       'before': '',
       'after': '',
       'class': '',
+      'query_args': [],
       'attributes': [],
-      'query_args': []
     }
   },
   'user': {
