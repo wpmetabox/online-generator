@@ -71,10 +71,10 @@ const FieldsTab = (props) => {
   const addItem = type => {
     let data = {...fields[type]};
     if (data.general.id !== undefined ) {
-      data.general.id = `${type}-${selectedList.length + 1}`;
+      data.general.id = `${type}_${selectedList.length + 1}`;
     }
     setListSelected([...selectedList, {type, data}]);
-    setIsShow(selectedList.length + 1);
+    setIsShow(selectedList.length);
   }
 
   const removeItem = (index) => {
@@ -86,8 +86,11 @@ const FieldsTab = (props) => {
   const copyItem = (type, index) => {
     let item = {type};
     item.data = getDataCopiedItem(type, index);
-    if (item.data.general.id !== undefined ) {
-      item.data.general.id += `_copy_${selectedList.length}`;
+    if (item.data.general.id !== undefined) {
+      item.data.general.id += '_copy';
+    }
+    if (item.data.general.name !== undefined) {
+      item.data.general.name += ' Copy';
     }
     let newList = selectedList;
     newList.splice(index + 1, 0, item);
