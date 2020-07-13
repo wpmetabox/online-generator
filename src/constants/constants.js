@@ -645,10 +645,10 @@ export const fields = {
       'id': '',
       'type': 'file_input',
       'name': 'File Input',
-      'placeholder': '',
-      'size': '',
       'desc': '',
       'std': '',
+      'placeholder': '',
+      'size': '',
       'clone': false,
     },
     'advanced': {
@@ -656,10 +656,6 @@ export const fields = {
       'after': '',
       'class': '',
       'attributes': [],
-      'datalist': {
-        'id': '',
-        'items': []
-      }
     }
   },
   'file_advanced': {
@@ -688,9 +684,9 @@ export const fields = {
       'name': 'Image Advanced',
       'desc': '',
       'max_file_uploads': '',
+      'max_status': false,
       'force_delete': false,
       'clone': false,
-      'max_status': false,
     },
     'advanced': {
       'before': '',
@@ -704,11 +700,10 @@ export const fields = {
       'id': '',
       'type': 'image',
       'name': 'Image Upload',
-      'std': '',
       'desc': '',
+      'max_file_uploads': '',
+      'force_delete' : false,
       'clone': false,
-      //			'force_delete' : false,
-      //			'max_file_uploads': 4,
     },
     'advanced': {
       'before': '',
@@ -722,10 +717,10 @@ export const fields = {
       'id': '',
       'type': 'video',
       'name': 'Video',
-      'std': '',
       'desc': '',
-      'force_delete': false,
       'max_file_uploads': 4,
+      'max_status': false,
+      'force_delete': false,
       'clone': false,
     },
     'advanced': {
@@ -734,26 +729,6 @@ export const fields = {
       'class': '',
       'attributes': [],
     }
-  },
-  'plupload_image': {
-    'id': '',
-    'type': 'plupload_image',
-    'name': 'Plupload Image',
-    'std': '',
-    'desc': '',
-    'force_delete': false,
-    'max_file_uploads': 4,
-    'js_options': [],
-  },
-  'thickbox_image': {
-    'id': '',
-    'type': 'thickbox_image',
-    'name': 'Thickbox Image',
-    'std': '',
-    'desc': '',
-    'class': '',
-    'force_delete': false,
-    'max_file_uploads': 4,
   },
 }
 
