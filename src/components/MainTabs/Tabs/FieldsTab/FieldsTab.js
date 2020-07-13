@@ -72,7 +72,9 @@ const FieldsTab = (props) => {
 
   const addItem = type => {
     let data = {...fields[type]};
-    data.general = { ...fields[type].general, id: `${type}-${selectedList.length + 1}` };
+    if (data.general.id !== undefined ) {
+      data.general.id = `${type}-${selectedList.length + 1}`;
+    }
     setListSelected([...selectedList, { type, data }]);
   }
 
@@ -86,7 +88,9 @@ const FieldsTab = (props) => {
     const sameTypeItems = selectedList.filter(item => item.type === type);
     let item = { type };
     item.data = getDataCopiedItem(type, index);
-    item.data.general.id = item.data.general.id + `_copy_${sameTypeItems.length}`;
+    if (item.data.general.id !== undefined ) {
+      item.data.general.id += `_copy_${sameTypeItems.length}`;
+    }
     setListSelected([...selectedList, item]);
   }
 

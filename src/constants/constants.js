@@ -466,12 +466,9 @@ export const fields = {
   },
   'heading': {
     'general': {
-      'id': '',
       'type': 'heading',
       'name': 'Heading',
       'desc': '',
-      'std': '',
-      'clone': false
     },
     'advanced': {
       'before': '',
@@ -481,9 +478,11 @@ export const fields = {
     }
   },
   'divider': {
-    'id': 'uniqid',
-    'type': 'divider',
-    'name': 'Divider',
+    'general': {
+      'type': 'divider',
+      'before': '',
+      'after': '',
+    },
   },
   'date': {
     'general': {

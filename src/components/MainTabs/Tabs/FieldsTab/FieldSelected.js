@@ -7,22 +7,51 @@ import {ucfirst} from '../../../../utility/functions';
 
 const FieldSelected = props => {
   const type = props.data.general.type;
+  const index = props.index;
+
+  if ('divider' === type) {
+    return (
+      <div
+        data-position={index}
+        draggable
+        onDragStart={props.onDragStart}
+        onDragOver={props.onDragOver}
+        onDrop={props.onDrop}
+        onDragLeave={props.onDragLeave}
+        className={`og-item og-collapsible${props.isShow ? ' og-collapsible--expanded' : ''} ${props.dragAndDrop && props.dragAndDrop.draggedTo === Number(index) && "dropArea"}`}>
+        <input ref={props.register} type="hidden" name={`fields-${index}-type`} defaultValue={type} />
+        <div className="og-item__header og-collapsible__header" onClick={() => props.handleShow(index + 1)}>
+          <div className="og-item__title">{props.data?.general?.name || ucfirst(type)}</div>
+          <div className="og-item__actions">
+            <span className="og-item__type">{type}</span>
+            <span className="og-item__action og-item__action--remove" title="Remove" onClick={() => props.removeItem(index)}>{trashIcon}</span>
+            <span className="og-item__action og-item__action--duplicate" title="Duplicate" onClick={() => props.copyItem(type, index)} >{copyIcon}</span>
+            <span className="og-item__action og-item__action--toggle" title="Toggle Settings">{props.isShow ? arrowUpIcon : arrowDownIcon}</span>
+          </div>
+        </div>
+        <div className="og-item__body og-collapsible__body">
+          <GeneralContent register={props.register} type={type} index={index} fieldData={props.data.general} />
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div
-      data-position={props.index}
+      data-position={index}
       draggable
       onDragStart={props.onDragStart}
       onDragOver={props.onDragOver}
       onDrop={props.onDrop}
       onDragLeave={props.onDragLeave}
-      className={`og-item og-collapsible${props.isShow ? ' og-collapsible--expanded' : ''} ${props.dragAndDrop && props.dragAndDrop.draggedTo === Number(props.index) && "dropArea"}`}>
-      <input ref={props.register} type="hidden" name={`fields-${props.index}-type`} defaultValue={type} />
-      <div className="og-item__header og-collapsible__header" onClick={() => props.handleShow(props.index + 1)}>
+      className={`og-item og-collapsible${props.isShow ? ' og-collapsible--expanded' : ''} ${props.dragAndDrop && props.dragAndDrop.draggedTo === Number(index) && "dropArea"}`}>
+      <input ref={props.register} type="hidden" name={`fields-${index}-type`} defaultValue={type} />
+      <div className="og-item__header og-collapsible__header" onClick={() => props.handleShow(index + 1)}>
         <div className="og-item__title">{props.data?.general?.name || ucfirst(type)}</div>
         <div className="og-item__actions">
           <span className="og-item__type">{type}</span>
-          <span className="og-item__action og-item__action--remove" title="Remove" onClick={() => props.removeItem(props.index)}>{trashIcon}</span>
-          <span className="og-item__action og-item__action--duplicate" title="Duplicate" onClick={() => props.copyItem(type, props.index)} >{copyIcon}</span>
+          <span className="og-item__action og-item__action--remove" title="Remove" onClick={() => props.removeItem(index)}>{trashIcon}</span>
+          <span className="og-item__action og-item__action--duplicate" title="Duplicate" onClick={() => props.copyItem(type, index)} >{copyIcon}</span>
           <span className="og-item__action og-item__action--toggle" title="Toggle Settings">{props.isShow ? arrowUpIcon : arrowDownIcon}</span>
         </div>
       </div>
@@ -33,10 +62,10 @@ const FieldSelected = props => {
             <Tab>Advanced</Tab>
           </TabList>
           <TabPanel>
-            <GeneralContent register={props.register} type={props.data?.general?.type} index={props.index} fieldData={props.data.general} />
+            <GeneralContent register={props.register} type={type} index={index} fieldData={props.data.general} />
           </TabPanel>
           <TabPanel>
-            <AdvancedContent register={props.register} type={props.data?.general?.type} index={props.index} data={props.data.advanced} />
+            <AdvancedContent register={props.register} type={type} index={index} data={props.data.advanced} />
           </TabPanel>
         </Tabs>
       </div>

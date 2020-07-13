@@ -14,13 +14,8 @@ export const getLabel = (name, type) => {
     suffix: "Suffix",
     timestamp: "Timestamp",
     max_file_uploads: "Maximum number of files",
-    force_delete: "Force delete?",
-    mime_type: "Mime type",
-    max_status: "Max status",
     options: "Options",
     parent: "Parent",
-    field_type: "Field Type",
-    post_type: "Post Type",
     taxonomy: "Taxonomy",
   };
 
