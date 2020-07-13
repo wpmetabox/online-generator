@@ -67,6 +67,7 @@ export const getElementControlName = (name, type) => {
         types = {
             taxonomy: 'QueryArgsTaxonomy',
             taxonomy_advanced: 'QueryArgsTaxonomy',
+            user: 'QueryArgsUser',
         };
         return types[type] || 'QueryArgs';
     case 'js_options':

@@ -609,9 +609,9 @@ export const fields = {
       'id': '',
       'type': 'user',
       'name': 'User',
-      'std': '',
       'desc': '',
       'field_type': 'select_advanced', // select, select_advanced,
+      'std': '',
       'placeholder': '',
       'clone': false
     },
@@ -619,8 +619,8 @@ export const fields = {
       'before': '',
       'after': '',
       'class': '',
+      'query_args': [],
       'attributes': [],
-      'query_args': []
     }
   },
   'file': {
