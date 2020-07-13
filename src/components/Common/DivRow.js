@@ -1,6 +1,5 @@
 import React from 'react';
-import ReactTooltip from 'react-tooltip';
-import {infoIcon} from '../../constants/icons';
+import Tooltip from './Tooltip';
 
 const DivRow = ({label, children, className = '', htmlFor = '', description = '', tooltip = '', keyValue = '', required = false}) => {
   return (
@@ -8,12 +7,7 @@ const DivRow = ({label, children, className = '', htmlFor = '', description = ''
       <label className="og-label" htmlFor={htmlFor}>
         <span dangerouslySetInnerHTML={{__html: label}} />
         {required && <span className="og-required">*</span>}
-        {tooltip &&
-        <>
-          <span className="og-tooltip-icon" data-tip={tooltip}>{infoIcon}</span>
-          <ReactTooltip effect="solid" />
-        </>
-        }
+        {tooltip && <Tooltip id={htmlFor} content={tooltip} />}
       </label>
       <div className="og-input">
         {children}

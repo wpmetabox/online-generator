@@ -548,20 +548,20 @@ export const fields = {
       'id': '',
       'type': 'post',
       'name': 'Post',
-      'std': '',
       'desc': '',
+      'std': '',
       'post_type': 'post',
       'field_type': 'select_advanced', // select, select_advanced
-      'placeholder': '',
       'parent': false,
+      'placeholder': '',
       'clone': false,
     },
     'advanced': {
       'before': '',
       'after': '',
       'class': '',
+      'query_args': [],
       'attributes': [],
-      'query_args': []
     }
   },
   'taxonomy': {
