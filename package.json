@@ -1,6 +1,5 @@
 {
   "name": "oneline-generator",
-  "homepage": "https://metabox.io/online-generator2/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

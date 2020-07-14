@@ -1,5 +1,5 @@
 &-field {
-  margin-top: 12px;
+  margin-top: 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -97,6 +97,9 @@
       }
     }
   }
+}
+&-item &-field {
+  margin-top: 12px;
 }
 &-item &-label {
   font-weight: normal;
