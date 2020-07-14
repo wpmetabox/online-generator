@@ -72,7 +72,7 @@ const FieldsTab = (props) => {
     if (data.general.id !== undefined ) {
       data.general.id = `${type}_${uniqid()}`;
     }
-    setListSelected([...selectedList, {type, data, expanded: true}]);
+    setListSelected([...selectedList, {type, data}]);
   }
 
   const removeItem = (index) => {
@@ -125,7 +125,6 @@ const FieldsTab = (props) => {
               draggedTo={dragAndDrop.draggedTo}
               removeItem={removeItem}
               copyItem={copyItem}
-              expanded={item.expanded}
             />
           )
         }
