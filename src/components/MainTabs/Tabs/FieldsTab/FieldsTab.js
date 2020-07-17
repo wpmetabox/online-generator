@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import FieldMenu from './FieldMenu';
 import FieldSelected from './FieldSelected';
-import {fields} from '../../../../constants/constants';
-import {getDataCopiedItem} from '../../../../utility/functions';
+import { fields } from '../../../../constants/constants';
+import { getDataCopiedItem } from '../../../../utility/functions';
 import SearchResultList from './SearchResultList';
 
 const initialDnDState = {
@@ -19,7 +19,9 @@ const FieldsTab = (props) => {
   const [dragAndDrop, setDragAndDrop] = useState(initialDnDState);
 
   const onDragStart = (event) => {
-    const initialPosition = Number(event.currentTarget.dataset.position);
+    const list = [...selectedList]
+    const id = event.currentTarget.dataset.position
+    const initialPosition = list.map(item => item.data.general.id).indexOf(id);
 
     setDragAndDrop({
       ...dragAndDrop,
@@ -35,7 +37,9 @@ const FieldsTab = (props) => {
     event.preventDefault();
     let newList = dragAndDrop.originalOrder;
     const draggedFrom = dragAndDrop.draggedFrom;
-    const draggedTo = Number(event.currentTarget.dataset.position);
+    const list = [...selectedList]
+    const id = event.currentTarget.dataset.position
+    const draggedTo = list.map(item => item.data.general.id).indexOf(id);
     const itemDragged = newList[draggedFrom];
     const remainingItems = newList.filter((item, index) => index !== draggedFrom);
 
@@ -54,7 +58,7 @@ const FieldsTab = (props) => {
     }
   }
 
-  const onDragLeave = () => setDragAndDrop({...dragAndDrop, draggedTo: null});
+  const onDragLeave = () => setDragAndDrop({ ...dragAndDrop, draggedTo: null });
 
   const onDrop = () => {
     setListSelected(dragAndDrop.updatedOrder);
@@ -68,22 +72,20 @@ const FieldsTab = (props) => {
   }
 
   const addItem = type => {
-    let data = {...fields[type]};
-    if (data.general.id !== undefined ) {
-      data.general.id = `${type}_${uniqid()}`;
-    }
-    setListSelected([...selectedList, {type, data}]);
+    const data = { ...fields[type], general: { ...fields[type].general, id: `${type}_${uniqid()}` } };
+    setListSelected([...selectedList, { type, data }]);
   }
 
-  const removeItem = (index) => {
+  const removeItem = (id) => {
     let newList = [...selectedList];
+    const index = newList.map(item => item.data.general.id).indexOf(id);
     newList.splice(index, 1);
     setListSelected(newList);
   }
 
-  const copyItem = (type, index) => {
-    let item = {type};
-    item.data = getDataCopiedItem(type, index);
+  const copyItem = (type, id) => {
+    let item = { type };
+    item.data = getDataCopiedItem(type, id);
     if (item.data.general.id !== undefined) {
       item.data.general.id += `_${uniqid()}`;
     }
@@ -91,9 +93,11 @@ const FieldsTab = (props) => {
       item.data.general.name += ' Copy';
     }
     let newList = [...selectedList];
+    const index = newList.map(item => item.data.general.id).indexOf(id);
     newList.splice(index + 1, 0, item);
     setListSelected(newList);
   }
+  console.log('sss', selectedList)
 
   return (
     <div className="og-fields-wrapper">
@@ -106,17 +110,17 @@ const FieldsTab = (props) => {
         <p>
           {
             selectedList.length > 0
-            ? 'Drag and drop fields to reorder. Click the title bar to reveal field settings.'
-            : 'No fields. Select fields on the left to add them to this field group.'
+              ? 'Drag and drop fields to reorder. Click the title bar to reveal field settings.'
+              : 'No fields. Select fields on the left to add them to this field group.'
           }
         </p>
         {
-          selectedList.map((item, index) =>
+          selectedList.map((item) =>
             <FieldSelected
               register={props.register}
               data={item.data}
-              key={item.type + index}
-              index={index}
+              key={item.data.general.id}
+              index={item.data.general.id}
               onDragStart={onDragStart}
               onDragOver={onDragOver}
               onDrop={onDrop}
@@ -133,6 +137,6 @@ const FieldsTab = (props) => {
   )
 }
 
-const uniqid = () => Math.random().toString( 36 ).substr( 2 );
+const uniqid = () => Math.random().toString(36).substr(2);
 
 export default FieldsTab;

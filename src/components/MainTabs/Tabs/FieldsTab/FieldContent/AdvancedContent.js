@@ -1,5 +1,5 @@
 import React, { memo, Suspense, lazy } from 'react';
-import {getElementControlName} from '../../../../../utility/functions';
+import { getElementControlName } from '../../../../../utility/functions';
 
 const AdvancedContent = (props) => {
   const getElement = (name) => {
