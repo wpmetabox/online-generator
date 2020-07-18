@@ -104,6 +104,10 @@
 &-item &-label {
   font-weight: normal;
 }
+&-item--heading &-field--id,
+&-item--divider &-field--id {
+  display: none;
+}
 
 &-attributes {
   h4 {

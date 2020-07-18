@@ -22,7 +22,7 @@ const FieldSelected = props => {
         onDragOver={props.onDragOver}
         onDrop={props.onDrop}
         onDragLeave={props.onDragLeave}
-        className={`og-item og-collapsible${expanded ? ' og-collapsible--expanded' : ''} ${props.dragAndDrop && props.dragAndDrop.draggedTo === index && "dropArea"}`}
+        className={`og-item og-item--${type} og-collapsible${expanded ? ' og-collapsible--expanded' : ''} ${props.dragAndDrop && props.dragAndDrop.draggedTo === index && "dropArea"}`}
         >
         <input ref={props.register} type="hidden" name={`fields-${index}-type`} defaultValue={type} />
         <Header type={type} index={index} name={props.data.general.name} expanded={expanded} copyItem={props.copyItem} removeItem={props.removeItem} toggleSettings={toggleSettings} />
@@ -41,7 +41,7 @@ const FieldSelected = props => {
       onDragOver={props.onDragOver}
       onDrop={props.onDrop}
       onDragLeave={props.onDragLeave}
-      className={`og-item og-collapsible${expanded ? ' og-collapsible--expanded' : ''} ${props.dragAndDrop && props.dragAndDrop.draggedTo === index && "dropArea"}`}
+      className={`og-item og-item--${type} og-collapsible${expanded ? ' og-collapsible--expanded' : ''} ${props.dragAndDrop && props.dragAndDrop.draggedTo === index && "dropArea"}`}
       >
       <input ref={props.register} type="hidden" name={`fields-${index}-type`} defaultValue={type} />
       <Header type={type} index={index} name={props.data.general.name} expanded={expanded} copyItem={props.copyItem} removeItem={props.removeItem} toggleSettings={toggleSettings} />
