@@ -19,6 +19,10 @@
     &:hover {
       border-color: var(--color-gray);
     }
+    &:focus {
+      outline: none;
+      border-color: var(--color-gray);
+    }
   }
 }
 &-search {
