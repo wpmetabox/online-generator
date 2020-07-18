@@ -260,7 +260,7 @@ export const fields = {
       'desc': '',
       'options': '',
       'std': '',
-      'placeholder': 'Select an item',
+      'placeholder': '',
       'multiple': false,
       'clone': false
     },
@@ -279,7 +279,7 @@ export const fields = {
       'desc': '',
       'options': '',
       'std': '',
-      'placeholder': 'Select an item',
+      'placeholder': '',
       'multiple': false,
       'clone': false
     },
@@ -786,13 +786,9 @@ export const DATA_LIST_TYPE = ['datalist'];
 
 export const LIST_OPTION_TYPE = [
   'attributes',
-  'select2',
   'query_args',
-  'slider',
-  'editor',
-  'date_picker',
-  'datetime_picker',
-  'time_picker',
+  'js_options',
+  'options',
 ]
 
 export const LIST_ADD_SELECT = ["checkbox_list", "radio", "select", "select_advanced", "image_select",  "autocomplete"];
