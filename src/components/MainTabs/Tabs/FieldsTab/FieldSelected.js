@@ -1,8 +1,9 @@
-import React, { useState, useEffect, memo } from 'react';
+import React, { useState, memo } from 'react';
 import { trashIcon, copyIcon, arrowDownIcon, arrowUpIcon } from '../../../../constants/icons';
 import { TabPanel, Tabs, TabList, Tab } from 'react-tabs';
 import GeneralContent from './FieldContent/GeneralContent';
 import AdvancedContent from './FieldContent/AdvancedContent';
+import { ucfirst } from '../../../../utility/functions';
 
 const FieldSelected = props => {
   console.log('zzzz', props)
@@ -24,7 +25,7 @@ const FieldSelected = props => {
         className={`og-item og-collapsible${expanded ? ' og-collapsible--expanded' : ''} ${props.dragAndDrop && props.dragAndDrop.draggedTo === index && "dropArea"}`}
         >
         <input ref={props.register} type="hidden" name={`fields-${index}-type`} defaultValue={type} />
-        <Header type={type} index={index} expanded={expanded} copyItem={props.copyItem} removeItem={props.removeItem} toggleSettings={toggleSettings} />
+        <Header type={type} index={index} name={props.data.general.name} expanded={expanded} copyItem={props.copyItem} removeItem={props.removeItem} toggleSettings={toggleSettings} />
         <div className="og-item__body og-collapsible__body">
           <GeneralContent register={props.register} type={type} index={index} fieldData={props.data.general} />
         </div>
@@ -51,7 +52,7 @@ const FieldSelected = props => {
             <Tab>Advanced</Tab>
           </TabList>
           <TabPanel>
-            {/* <GeneralContent register={props.register} type={type} index={index} fieldData={props.data.general} /> */}
+            { <GeneralContent register={props.register} type={type} index={index} fieldData={props.data.general} /> }
           </TabPanel>
           <TabPanel>
             <AdvancedContent register={props.register} type={type} index={index} data={props.data.advanced} />
@@ -73,7 +74,7 @@ const Header = props => {
 
   return (
     <div className="og-item__header og-collapsible__header" onClick={props.toggleSettings}>
-      <div className="og-item__title" id={`og-item__title__${props.index}`} >{props.name}</div>
+      <div className="og-item__title" id={`og-item__title__${props.index}`}>{props.name || ucfirst(props.type)}</div>
       <div className="og-item__actions">
         <span className="og-item__type">{props.type}</span>
         <span className="og-item__action og-item__action--remove" title="Remove" onClick={remove}>{trashIcon}</span>
