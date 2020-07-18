@@ -59,6 +59,10 @@ const FieldSelected = props => {
           </TabPanel>
         </Tabs>
       </div>
+      <div class="og-item__sort">
+        <button type="button" class="og-item__up" title="Move up">{ arrowUpIcon }</button>
+        <button type="button" class="og-item__down" title="Move down">{ arrowDownIcon }</button>
+      </div>
     </div>
   )
 }

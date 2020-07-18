@@ -107,13 +107,7 @@ const FieldsTab = (props) => {
       </div>
 
       <div className="og-main">
-        <p>
-          {
-            selectedList.length > 0
-              ? 'Drag and drop fields to reorder. Click the title bar to reveal field settings.'
-              : 'No fields. Select fields on the left to add them to this field group.'
-          }
-        </p>
+        {selectedList.length === 0 && <p>No fields. Select fields on the left to add them to this field group.</p>}
         {
           selectedList.map((item) =>
             <FieldSelected

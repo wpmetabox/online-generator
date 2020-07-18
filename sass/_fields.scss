@@ -1,5 +1,5 @@
 &-field {
-  margin-top: 24px;
+  margin-bottom: 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -28,7 +28,8 @@
   margin-top: 2px;
 }
 &-item {
-  margin-top: 12px;
+  margin-bottom: 12px;
+  position: relative;
 
   &__header {
     padding: 8px 12px;
@@ -38,6 +39,7 @@
   }
   &__title {
     font-weight: bold;
+    line-height: 24px;
   }
   &__actions {
     font-size: 12px;
@@ -96,6 +98,42 @@
         opacity: .75;
       }
     }
+  }
+
+  // Sorting.
+  &__sort {
+    position: absolute;
+    right: -32px;
+    top: 0;
+    display: none;
+    padding-left: 8px;
+
+    .og-item:hover & {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &__up,
+  &__down {
+    display: flex;
+    background: none;
+    border: 1px solid var(--color-light);
+    padding: 2px 4px;
+
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      background-color: var(--color-light);
+    }
+  }
+  &__up {
+    border-radius: 4px 4px 0 0;
+    border-bottom-width: 0;
+  }
+  &__down {
+    border-radius: 0 0 4px 4px;
+    border-top-width: 0;
   }
 }
 &-item &-field {
