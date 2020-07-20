@@ -39,14 +39,20 @@ const FieldsTab = (props) => {
     setListSelected(newList);
   };
 
-  const changePosition = (id, type) => {
+  const changePosition = (id, direction) => {
     let newList = [...selectedList];
-    const index = newList.map((item) => item.data.general.id).indexOf(id);
+    const index = newList.map(item => item.data.general.id).indexOf(id);
     const itemChange = newList[index];
-    if (type === 'up') {
+    if (direction === 'up') {
+      if (0 === index) {
+        return;
+      }
       newList[index] = newList[index - 1];
       newList[index - 1] = itemChange;
     } else {
+      if (index === selectedList.length - 1) {
+        return;
+      }
       newList[index] = newList[index + 1];
       newList[index + 1] = itemChange;
     }
