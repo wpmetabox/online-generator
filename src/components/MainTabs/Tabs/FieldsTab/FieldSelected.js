@@ -28,6 +28,10 @@ const FieldSelected = (props) => {
         <div className="og-item__body og-collapsible__body">
           <GeneralContent register={props.register} type={type} index={index} fieldData={props.data.general} />
         </div>
+        <div className="og-item__sort">
+          <button type="button" className="og-item__up" title="Move up" onClick={() => props.changePosition(props.index, 'up')}>{arrowUpIcon}</button>
+          <button type="button" className="og-item__down" title="Move down" onClick={() => props.changePosition(props.index, 'down')}>{arrowDownIcon}</button>
+        </div>
       </div>
     );
   }
@@ -58,9 +62,9 @@ const FieldSelected = (props) => {
           </TabPanel>
         </Tabs>
       </div>
-      <div class="og-item__sort">
-        <button type="button" class="og-item__up" title="Move up" onClick={() => props.changePosition(props.index, 'up')}>{arrowUpIcon}</button>
-        <button type="button" class="og-item__down" title="Move down" onClick={() => props.changePosition(props.index, 'down')}>{arrowDownIcon}</button>
+      <div className="og-item__sort">
+        <button type="button" className="og-item__up" title="Move up" onClick={() => props.changePosition(props.index, 'up')}>{arrowUpIcon}</button>
+        <button type="button" className="og-item__down" title="Move down" onClick={() => props.changePosition(props.index, 'down')}>{arrowDownIcon}</button>
       </div>
     </div>
   );
