@@ -29,6 +29,7 @@
 }
 &-item {
   margin-bottom: 12px;
+  padding-right: 32px;
   position: relative;
 
   &__header {
@@ -103,10 +104,9 @@
   // Sorting.
   &__sort {
     position: absolute;
-    right: -32px;
+    right: 0;
     top: 0;
     display: none;
-    padding-left: 8px;
 
     .og-item:hover & {
       display: flex;
