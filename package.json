@@ -1,12 +1,8 @@
 {
-  "name": "oneline-generator",
+  "name": "online-generator",
   "homepage": "https://metabox.io/online-generator/",
   "version": "1.0.0",
-  "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
     "autoprefixer": "^9.8.2",
     "node-sass": "^4.14.1",
     "postcss-cli": "^7.1.1",
@@ -27,7 +23,6 @@
     "deploy": "scp -r build/* metabox:/home/bitnami/apps/wordpress/htdocs/online-generator/",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
