@@ -1,6 +1,11 @@
 body {
   background: #fff;
 }
+@media (max-width: 767px) {
+  .top-bar .menu-item:nth-child(n+3) {
+    display: none;
+  }
+}
 .og {
   --color-accent: #00b1b3;
   --color-gray: #999;
