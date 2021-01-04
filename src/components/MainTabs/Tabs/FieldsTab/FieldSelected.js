@@ -1,95 +1,29 @@
-import React, { memo, useState } from 'react';
+import React, { memo } from 'react';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
-import { arrowDownIcon, arrowUpIcon, copyIcon, trashIcon } from '../../../../constants/icons';
-import { ucfirst } from '../../../../utility/functions';
-import AdvancedContent from './FieldContent/AdvancedContent';
-import GeneralContent from './FieldContent/GeneralContent';
+import { fieldsData } from '../../../../constants/constants';
+import Content from './Content';
 
-const FieldSelected = props => {
-	const type = props.data.general.type;
-	const index = props.index;
+const FieldSelected = ( { id, field } ) => {
+	let data = { ...fieldsData[ field.type ] };
 
-	const [ expanded, setExpanded ] = useState( false );
-	const toggleSettings = () => setExpanded( !expanded );
-
-	if ( 'divider' === type ) {
-		return (
-			<div className={ `og-item og-item--${ type } og-collapsible${ expanded ? ' og-collapsible--expanded' : '' }` }>
-				<input type="hidden" name={ `fields[${ index }][type]` } defaultValue={ type } />
-				<Header
-					type={ type }
-					index={ index }
-					name={ props.data.general.name }
-					expanded={ expanded }
-					copyItem={ props.copyItem }
-					removeItem={ props.removeItem }
-					toggleSettings={ toggleSettings }
-				/>
-				<div className="og-item__body og-collapsible__body">
-					<GeneralContent type={ type } index={ index } fieldData={ props.data.general } />
-				</div>
-				<div className="og-item__sort">
-					<button type="button" className="og-item__up" title="Move up" onClick={ () => props.changePosition( props.index, 'up' ) }>{ arrowUpIcon }</button>
-					<button type="button" className="og-item__down" title="Move down" onClick={ () => props.changePosition( props.index, 'down' ) }>{ arrowDownIcon }</button>
-				</div>
-			</div>
-		);
+	if ( [ 'divider', 'tab' ].includes( field.type ) ) {
+		return <div className="og-item__body og-collapsible__body">
+			<Content id={ id } data={ data.general } field={ field } />
+		</div>;
 	}
 
-	return (
-		<div className={ `og-item og-item--${ type } og-collapsible${ expanded ? ' og-collapsible--expanded' : '' }` }>
-			<input type="hidden" name={ `fields[${ index }][type]` } defaultValue={ type } />
-			<Header
-				type={ type }
-				index={ index }
-				name={ props.data.general.name }
-				expanded={ expanded }
-				copyItem={ props.copyItem }
-				removeItem={ props.removeItem }
-				toggleSettings={ toggleSettings }
-			/>
-			<div className="og-item__body og-collapsible__body">
-				<Tabs forceRenderTabPanel={ true }>
-					<TabList>
-						<Tab>General</Tab>
-						<Tab>Advanced</Tab>
-					</TabList>
-					<TabPanel>
-						<GeneralContent type={ type } index={ index } fieldData={ props.data.general } />
-					</TabPanel>
-					<TabPanel>
-						<AdvancedContent type={ type } index={ index } data={ props.data.advanced } />
-					</TabPanel>
-				</Tabs>
-			</div>
-			<div className="og-item__sort">
-				<button type="button" className="og-item__up" title="Move up" onClick={ () => props.changePosition( props.index, 'up' ) }>{ arrowUpIcon }</button>
-				<button type="button" className="og-item__down" title="Move down" onClick={ () => props.changePosition( props.index, 'down' ) }>{ arrowDownIcon }</button>
-			</div>
-		</div>
-	);
-};
-const Header = ( props ) => {
-	const duplicate = ( e ) => {
-		e.stopPropagation();
-		props.copyItem( props.type, props.index );
-	};
-	const remove = ( e ) => {
-		e.stopPropagation();
-		props.removeItem( props.index );
-	};
-
-	return (
-		<div className="og-item__header og-collapsible__header" onClick={ props.toggleSettings }>
-			<div className="og-item__title" id={ `og-item__title__${ props.index }` }>{ props.name || ucfirst( props.type ) }</div>
-			<div className="og-item__actions">
-				<span className="og-item__type">{ props.type }</span>
-				<span className="og-item__action og-item__action--remove" title="Remove" onClick={ remove }>{ trashIcon }</span>
-				<span className="og-item__action og-item__action--duplicate" title="Duplicate" onClick={ duplicate }>{ copyIcon }</span>
-				<span className="og-item__action og-item__action--toggle" title="Toggle Settings">{ props.expanded ? arrowUpIcon : arrowDownIcon }</span>
-			</div>
-		</div>
-	);
+	return <Tabs forceRenderTabPanel={ true } className="og-item__body og-collapsible__body">
+		<TabList>
+			<Tab>General</Tab>
+			<Tab>Advanced</Tab>
+		</TabList>
+		<TabPanel>
+			<Content id={ id } data={ data.general } field={ field } />
+		</TabPanel>
+		<TabPanel>
+			<Content id={ id } data={ data.advanced } field={ field } />
+		</TabPanel>
+	</Tabs>;
 };
 
 export default memo( FieldSelected );

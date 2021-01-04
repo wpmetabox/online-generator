@@ -59,7 +59,7 @@ export const fieldTypes = {
   }
 }
 
-export const fields = {
+export const fieldsData = {
   'text': {
     'general': {
       'id': '',

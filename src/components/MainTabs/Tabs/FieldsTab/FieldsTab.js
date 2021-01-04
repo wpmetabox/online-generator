@@ -68,13 +68,14 @@ const FieldsTab = props => {
 
 			<div className="og-main">
 				{ fields.length === 0 && <p>No fields. Select fields on the left to add them to this field group.</p> }
-				{ fields.map( ( item ) => (
+				{ fields.map( ( field, index ) => (
 					<FieldSelected
-						data={ item.data }
-						key={ item.data.general.id }
-						index={ item.data.general.id }
+						key={ field._id }
+						id={ field._id }
+						index={ index }
+						field={ field }
 						removeField={ removeField }
-						duplicateField={ duplicateField }˝
+						duplicateField={ duplicateField }
 						moveField={ moveField }
 					/>
 				) ) }

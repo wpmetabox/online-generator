@@ -1,4 +1,4 @@
-import { TEXT_INPUT, NUMBER_INPUT, CHECKBOX, fields, DROPDOWN_MENU, RADIO_CHECKBOX, LIST_OPTION_TYPE, DATA_LIST_TYPE } from '../constants/constants';
+import { CHECKBOX, DROPDOWN_MENU, NUMBER_INPUT, RADIO_CHECKBOX, TEXT_INPUT } from '../constants/constants';
 
 export const getLabel = (name, type) => {
   const labels = {
@@ -103,88 +103,6 @@ export const getElementType = (name) => {
     }
 
     return type
-}
-
-export const getDataCopiedItem = (type, index) => {
-    let data = fields[type];
-    let result = {}
-    result.general = getGeneralData(data.general, index);
-    result.advanced = getAdvancedData(data.advanced, index)
-
-    return result
-}
-
-const getGeneralData = (generalItems, index) => {
-    let result = {}
-    const multipleInputTypes = ['fieldset_text', 'text_list'];
-
-    Object.keys(generalItems).forEach(item => {
-        const elementName = `fields-${index}-${item}`;
-        let value = getElementValue(elementName);
-        value = value ? value : generalItems[item]
-        result[item] = value;
-
-        if (item === 'options' && multipleInputTypes.includes(item)) {
-            let options = []
-            for (let i = 0; i < value; i++) {
-                options[i] = {}
-                options[i]['key'] = getElementValue(`fields-${index}-${item}-${i}-key`);
-                options[i]['label'] = getElementValue(`fields-${index}-${item}-${i}-label`);
-            }
-            result[item] = options;
-        }
-    })
-
-    return result
-}
-
-const getAdvancedData = (advancedItems, index) => {
-    let result = {}
-    Object.keys(advancedItems).forEach(item => {
-        const elementName = `fields-${index}-${item}`;
-        let value = getElementValue(elementName);
-        value = value ? value : advancedItems[item]
-        if (LIST_OPTION_TYPE.includes(item)) {
-            let optionalList = []
-            for (let i = 0; i < value; i++) {
-                optionalList[i] = {}
-                optionalList[i]['key'] = getElementValue(`fields-${index}-${item}-${i}-key`);
-                optionalList[i]['label'] = getElementValue(`fields-${index}-${item}-${i}-label`);
-            }
-
-            result[item] = optionalList;
-        } else if (DATA_LIST_TYPE.includes(item)) {
-            let dataList = []
-            let idDataList = document.getElementsByName(`fields-${index}-datalist-id`)[0]?.value
-            const listValue = document.getElementsByName(`fields-${index}-datalist-options-0`);
-
-            listValue.forEach(input => {
-                dataList.push(input.value);
-            });
-
-            result[item] = { id: idDataList, items: dataList };
-        } else {
-            result[item] = value;
-        }
-    })
-
-    return result
-}
-
-const getElementValue = name => {
-    const element = document.querySelector(`[name="${name}"]`);
-    if (! element) {
-        return null;
-    }
-    if (['select', 'textarea'].includes(element.tagName) || ['text', 'number', 'email'].includes(element.type)) {
-        return element.value;
-    }
-    if ('checkbox' === element.type) {
-        return element?.checked;
-    }
-    if ('radio' === element.type) {
-        return document.querySelector(`[name="${name}"]:checked`).value;
-    }
 }
 
 export const ucfirst = string => string.charAt(0).toUpperCase() + string.slice(1);
