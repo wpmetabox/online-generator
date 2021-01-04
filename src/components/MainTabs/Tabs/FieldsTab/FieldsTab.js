@@ -1,64 +1,54 @@
+import dotProp from 'dot-prop';
 import React, { useState } from 'react';
-import { fields } from '../../../../constants/constants';
-import { getDataCopiedItem } from '../../../../utility/functions';
 import FieldMenu from './FieldMenu';
 import FieldSelected from './FieldSelected';
 import SearchResultList from './SearchResultList';
 
 const FieldsTab = props => {
-	const [ selectedList, setListSelected ] = useState( [] );
+	const [ fields, setFields ] = useState( [] );
 	const [ searchParam, setSearchParam ] = useState( '' );
 
-	const addItem = type => {
-		const data = {
-			...fields[ type ],
-			general: { ...fields[ type ].general, id: `${ type }_${ uniqid() }` },
-		};
-		setListSelected( [ ...selectedList, { type, data } ] );
-	};
+	const addField = type => setFields( prev => {
+		const id = `${ type }_${ uniqid() }`;
+		const newField = { _id: id, id, type, name: ucwords( type, '_' ) };
+		return [ ...prev, newField ];
+	} );
 
-	const removeItem = ( id ) => {
-		let newList = [ ...selectedList ];
-		const index = newList.map( item => item.data.general.id ).indexOf( id );
-		newList.splice( index, 1 );
-		setListSelected( newList );
-	};
+	const removeField = id => setFields( prev => prev.filter( field => field._id !== id ) );
 
-	const copyItem = ( type, id ) => {
-		let item = { type };
-		item.data = getDataCopiedItem( type, id );
-		if ( item.data.general.id !== undefined ) {
-			item.data.general.id += `_${ uniqid() }`;
-		}
-		if ( item.data.general.name !== undefined ) {
-			item.data.general.name += ' Copy';
-		}
-		let newList = [ ...selectedList ];
-		const index = newList.map( ( item ) => item.data.general.id ).indexOf( id );
-		newList.splice( index + 1, 0, item );
-		setListSelected( newList );
-	};
+	const duplicateField = id => setFields( prev => {
+		let newField = getFieldValue( `fields[${ id }]` );
+		const newId = `${ dotProp.get( newField, 'type' ) }_${ uniqid() }`;
+		newField.id = newId;
+		newField._id = newId;
+		newField.name += ' (Copy)';
 
-	const changePosition = ( id, direction ) => {
-		let newList = [ ...selectedList ];
-		const index = newList.map( item => item.data.general.id ).indexOf( id );
-		const itemChange = newList[ index ];
+		const index = prev.findIndex( field => field._id === id );
+		let newFields = [ ...prev ];
+		newFields.splice( index + 1, 0, newField );
+
+		return newFields;
+	} );
+
+	const moveField = ( index, direction ) => setFields( prev => {
+		let newFields = [ ...prev ];
+		const field = newFields[ index ];
 		if ( direction === 'up' ) {
 			if ( 0 === index ) {
-				return;
+				return newFields;
 			}
-			newList[ index ] = newList[ index - 1 ];
-			newList[ index - 1 ] = itemChange;
+			newFields[ index ] = newFields[ index - 1 ];
+			newFields[ index - 1 ] = field;
 		} else {
-			if ( index === selectedList.length - 1 ) {
-				return;
+			if ( index === prev.length - 1 ) {
+				return newFields;
 			}
-			newList[ index ] = newList[ index + 1 ];
-			newList[ index + 1 ] = itemChange;
+			newFields[ index ] = newFields[ index + 1 ];
+			newFields[ index + 1 ] = field;
 		}
 
-		setListSelected( newList );
-	};
+		return newFields;
+	} );
 
 	return (
 		<div className="og-fields-wrapper">
@@ -71,21 +61,21 @@ const FieldsTab = props => {
 				/>
 				{
 					searchParam
-						? <SearchResultList onSelectField={ addItem } searchParam={ searchParam } />
-						: <FieldMenu onSelectField={ addItem } />
+						? <SearchResultList onSelectField={ addField } searchParam={ searchParam } />
+						: <FieldMenu onSelectField={ addField } />
 				}
 			</div>
 
 			<div className="og-main">
-				{ selectedList.length === 0 && <p>No fields. Select fields on the left to add them to this field group.</p> }
-				{ selectedList.map( ( item ) => (
+				{ fields.length === 0 && <p>No fields. Select fields on the left to add them to this field group.</p> }
+				{ fields.map( ( item ) => (
 					<FieldSelected
 						data={ item.data }
 						key={ item.data.general.id }
 						index={ item.data.general.id }
-						removeItem={ removeItem }
-						copyItem={ copyItem }
-						changePosition={ changePosition }
+						removeField={ removeField }
+						duplicateField={ duplicateField }˝
+						moveField={ moveField }
 					/>
 				) ) }
 			</div>
@@ -94,5 +84,33 @@ const FieldsTab = props => {
 };
 
 const uniqid = () => Math.random().toString( 36 ).substr( 2 );
+
+const ucfirst = string => string[ 0 ].toUpperCase() + string.slice( 1 );
+const ucwords = ( string, delimitor = ' ', join = ' ' ) => string.split( delimitor ).map( ucfirst ).join( join );
+
+const getFieldValue = key => {
+	const data = serializeForm( document.querySelector( '#og-form' ) );
+	return dotProp.get( data, bracketsToDots( key ) );
+};
+
+const serializeForm = form => {
+	const formData = new FormData( form );
+
+	let data = {};
+
+	// Convert `<select multiple>` and checkboxes values to array when more than one option is selected.
+	for ( let [ key, value ] of formData ) {
+		key = bracketsToDots( key );
+		if ( key in data ) {
+			const oldValue = dotProp.get( data, key );
+			value = Array.isArray( oldValue ) ? [ ...oldValue, value ] : [ oldValue, value ];
+		}
+		dotProp.set( data, key, value );
+	}
+
+	return data;
+};
+
+const bracketsToDots = key => key.replace( /\[\]/g, '' ).replace( /\[(.+?)\]/g, '.$1' );
 
 export default FieldsTab;

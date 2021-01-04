@@ -5,6 +5,7 @@
   "license": "gpl-2",
   "dependencies": {
     "autoprefixer": "^9.8.2",
+    "dot-prop": "^6.0.1",
     "node-sass": "^4.14.1",
     "postcss-cli": "^7.1.1",
     "react": "^16.13.1",
