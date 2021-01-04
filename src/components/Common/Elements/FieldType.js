@@ -1,9 +1,9 @@
 import React from 'react';
 import DivRow from '../DivRow';
 
-const FieldType = ({name, ...rest}) => (
-  <DivRow {...rest} htmlFor={name} label="Field type">
-    <select id={name} name={name} defaultValue="select_advanced">
+const FieldType = ( { name, ...rest } ) => (
+  <DivRow { ...rest } htmlFor={ name } label="Field type">
+    <select id={ name } name={ name } defaultValue="select_advanced">
       <option value="select">Select</option>
       <option value="select_advanced">Select advanced</option>
       <option value="select_tree">Select tree</option>
@@ -12,5 +12,5 @@ const FieldType = ({name, ...rest}) => (
       <option value="radio_list">Radio list</option>
     </select>
   </DivRow>
-)
+);
 export default FieldType;
