@@ -2,6 +2,7 @@
   "name": "online-generator",
   "homepage": "https://metabox.io/online-generator/",
   "version": "1.0.0",
+  "license": "gpl-2",
   "dependencies": {
     "autoprefixer": "^9.8.2",
     "node-sass": "^4.14.1",
