@@ -1,5 +1,6 @@
 import dotProp from 'dot-prop';
 import React, { useState } from 'react';
+import { uniqid } from '../../../../utility/functions';
 import FieldMenu from './FieldMenu';
 import FieldSelected from './FieldSelected';
 import SearchResultList from './SearchResultList';
@@ -83,8 +84,6 @@ const FieldsTab = props => {
 		</div>
 	);
 };
-
-const uniqid = () => Math.random().toString( 36 ).substr( 2 );
 
 const ucfirst = string => string[ 0 ].toUpperCase() + string.slice( 1 );
 const ucwords = ( string, delimitor = ' ', join = ' ' ) => string.split( delimitor ).map( ucfirst ).join( join );

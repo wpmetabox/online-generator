@@ -1,19 +1,13 @@
-import React, { lazy, Suspense } from 'react';
-import { Provider } from './context/GeneratorContext';
+import React from 'react';
+import MainTabs from './components/MainTabs/MainTabs';
+import Result from './components/Result';
 
-function App() {
-  const Result = lazy(() => import('./components/Result'))
-  const MainTabs = lazy(() => import('./components/MainTabs/MainTabs'))
-  return (
-    <div className="og">
-      <Provider>
-        <Suspense fallback={null}>
-          <MainTabs />
-          <Result />
-        </Suspense>
-      </Provider>
-    </div>
-  );
-}
+const App = () => (
+	<div className="og">
+		<MainTabs />
+		<Result />
+		{/* <FieldsData /> */}
+	</div>
+);
 
 export default App;

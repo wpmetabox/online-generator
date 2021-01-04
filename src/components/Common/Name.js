@@ -1,5 +1,5 @@
 import React from 'react';
-import DivRow from '../DivRow';
+import DivRow from './DivRow';
 
 const Name = ( { name, defaultValue, ...rest } ) => {
 	const changeFieldLabel = e => document.getElementById( `og-item__title__${ rest.data.id }` ).textContent = e.target.value;
