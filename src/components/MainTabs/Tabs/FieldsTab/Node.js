@@ -1,7 +1,9 @@
 import React, { memo, useState } from 'react';
 import { arrowDownIcon, arrowUpIcon, copyIcon, trashIcon } from '../../../../constants/icons';
+import { ucwords } from '../../../../utility/functions';
+import FieldSelected from './FieldSelected';
 
-const FieldSelected = ( { id, field, index, removeField, duplicateField, moveField } ) => {
+const Node = ( { id, field, index, removeField, duplicateField, moveField } ) => {
 	const [ expanded, setExpanded ] = useState( false );
 	const toggleSettings = () => setExpanded( !expanded );
 
@@ -49,4 +51,4 @@ const FieldSelected = ( { id, field, index, removeField, duplicateField, moveFie
 	);
 };
 
-export default memo( FieldSelected );
+export default memo( Node );

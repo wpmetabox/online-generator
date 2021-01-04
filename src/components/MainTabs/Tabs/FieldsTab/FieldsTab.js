@@ -1,8 +1,8 @@
 import dotProp from 'dot-prop';
 import React, { useState } from 'react';
-import { uniqid } from '../../../../utility/functions';
+import { ucwords, uniqid } from '../../../../utility/functions';
 import FieldMenu from './FieldMenu';
-import FieldSelected from './FieldSelected';
+import Node from './Node';
 import SearchResultList from './SearchResultList';
 
 const FieldsTab = props => {
@@ -70,7 +70,7 @@ const FieldsTab = props => {
 			<div className="og-main">
 				{ fields.length === 0 && <p>No fields. Select fields on the left to add them to this field group.</p> }
 				{ fields.map( ( field, index ) => (
-					<FieldSelected
+					<Node
 						key={ field._id }
 						id={ field._id }
 						index={ index }
@@ -84,9 +84,6 @@ const FieldsTab = props => {
 		</div>
 	);
 };
-
-const ucfirst = string => string[ 0 ].toUpperCase() + string.slice( 1 );
-const ucwords = ( string, delimitor = ' ', join = ' ' ) => string.split( delimitor ).map( ucfirst ).join( join );
 
 const getFieldValue = key => {
 	const data = serializeForm( document.querySelector( '#og-form' ) );

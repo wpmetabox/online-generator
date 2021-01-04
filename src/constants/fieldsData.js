@@ -21,7 +21,7 @@ export const fieldsData = {
 			desc: {
 				control: 'Input',
 				props: {
-					label: 'Input description',
+					label: 'Description',
 					tooltip: 'Display below the field input'
 				},
 				'default': ''
@@ -108,7 +108,7 @@ export const fieldsData = {
 			desc: {
 				control: 'Input',
 				props: {
-					label: 'Input description',
+					label: 'Description',
 					tooltip: 'Display below the field input'
 				},
 				'default': ''
@@ -178,7 +178,7 @@ export const fieldsData = {
 			desc: {
 				control: 'Input',
 				props: {
-					label: 'Input description',
+					label: 'Description',
 					tooltip: 'Display below the field input'
 				},
 				'default': ''
@@ -256,7 +256,7 @@ export const fieldsData = {
 			desc: {
 				control: 'Input',
 				props: {
-					label: 'Input description',
+					label: 'Description',
 					tooltip: 'Display below the field input'
 				},
 				'default': ''
@@ -358,7 +358,7 @@ export const fieldsData = {
 			desc: {
 				control: 'Input',
 				props: {
-					label: 'Input description',
+					label: 'Description',
 					tooltip: 'Display below the field input'
 				},
 				'default': ''
@@ -451,7 +451,7 @@ export const fieldsData = {
 			desc: {
 				control: 'Input',
 				props: {
-					label: 'Input description',
+					label: 'Description',
 					tooltip: 'Display below the field input'
 				},
 				'default': ''
@@ -575,7 +575,7 @@ export const fieldsData = {
 			desc: {
 				control: 'Input',
 				props: {
-					label: 'Input description',
+					label: 'Description',
 					tooltip: 'Display below the field input'
 				},
 				'default': ''
@@ -753,7 +753,7 @@ export const fieldsData = {
 			desc: {
 				control: 'Input',
 				props: {
-					label: 'Input description',
+					label: 'Description',
 					tooltip: 'Display below the field input'
 				},
 				'default': ''
@@ -846,7 +846,7 @@ export const fieldsData = {
 			desc: {
 				control: 'Input',
 				props: {
-					label: 'Input description',
+					label: 'Description',
 					tooltip: 'Display below the field input'
 				},
 				'default': ''
@@ -925,7 +925,7 @@ export const fieldsData = {
 			desc: {
 				control: 'Input',
 				props: {
-					label: 'Input description',
+					label: 'Description',
 					tooltip: 'Display below the field input'
 				},
 				'default': ''
@@ -1021,7 +1021,7 @@ export const fieldsData = {
 			desc: {
 				control: 'Input',
 				props: {
-					label: 'Input description',
+					label: 'Description',
 					tooltip: 'Display below the field input'
 				},
 				'default': ''
@@ -1125,7 +1125,7 @@ export const fieldsData = {
 			desc: {
 				control: 'Input',
 				props: {
-					label: 'Input description',
+					label: 'Description',
 					tooltip: 'Display below the field input'
 				},
 				'default': ''
@@ -1218,7 +1218,7 @@ export const fieldsData = {
 			desc: {
 				control: 'Input',
 				props: {
-					label: 'Input description',
+					label: 'Description',
 					tooltip: 'Display below the field input'
 				},
 				'default': ''
@@ -1492,7 +1492,7 @@ export const fieldsData = {
 			desc: {
 				control: 'Input',
 				props: {
-					label: 'Input description',
+					label: 'Description',
 					tooltip: 'Display below the field input'
 				},
 				'default': ''
@@ -1588,7 +1588,7 @@ export const fieldsData = {
 			desc: {
 				control: 'Input',
 				props: {
-					label: 'Input description',
+					label: 'Description',
 					tooltip: 'Display below the field input'
 				},
 				'default': ''
@@ -1712,7 +1712,7 @@ export const fieldsData = {
 			desc: {
 				control: 'Input',
 				props: {
-					label: 'Input description',
+					label: 'Description',
 					tooltip: 'Display below the field input'
 				},
 				'default': ''
@@ -1806,7 +1806,7 @@ export const fieldsData = {
 			desc: {
 				control: 'Input',
 				props: {
-					label: 'Input description',
+					label: 'Description',
 					tooltip: 'Display below the field input'
 				},
 				'default': ''
@@ -1923,7 +1923,7 @@ export const fieldsData = {
 			desc: {
 				control: 'Input',
 				props: {
-					label: 'Input description',
+					label: 'Description',
 					tooltip: 'Display below the field input'
 				},
 				'default': ''
@@ -2024,7 +2024,7 @@ export const fieldsData = {
 			desc: {
 				control: 'Input',
 				props: {
-					label: 'Input description',
+					label: 'Description',
 					tooltip: 'Display below the field input'
 				},
 				'default': ''
@@ -2117,7 +2117,7 @@ export const fieldsData = {
 			desc: {
 				control: 'Input',
 				props: {
-					label: 'Input description',
+					label: 'Description',
 					tooltip: 'Display below the field input'
 				},
 				'default': ''
@@ -2257,7 +2257,7 @@ export const fieldsData = {
 			desc: {
 				control: 'Input',
 				props: {
-					label: 'Input description',
+					label: 'Description',
 					tooltip: 'Display below the field input'
 				},
 				'default': ''
@@ -2351,7 +2351,7 @@ export const fieldsData = {
 			desc: {
 				control: 'Input',
 				props: {
-					label: 'Input description',
+					label: 'Description',
 					tooltip: 'Display below the field input'
 				},
 				'default': ''
@@ -2453,7 +2453,7 @@ export const fieldsData = {
 			desc: {
 				control: 'Input',
 				props: {
-					label: 'Input description',
+					label: 'Description',
 					tooltip: 'Display below the field input'
 				},
 				'default': ''
@@ -2561,7 +2561,7 @@ export const fieldsData = {
 			desc: {
 				control: 'Input',
 				props: {
-					label: 'Input description',
+					label: 'Description',
 					tooltip: 'Display below the field input'
 				},
 				'default': ''
@@ -2677,7 +2677,7 @@ export const fieldsData = {
 			desc: {
 				control: 'Input',
 				props: {
-					label: 'Input description',
+					label: 'Description',
 					tooltip: 'Display below the field input'
 				},
 				'default': ''
@@ -2779,7 +2779,7 @@ export const fieldsData = {
 			desc: {
 				control: 'Input',
 				props: {
-					label: 'Input description',
+					label: 'Description',
 					tooltip: 'Display below the field input'
 				},
 				'default': ''
@@ -2923,7 +2923,7 @@ export const fieldsData = {
 			desc: {
 				control: 'Input',
 				props: {
-					label: 'Input description',
+					label: 'Description',
 					tooltip: 'Display below the field input'
 				},
 				'default': ''
@@ -3067,7 +3067,7 @@ export const fieldsData = {
 			desc: {
 				control: 'Input',
 				props: {
-					label: 'Input description',
+					label: 'Description',
 					tooltip: 'Display below the field input'
 				},
 				'default': ''
@@ -3182,7 +3182,7 @@ export const fieldsData = {
 			desc: {
 				control: 'Input',
 				props: {
-					label: 'Input description',
+					label: 'Description',
 					tooltip: 'Display below the field input'
 				},
 				'default': ''
@@ -3262,7 +3262,7 @@ export const fieldsData = {
 			desc: {
 				control: 'Input',
 				props: {
-					label: 'Input description',
+					label: 'Description',
 					tooltip: 'Display below the field input'
 				},
 				'default': ''
@@ -3363,7 +3363,7 @@ export const fieldsData = {
 			desc: {
 				control: 'Input',
 				props: {
-					label: 'Input description',
+					label: 'Description',
 					tooltip: 'Display below the field input'
 				},
 				'default': ''
@@ -3472,7 +3472,7 @@ export const fieldsData = {
 			desc: {
 				control: 'Input',
 				props: {
-					label: 'Input description',
+					label: 'Description',
 					tooltip: 'Display below the field input'
 				},
 				'default': ''
@@ -3589,7 +3589,7 @@ export const fieldsData = {
 			desc: {
 				control: 'Input',
 				props: {
-					label: 'Input description',
+					label: 'Description',
 					tooltip: 'Display below the field input'
 				},
 				'default': ''
@@ -3682,7 +3682,7 @@ export const fieldsData = {
 			desc: {
 				control: 'Input',
 				props: {
-					label: 'Input description',
+					label: 'Description',
 					tooltip: 'Display below the field input'
 				},
 				'default': ''
@@ -3778,7 +3778,7 @@ export const fieldsData = {
 			desc: {
 				control: 'Input',
 				props: {
-					label: 'Input description',
+					label: 'Description',
 					tooltip: 'Display below the field input'
 				},
 				'default': ''
