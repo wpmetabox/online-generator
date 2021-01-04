@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react';
+import { memo, useState } from 'react';
 import { arrowDownIcon, arrowUpIcon, copyIcon, trashIcon } from '../../../constants/icons';
 import { ucwords } from '../../../functions';
 import FieldSelected from './FieldSelected';

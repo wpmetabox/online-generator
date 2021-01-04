@@ -1,5 +1,5 @@
 import dotProp from 'dot-prop';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ucwords, uniqid } from '../../functions';
 import FieldMenu from './FieldsTab/FieldMenu';
 import Node from './FieldsTab/Node';

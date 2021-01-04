@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import { memo } from 'react';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import { fieldsData } from '../../../constants/fields';
 import Content from './Content';

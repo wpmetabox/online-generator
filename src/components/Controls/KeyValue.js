@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { xIcon } from '../../constants/icons';
 import { uniqid } from '../../functions';
 import DivRow from './DivRow';

@@ -1,5 +1,5 @@
 import dotProp from 'dot-prop';
-import React, { lazy, memo, Suspense } from 'react';
+import { lazy, memo, Suspense } from 'react';
 
 const Content = ( { id, data, field } ) => {
 	const getControl = name => {
