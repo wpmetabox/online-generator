@@ -1,4 +1,3 @@
-import React from 'react';
 import Checkbox from '../Controls/Checkbox';
 import DivRow from '../Controls/DivRow';
 import Input from '../Controls/Input';
@@ -26,8 +25,8 @@ const SettingsTab = () => (
 		</DivRow>
 		<Checkbox name="settings[autosave]" label="Autosave" />
 		<h3>Advanced</h3>
-		<Input name="settings[prefix]" label="Field ID prefix" defaultValue="" description="Prefix for all fields' ID. Leave empty to ignore or use _ to make fields hidden." tooltip="Auto add a prefix to all field IDs to keep them separated from other field groups or other plugins." />
-		<Input name="settings[text_domain]" label="Text domain" defaultValue="online-generator" tooltip="Required for multilingual website. Used in the exported code only." />
+		<Input name="prefix" label="Field ID prefix" defaultValue="" description="Prefix for all fields' ID. Leave empty to ignore or use _ to make fields hidden." tooltip="Auto add a prefix to all field IDs to keep them separated from other field groups or other plugins." />
+		<Input name="text_domain" label="Text domain" defaultValue="online-generator" tooltip="Required for multilingual website. Used in the exported code only." />
 	</>
 );
 export default SettingsTab;
