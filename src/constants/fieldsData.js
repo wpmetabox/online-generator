@@ -10,7 +10,7 @@ export const fieldsData = {
 				'default': ''
 			},
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,
@@ -97,7 +97,7 @@ export const fieldsData = {
 				'default': ''
 			},
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,
@@ -167,7 +167,7 @@ export const fieldsData = {
 				'default': ''
 			},
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,
@@ -245,7 +245,7 @@ export const fieldsData = {
 				'default': ''
 			},
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,
@@ -347,7 +347,7 @@ export const fieldsData = {
 				'default': ''
 			},
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,
@@ -440,7 +440,7 @@ export const fieldsData = {
 				'default': ''
 			},
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,
@@ -564,7 +564,7 @@ export const fieldsData = {
 				'default': ''
 			},
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,
@@ -742,7 +742,7 @@ export const fieldsData = {
 				'default': ''
 			},
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,
@@ -835,7 +835,7 @@ export const fieldsData = {
 				'default': ''
 			},
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,
@@ -914,7 +914,7 @@ export const fieldsData = {
 				'default': ''
 			},
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,
@@ -1010,7 +1010,7 @@ export const fieldsData = {
 				'default': ''
 			},
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,
@@ -1114,7 +1114,7 @@ export const fieldsData = {
 				'default': ''
 			},
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,
@@ -1207,7 +1207,7 @@ export const fieldsData = {
 				'default': ''
 			},
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,
@@ -1419,7 +1419,7 @@ export const fieldsData = {
 	hidden: {
 		general: {
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,
@@ -1481,7 +1481,7 @@ export const fieldsData = {
 				'default': ''
 			},
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,
@@ -1577,7 +1577,7 @@ export const fieldsData = {
 				'default': ''
 			},
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,
@@ -1701,7 +1701,7 @@ export const fieldsData = {
 				'default': ''
 			},
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,
@@ -1795,7 +1795,7 @@ export const fieldsData = {
 				'default': ''
 			},
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,
@@ -1912,7 +1912,7 @@ export const fieldsData = {
 				'default': ''
 			},
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,
@@ -2013,7 +2013,7 @@ export const fieldsData = {
 				'default': ''
 			},
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,
@@ -2106,7 +2106,7 @@ export const fieldsData = {
 				'default': ''
 			},
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,
@@ -2246,7 +2246,7 @@ export const fieldsData = {
 				'default': ''
 			},
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,
@@ -2340,7 +2340,7 @@ export const fieldsData = {
 				'default': ''
 			},
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,
@@ -2442,7 +2442,7 @@ export const fieldsData = {
 				'default': ''
 			},
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,
@@ -2550,7 +2550,7 @@ export const fieldsData = {
 				'default': ''
 			},
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,
@@ -2666,7 +2666,7 @@ export const fieldsData = {
 				'default': ''
 			},
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,
@@ -2768,7 +2768,7 @@ export const fieldsData = {
 				'default': ''
 			},
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,
@@ -2912,7 +2912,7 @@ export const fieldsData = {
 				'default': ''
 			},
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,
@@ -3056,7 +3056,7 @@ export const fieldsData = {
 				'default': ''
 			},
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,
@@ -3171,7 +3171,7 @@ export const fieldsData = {
 				'default': ''
 			},
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,
@@ -3251,7 +3251,7 @@ export const fieldsData = {
 				'default': ''
 			},
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,
@@ -3352,7 +3352,7 @@ export const fieldsData = {
 				'default': ''
 			},
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,
@@ -3461,7 +3461,7 @@ export const fieldsData = {
 				'default': ''
 			},
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,
@@ -3578,7 +3578,7 @@ export const fieldsData = {
 				'default': ''
 			},
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,
@@ -3671,7 +3671,7 @@ export const fieldsData = {
 				'default': ''
 			},
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,
@@ -3767,7 +3767,7 @@ export const fieldsData = {
 				'default': ''
 			},
 			id: {
-				control: 'Id',
+				control: 'Input',
 				props: {
 					label: 'ID',
 					required: true,

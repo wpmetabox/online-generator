@@ -6,6 +6,7 @@ const Content = ( { id, data, field } ) => {
 		let Control = lazy( () => import( `../../../Common/${ data[ name ].control }` ) );
 
 		return <Control
+			fieldId={ id }
 			name={ `fields[${ id }][${ name }]` }
 			defaultValue={ dotProp.get( field, name, data[ name ].default ) }
 			{ ...data[ name ].props }
