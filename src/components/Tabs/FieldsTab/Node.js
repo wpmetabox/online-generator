@@ -1,6 +1,6 @@
 import React, { memo, useState } from 'react';
-import { arrowDownIcon, arrowUpIcon, copyIcon, trashIcon } from '../../../../constants/icons';
-import { ucwords } from '../../../../utility/functions';
+import { arrowDownIcon, arrowUpIcon, copyIcon, trashIcon } from '../../../constants/icons';
+import { ucwords } from '../../../functions';
 import FieldSelected from './FieldSelected';
 
 const Node = ( { id, field, index, removeField, duplicateField, moveField } ) => {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { fieldTypes } from '../../../../constants/constants';
+import { fieldTypes } from '../../../constants/fields';
 
 const FieldMenu = ({onSelectField}) => {
   const [active, setActive] = useState('Basic');

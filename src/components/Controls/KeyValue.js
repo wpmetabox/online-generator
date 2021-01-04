@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { xIcon } from '../../constants/icons';
-import { uniqid } from '../../utility/functions';
+import { uniqid } from '../../functions';
 import DivRow from './DivRow';
 
 const KeyValue = ( {

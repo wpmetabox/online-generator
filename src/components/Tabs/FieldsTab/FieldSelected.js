@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
-import { fieldsData } from '../../../../constants/fieldsData';
+import { fieldsData } from '../../../constants/fields';
 import Content from './Content';
 
 const FieldSelected = ( { id, field } ) => {
