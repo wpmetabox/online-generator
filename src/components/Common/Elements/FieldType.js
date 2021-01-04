@@ -1,9 +1,9 @@
 import React from 'react';
 import DivRow from '../DivRow';
 
-const FieldType = ({name, register, ...rest}) => (
+const FieldType = ({name, ...rest}) => (
   <DivRow {...rest} htmlFor={name} label="Field type">
-    <select ref={register} id={name} name={name} defaultValue="select_advanced">
+    <select id={name} name={name} defaultValue="select_advanced">
       <option value="select">Select</option>
       <option value="select_advanced">Select advanced</option>
       <option value="select_tree">Select tree</option>

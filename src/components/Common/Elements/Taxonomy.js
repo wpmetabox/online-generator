@@ -1,9 +1,9 @@
 import React from 'react';
 import DivRow from '../DivRow';
 
-const Taxonomy = ({name, register, ...rest}) => (
+const Taxonomy = ({name, ...rest}) => (
   <DivRow {...rest} htmlFor={name} label="Taxonomy">
-    <select ref={register} id={name} name={name} defaultValue="category">
+    <select id={name} name={name} defaultValue="category">
       <option value="category">Category</option>
       <option value="post_tag">Tag</option>
     </select>
