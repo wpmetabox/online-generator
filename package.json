@@ -1,20 +1,18 @@
 {
   "name": "online-generator",
   "homepage": "https://metabox.io/online-generator/",
-  "version": "1.0.0",
+  "version": "2.0.0",
+  "license": "GPL-2.0-or-later",
   "dependencies": {
-    "autoprefixer": "^9.8.2",
-    "node-sass": "^4.14.1",
-    "postcss-cli": "^7.1.1",
-    "react": "^16.13.1",
-    "react-beautiful-dnd": "^13.0.0",
+    "dot-prop": "^6.0.1",
+    "react": "^17.0.1",
     "react-clipboard.js": "^2.0.16",
-    "react-dom": "^16.13.1",
+    "react-dom": "^17.0.1",
     "react-highlight": "^0.12.0",
-    "react-hook-form": "^5.7.2",
-    "react-scripts": "3.4.1",
+    "react-scripts": "4.0.1",
     "react-tabs": "^3.1.1",
-    "react-tooltip": "^4.2.7"
+    "react-tooltip": "^4.2.7",
+    "slugify": "^1.4.6"
   },
   "scripts": {
     "css": "node-sass --output-style compressed -x sass/style.scss -o public",
@@ -39,5 +37,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.1.0",
+    "node-sass": "^5.0.0",
+    "postcss": "^8.2.2",
+    "postcss-cli": "^8.3.1"
   }
 }

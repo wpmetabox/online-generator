@@ -2,7 +2,7 @@
   margin-bottom: 24px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 &-field--check &-input {
   label {
@@ -17,7 +17,6 @@
 }
 &-label {
   width: 25%;
-  font-weight: 700;
 }
 &-input {
   flex: 1;
@@ -138,13 +137,6 @@
 }
 &-item &-field {
   margin-top: 12px;
-}
-&-item &-label {
-  font-weight: normal;
-}
-&-item--heading &-field--id,
-&-item--divider &-field--id {
-  display: none;
 }
 
 &-attributes {
