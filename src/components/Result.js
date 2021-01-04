@@ -5,16 +5,34 @@ import Highlight from 'react-highlight';
 const ResultCode = () => {
 	const [ copied, setCopied ] = useState( false );
 	const [ loading, setLoading ] = useState( false );
+	const [ data, setData ] = useState( '' );
 	const copy = () => {
 		setCopied( true );
 		setTimeout( () => setCopied( false ), 1000 );
 	};
 
-	const data = '';
+	const onClick = e => {
+		e.preventDefault();
+
+		setLoading( true );
+
+		const formData = new FormData( document.querySelector( '#og-form' ) );
+
+		const isTest = window.location.href.includes( 'localhost' );
+		let url = isTest ? 'http://localhost/metaboxio/wp-json/mbb-parser/meta-box' : 'https://metabox.io/wp-json/mbb-parser/meta-box';
+
+		fetch( url, {
+			method: 'POST',
+			body: formData
+		} ).then( response => response.json() ).then( response => {
+			setLoading( false );
+			setData( response );
+		} );
+	};
 
 	return (
 		<>
-			<button type="submit" disabled={ loading }>Generate Code</button>
+			<button type="submit" disabled={ loading } onClick={ onClick }>Generate Code</button>
 			{ loading && <span className="og-loading">Generating code. Please wait...</span> }
 			{
 				data &&

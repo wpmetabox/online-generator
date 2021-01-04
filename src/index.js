@@ -8,7 +8,7 @@ import SettingsTab from './components/Tabs/SettingsTab';
 import { fieldIcon, settingIcon } from './constants/icons';
 
 const App = () => (
-	<form className="og" id="og-form">
+	<form className="og" id="og-form" onSubmit={ e => e.preventDefault() }>
 		<Tabs forceRenderTabPanel={ true }>
 			<TabList>
 				<Tab>{ fieldIcon } Fields</Tab>
