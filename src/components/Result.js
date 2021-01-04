@@ -17,7 +17,6 @@ const ResultCode = () => {
 		const formData = new FormData( document.querySelector( '#og-form' ) );
 		fetch( url, {
 			method: 'POST',
-			headers: { "Content-Type": "application/x-www-form-urlencoded" },
 			body: formData
 		} ).then( response => response.json() ).then( response => {
 			setData( response );
