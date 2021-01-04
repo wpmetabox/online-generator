@@ -1,4 +1,3 @@
-import React from 'react';
 import Tooltip from './Tooltip';
 
 const DivRow = ( { label, children, className = '', htmlFor = '', description = '', tooltip = '', keyValue = '', required = false } ) => {

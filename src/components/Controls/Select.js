@@ -1,4 +1,3 @@
-import React from 'react';
 import DivRow from './DivRow';
 
 const FieldType = ( { name, options, placeholder = '', defaultValue, ...rest } ) => (

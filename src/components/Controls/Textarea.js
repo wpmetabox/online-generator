@@ -1,4 +1,3 @@
-import React from 'react';
 import DivRow from './DivRow';
 
 const Textarea = ( { name, defaultValue, ...rest } ) => (

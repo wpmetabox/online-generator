@@ -3,7 +3,6 @@
  */
 
 import dotProp from 'dot-prop';
-import React from 'react';
 
 // Get full fieldsData from Meta Box Builder /mbb/fields/ REST API.
 let fieldsData = {

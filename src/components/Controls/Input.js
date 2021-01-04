@@ -1,4 +1,3 @@
-import React from 'react';
 import DivRow from './DivRow';
 
 const Input = ( { name, defaultValue, type = 'text', ...rest } ) => (

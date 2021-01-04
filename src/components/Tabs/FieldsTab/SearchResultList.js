@@ -1,4 +1,3 @@
-import React from 'react';
 import { fieldTypes } from '../../../constants/fields';
 
 const SearchResultList = (props) => {
