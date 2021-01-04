@@ -1,11 +1,11 @@
 import dotProp from 'dot-prop';
 import React, { useState } from 'react';
-import { ucwords, uniqid } from '../../../../utility/functions';
-import FieldMenu from './FieldMenu';
-import Node from './Node';
-import SearchResultList from './SearchResultList';
+import { ucwords, uniqid } from '../../functions';
+import FieldMenu from './FieldsTab/FieldMenu';
+import Node from './FieldsTab/Node';
+import SearchResultList from './FieldsTab/SearchResultList';
 
-const FieldsTab = props => {
+const FieldsTab = () => {
 	const [ fields, setFields ] = useState( [] );
 	const [ searchParam, setSearchParam ] = useState( '' );
 

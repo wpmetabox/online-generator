@@ -1,7 +1,7 @@
 import React from 'react';
-import Checkbox from '../../Common/Checkbox';
-import DivRow from '../../Common/DivRow';
-import Input from '../../Common/Input';
+import Checkbox from '../Controls/Checkbox';
+import DivRow from '../Controls/DivRow';
+import Input from '../Controls/Input';
 
 const SettingsTab = () => (
 	<>

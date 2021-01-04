@@ -3,7 +3,7 @@ import React, { lazy, memo, Suspense } from 'react';
 
 const Content = ( { id, data, field } ) => {
 	const getControl = name => {
-		let Control = lazy( () => import( `../../../Common/${ data[ name ].control }` ) );
+		let Control = lazy( () => import( `../../../Controls/${ data[ name ].control }` ) );
 
 		return <Control
 			fieldId={ id }
