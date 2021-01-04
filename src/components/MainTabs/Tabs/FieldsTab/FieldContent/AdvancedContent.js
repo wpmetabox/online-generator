@@ -1,4 +1,4 @@
-import React, { memo, Suspense, lazy } from 'react';
+import React, { lazy, memo, Suspense } from 'react';
 import { getElementControlName } from '../../../../../utility/functions';
 
 const AdvancedContent = (props) => {
@@ -9,7 +9,6 @@ const AdvancedContent = (props) => {
     return <Element
       name={`fields-${props.index}-${name}`}
       label={name}
-      register={props.register}
       defaultValue={props.data[name]}
       data={props.data}
       type={props.type}

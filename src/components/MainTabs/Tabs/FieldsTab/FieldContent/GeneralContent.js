@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, memo } from 'react';
+import React, { lazy, memo, Suspense } from 'react';
 import { getElementControlName } from '../../../../../utility/functions';
 
 const GeneralContent = (props) => {
@@ -10,7 +10,6 @@ const GeneralContent = (props) => {
       name={`fields-${props.index}-${name}`}
       label={name}
       setLabel={props.setLabel}
-      register={props.register}
       defaultValue={props.fieldData[name]}
       data={props.fieldData}
       index={props.index}
