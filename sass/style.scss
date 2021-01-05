@@ -31,4 +31,38 @@ body {
   @import "elements";
   @import "sidebar";
   @import "fields";
+
+  &-share {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5em;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 4px;
+      padding: 0 12px 0 0;
+      margin-left: 18px;
+      color: #fff;
+      font-weight: bold;
+
+      &:hover {
+        opacity: .75;
+        text-decoration: none;
+      }
+    }
+    svg {
+      fill: currentColor;
+      width: 28px;
+      height: 28px;
+      padding: 4px;
+    }
+
+    &--facebook {
+      background: #3b5998;
+    }
+    &--twitter {
+      background: #1da1f2;
+    }
+  }
 }

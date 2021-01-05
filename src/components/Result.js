@@ -1,4 +1,5 @@
 import { lazy, Suspense, useState } from 'react';
+import { facebookIcon, twitterIcon } from '../constants/icons';
 
 const ResultCode = () => {
 	const [ isGenerating, setIsGenerating ] = useState( false );
@@ -38,7 +39,12 @@ const ResultCode = () => {
 				data.length > 0 &&
 				<Suspense fallback={ null }>
 					<div className="og-result">
-						<div className="alert alert-info">Copy the code and paste into your theme's <code>functions.php</code> file. Wanna more features or use inside the WordPress admin? <a href="https://metabox.io/pricing/" target="_blank" rel="noopener noreferrer">Become a premium user</a>.</div>
+						<div className="alert alert-info">Copy and paste the code into your theme's <code>functions.php</code> file. Wanna use this builder inside the WordPress admin with support for groups, tabs, advanced location rules and many more settings? <a href="https://metabox.io/pricing/">Become a premium user</a>!</div>
+						<div className="og-share">
+							<strong>Share with your friends:</strong>
+							<a className="og-share--facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmetabox.io%2Fonline-generator%2F" target="_blank" rel="noopener noreferrer">{ facebookIcon } Facebook</a>
+							<a className="og-share--twitter" href="https://twitter.com/intent/tweet?url=https://metabox.io/online-generator/&amp;via=wpmetabox&amp;text=I+just+generated+a+custom+meta+box+and+custom+fields+for+%23WordPress" target="_blank" rel="noopener noreferrer">{ twitterIcon } Twitter</a>
+						</div>
 						<div className="og-result__body">
 							<Highlight className="php">{ data }</Highlight>
 							<Clipboard title="Click to copy the code" data-clipboard-text={ data } onSuccess={ copy }>{ copied ? 'Copied' : 'Copy' }</Clipboard>
