@@ -474,6 +474,7 @@ export const fieldsData = {
 			name,
 			desc
 		},
+		advanced
 	},
 	hidden: {
 		general: {
