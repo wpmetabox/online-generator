@@ -1,6 +1,6 @@
 {
   "name": "online-generator",
-  "homepage": "https://metabox.io/online-generator/",
+  "homepage": "http://online-generator.test",
   "version": "2.0.0",
   "license": "GPL-2.0-or-later",
   "dependencies": {
@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.1.0",
-    "node-sass": "^5.0.0",
+    "node-sass": "^6.0.1",
     "postcss": "^8.2.2",
     "postcss-cli": "^8.3.1"
   }
