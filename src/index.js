@@ -1,4 +1,4 @@
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import Result from './components/Result';
@@ -25,4 +25,6 @@ const App = () => (
 	</form>
 );
 
-render( <App />, document.getElementById( 'root' ) );
+const container = document.getElementById( 'root' );
+const root = createRoot( container );
+root.render( <App /> );
