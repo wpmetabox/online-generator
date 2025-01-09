@@ -21,7 +21,6 @@
 
   <link rel="stylesheet" href="//metabox.io/wp-content/themes/rooster/style.css">
   <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="//metabox.io/wp-content/plugins/mb-functionality/css/style.css" media="print" onload="this.media='all'">
 
   <meta name="description" content="Generate custom meta boxes for WordPress in a few click. Ready to copy and paste PHP code for custom meta boxes." />
   <link rel="canonical" href="https://metabox.io/online-generator/" />
@@ -49,73 +48,56 @@
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KX7MB6');</script>
 </head>
 
-<body class="page">
-  <div class="top-bar">
-    <nav class="header-navigation top-bar-navigation">
-      <ul class="menu" id="menu-top-bar-left">
-        <li class="menu-item"><a href="https://demo.metabox.io">Demo</a></li>
-        <li class="menu-item current-menu-item"><a href="/online-generator/" aria-current="page">Online Generator</a></li>
-        <li class="menu-item"><a href="/post-type-generator/">Post Type Generator</a></li>
-        <li class="menu-item"><a href="/taxonomy-generator/">Taxonomy Generator</a></li>
-        <li class="menu-item"><a href="/block-generator/">Block Generator</a></li>
-      </ul>
-    </nav>
-    <nav class="header-navigation top-bar-navigation">
-      <ul class="menu">
-        <li class="menu-item"><a href="/my-account/">My Account</a></li>
-      </ul>
-    </nav>
-  </div>
-  <header class="site-header" role="banner">
-    <div class="site-branding">
-      <p class="site-title">
-        <a href="/" rel="home">
-          <svg viewBox="227 227 46 46" width="46" height="46" xmlns="http://www.w3.org/2000/svg">
-            <rect x="227" y="227" width="46" height="46" rx="4" ry="4"></rect>
-            <path d="M 256.873 255.508 L 257.283 246.088 L 257.193 246.078 L 251.483 261.868 L 248.613 261.868 L 242.933 246.138 L 242.843 246.148 L 243.253 255.508 L 243.253 258.868 L 245.533 259.308 L 245.533 261.868 L 236.703 261.868 L 236.703 259.308 L 238.973 258.868 L 238.973 243.558 L 236.703 243.118 L 236.703 240.538 L 238.973 240.538 L 244.553 240.538 L 249.993 256.258 L 250.073 256.258 L 255.553 240.538 L 263.433 240.538 L 263.433 243.118 L 261.153 243.558 L 261.153 258.868 L 263.433 259.308 L 263.433 261.868 L 254.603 261.868 L 254.603 259.308 L 256.873 258.868 L 256.873 255.508 Z" style="fill:#fff"></path>
-          </svg>
-          <span itemprop="brand">Meta Box</span>
-        </a>
-      </p>
-      <p class="site-description">Best WordPress Plugin for Custom Fields &amp; Meta Boxes</p>
+<body class="font-sans text-slate-700 text-base overflow-x-hidden">
+  <header class="py-4 border-0 border-b border-solid border-slate-200 relative">
+    <div class="container flex justify-between items-center">
+      <a href="/" class="site-title font-bold flex items-center gap-2 hover:no-underline">
+        <svg viewBox="227 227 46 46" width="46" height="46" xmlns="http://www.w3.org/2000/svg">
+          <rect x="227" y="227" width="46" height="46" rx="4" ry="4"></rect>
+          <path d="M 256.873 255.508 L 257.283 246.088 L 257.193 246.078 L 251.483 261.868 L 248.613 261.868 L 242.933 246.138 L 242.843 246.148 L 243.253 255.508 L 243.253 258.868 L 245.533 259.308 L 245.533 261.868 L 236.703 261.868 L 236.703 259.308 L 238.973 258.868 L 238.973 243.558 L 236.703 243.118 L 236.703 240.538 L 238.973 240.538 L 244.553 240.538 L 249.993 256.258 L 250.073 256.258 L 255.553 240.538 L 263.433 240.538 L 263.433 243.118 L 261.153 243.558 L 261.153 258.868 L 263.433 259.308 L 263.433 261.868 L 254.603 261.868 L 254.603 259.308 L 256.873 258.868 L 256.873 255.508 Z" style="fill:#fff"></path>
+        </svg>
+        <span>Meta Box</span>
+      </a>
+
+      <nav id="site-navigation" class="main-navigation font-bold uppercase text-sm">
+        <button class="menu-toggle">Menu</button>
+        <ul id="primary-menu" class="menu list-none p-0 m-0 z-30">
+          <li class="menu-item"><a href="https://metabox.io/features/">Features</a></li>
+          <li class="menu-item"><a href="https://metabox.io/pricing/">Pricing</a></li>
+          <li class="menu-item menu-item-has-children"><a href="https://metabox.io/plugins/">Products</a>
+            <ul class="sub-menu">
+              <li class="menu-item"><a href="https://metabox.io/lite/">Meta Box Lite</a></li>
+              <li class="menu-item"><a href="https://metabox.io/plugins/">Extensions</a></li>
+              <li class="menu-item"><a href="https://metabox.io/product-category/solutions/">Solutions</a></li>
+            </ul>
+          </li>
+          <li class="menu-item menu-item-has-children"><a href="#">Support</a>
+            <ul class="sub-menu">
+              <li class="menu-item"><a href="https://docs.metabox.io">Documentation</a></li>
+              <li class="menu-item"><a href="https://docs.metabox.io/tutorials/">Tutorials</a></li>
+              <li class="menu-item"><a href="https://support.metabox.io">Support Forum</a></li>
+            </ul>
+          </li>
+          <li class="menu-item"><a href="https://metabox.io/blog/">Blog</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav id="site-navigation" class="main-navigation header-navigation">
-      <button class="menu-toggle">Menu</button>
-      <ul id="primary-menu" class="menu">
-        <li class="menu-item"><a href="https://metabox.io/features/">Features</a></li>
-        <li class="menu-item"><a href="https://metabox.io/pricing/">Pricing</a></li>
-        <li class="menu-item menu-item-has-children"><a href="https://metabox.io/plugins/">Products</a>
-          <ul class="sub-menu">
-            <li class="menu-item"><a href="https://metabox.io/plugins/">Extensions</a></li>
-            <li class="menu-item"><a href="https://metabox.io/product-category/solutions/">Solutions</a></li>
-            <li class="menu-item"><a href="https://metabox.io/resources/">3rd-Party</a></li>
-            <li class="menu-item"><a href="https://metabox.io/showcase/">Showcase</a></li>
-          </ul>
-        </li>
-        <li class="menu-item menu-item-has-children"><a href="#">Support</a>
-          <ul class="sub-menu">
-            <li class="menu-item"><a href="https://docs.metabox.io">Documentation</a></li>
-            <li class="menu-item"><a href="https://support.metabox.io">Support Forum</a></li>
-          </ul>
-        </li>
-        <li class="menu-item"><a href="https://metabox.io/blog/">Blog</a></li>
-      </ul>
-    </nav>
   </header>
 
   <div class="site-content">
-    <div class="page-header">
+    <div class="bg-slate-700 text-white text-center py-16 mb-16">
       <div class="container">
-        <h1 class="page-title">Online Generator</h1>
+        <h1 class="m-0 entry-title">Online Generator</h1>
         <p>Generate custom meta boxes for WordPress in a few click. Ready to copy and paste PHP code for custom meta boxes.</p>
       </div>
     </div>
+
     <main class="container">
       <div class="alert alert-info">
         <p>Welcome to Meta Box Online Generator. This tool helps you to generate code for custom meta boxes and custom fields to use with the Meta Box plugin.</p>
         <ul>
           <li>If this is the first time you use the tool, please <a href="//docs.metabox.io/online-generator/" target="_blank">read this guide</a>.</li>
-          <li>If you want to use the generator inside WordPress admin area, please use the <a href="//metabox.io/plugins/meta-box-builder" target="_blank">Meta Box Builder</a> extension.</li>
+          <li>If you want to use the generator inside WordPress admin area, please use <a href="https://metabox.io/lite/">Meta Box Lite</a>, a single plugin that combines Meta Box, Meta Box Builder and all free extensions to manage post types, taxonomies, custom fields, and relationships with UI.</li>
         </ul>
       </div>
       <div id="root"></div>
