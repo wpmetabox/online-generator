@@ -19,7 +19,7 @@
   <link rel="preconnect" href="//www.google-analytics.com">
   <link rel="preconnect" href="//i0.wp.com">
 
-  <link rel="stylesheet" href="//metabox.io/wp-content/themes/rooster/style.css">
+  <link rel="stylesheet" href="//metabox.io/wp-content/themes/rooster/style.css?v=20250109">
   <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
 
   <meta name="description" content="Generate custom meta boxes for WordPress in a few click. Ready to copy and paste PHP code for custom meta boxes." />
@@ -187,6 +187,26 @@
       </div>
     </div>
   </footer>
+  <div class="to-top">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+      <path d="M7.406 15.422l-1.406-1.406 6-6 6 6-1.406 1.406-4.594-4.594z"></path>
+    </svg>
+  </div>
+
+  <script type="module">
+    let button = document.querySelector( '.to-top' );
+    window.addEventListener( 'scroll', () => button.classList.toggle( 'is-visible', window.scrollY > 100 ), { passive: true } );
+    button.addEventListener( 'click', () => window.scrollTo( { top: 0, left: 0, behavior: 'smooth' } ), { passive: true } );
+  </script>
+
+  <script>
+    window.subscribeUrl = 'https://metabox.io/wp-json/rooster/subscribe';
+    {
+      document.querySelector( '.menu-toggle' ).addEventListener( 'click', () => document.querySelector( '#site-navigation' ).classList.toggle( 'toggled' ), { passive: true } );
+      document.querySelectorAll( ".subscribe-form" ).forEach( n => { const s = n.querySelector( "button" ), o = n.dataset.keys.split( "," ), e = [ "mousemove", "keydown", "click", "scroll", "touchstart" ]; let t = !1; function r() { t || ( t = !0, e.forEach( e => document.removeEventListener( e, r ) ), setTimeout( a, 3e3 ) ); } e.forEach( e => document.addEventListener( e, r ) ); const a = () => { n.querySelector( "input" ).name = o[ 0 ]; let e = document.createElement( "input" ); e.type = "hidden", e.name = o[ 1 ], e.value = o[ 2 ], n.append( e ); }; n.addEventListener( "submit", e => { e.preventDefault(), s.disabled = !0; const t = new FormData( n ); if ( !t.get( o[ 0 ] ) ) return alert( "Please enter your email" ), void ( s.disabled = !1 ); t.set( "referrer", location.href ), t.set( "keys", o.join( "," ) ), t.set( "source", n.dataset.source ), fetch( window.subscribeUrl, { method: "POST", body: t } ).then( e => e.json() ).then( e => { s.disabled = !1, e.success ? n.dataset.callback ? window[ n.dataset.callback ]( n ) : n.innerHTML = "Thank you for subscribing!" : alert( e.message ); } ); } ); } );
+    }
+  </script>
+  <script src="https://scripts.elightup.com/sales.min.js?v=20240304v2"></script>
 
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.12.0/build/styles/atom-one-dark.min.css" media="print" onload="this.media='all'">
   <script>
