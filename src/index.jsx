@@ -1,6 +1,7 @@
 import { createRoot } from 'react-dom/client';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import '../sass/style.scss';
 import Result from './components/Result';
 import FieldsTab from './components/Tabs/FieldsTab';
 import SettingsTab from './components/Tabs/SettingsTab';
