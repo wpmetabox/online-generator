@@ -1,4 +1,4 @@
-import dotProp from 'dot-prop';
+import { getProperty, setProperty } from 'dot-prop';
 import { useState } from 'react';
 import { ucwords, uniqid } from '../../functions';
 import FieldMenu from './FieldsTab/FieldMenu';
@@ -19,7 +19,7 @@ const FieldsTab = () => {
 
 	const duplicateField = id => setFields( prev => {
 		let newField = getFieldValue( `fields[${ id }]` );
-		const newId = `${ dotProp.get( newField, 'type' ) }_${ uniqid() }`;
+		const newId = `${ getProperty( newField, 'type' ) }_${ uniqid() }`;
 		newField.id = newId;
 		newField._id = newId;
 		newField.name += ' (Copy)';
@@ -87,7 +87,7 @@ const FieldsTab = () => {
 
 const getFieldValue = key => {
 	const data = serializeForm( document.querySelector( '#og-form' ) );
-	return dotProp.get( data, bracketsToDots( key ) );
+	return getProperty( data, bracketsToDots( key ) );
 };
 
 const serializeForm = form => {
@@ -99,10 +99,10 @@ const serializeForm = form => {
 	for ( let [ key, value ] of formData ) {
 		key = bracketsToDots( key );
 		if ( key in data ) {
-			const oldValue = dotProp.get( data, key );
+			const oldValue = getProperty( data, key );
 			value = Array.isArray( oldValue ) ? [ ...oldValue, value ] : [ oldValue, value ];
 		}
-		dotProp.set( data, key, value );
+		setProperty( data, key, value );
 	}
 
 	return data;

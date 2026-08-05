@@ -2,7 +2,7 @@
  * Used to strip un-supported field types and field settings from Meta Box Builder
  */
 
-import dotProp from 'dot-prop';
+import { getProperty, setProperty, deleteProperty } from 'dot-prop';
 
 // Get full fieldsData from Meta Box Builder /mbb/fields/ REST API.
 let fieldsData = {
@@ -9426,16 +9426,16 @@ const unSupportedAdvancedSettings = [
 	'conditional_logic'
 ];
 
-unSupportedTypes.forEach( type => dotProp.delete( fieldsData, type ) );
+unSupportedTypes.forEach( type => deleteProperty( fieldsData, type ) );
 
 Object.entries( fieldsData ).forEach( ( [ type, data ] ) => {
-	unSupportedGeneralSettings.forEach( setting => dotProp.delete( fieldsData[ type ].general, setting ) );
+	unSupportedGeneralSettings.forEach( setting => deleteProperty( fieldsData[ type ].general, setting ) );
 
 	// Rename custom_settings to attributes to maintain backward compatibility.
-	let attributes = dotProp.get( fieldsData[ type ].advanced, 'custom_settings' );
-	dotProp.set( fieldsData[ type ].advanced, 'attributes', attributes );
+	let attributes = getProperty( fieldsData[ type ].advanced, 'custom_settings' );
+	setProperty( fieldsData[ type ].advanced, 'attributes', attributes );
 
-	unSupportedAdvancedSettings.forEach( setting => dotProp.delete( fieldsData[ type ].advanced, setting ) );
+	unSupportedAdvancedSettings.forEach( setting => deleteProperty( fieldsData[ type ].advanced, setting ) );
 } );
 
 export default () => <textarea style={ { fontFamily: 'monospace' } } rows="50">{ JSON.stringify( fieldsData, null, 2 ) }</textarea>;

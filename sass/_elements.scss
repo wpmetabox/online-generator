@@ -86,11 +86,9 @@ svg {
   &__body {
     position: relative;
   }
-  pre {
-    padding: 0;
-  }
   .hljs {
-    font-size: 13px;
+    font-size: 14px;
+    background: #282c34;
   }
 
   button {
