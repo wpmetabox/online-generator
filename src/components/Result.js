@@ -1,6 +1,8 @@
 import { lazy, Suspense, useState } from 'react';
 import { facebookIcon, twitterIcon } from '../constants/icons';
 
+const Highlight = lazy( () => import( 'react-highlight' ) );
+
 const ResultCode = () => {
 	const [ isGenerating, setIsGenerating ] = useState( false );
 	const [ data, setData ] = useState( '' );
@@ -32,8 +34,6 @@ const ResultCode = () => {
 			console.error( 'Failed to copy:', error );
 		}
 	};
-
-	const Highlight = lazy( () => import( 'react-highlight' ) );
 
 	return (
 		<>
