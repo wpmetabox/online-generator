@@ -11,7 +11,7 @@ const ResultCode = () => {
 		setIsGenerating( true );
 
 		const isTest = window.location.href.includes( 'localhost' );
-		let url = isTest ? 'http://localhost/metaboxio/wp-json/mbb-parser/meta-box' : 'https://metabox.io/wp-json/mbb-parser/meta-box';
+		let url = isTest ? 'http://mb.test/wp-json/mbb-parser/meta-box' : 'https://metabox.io/wp-json/mbb-parser/meta-box';
 
 		const formData = new FormData( document.querySelector( '#og-form' ) );
 		fetch( url, {
@@ -23,12 +23,16 @@ const ResultCode = () => {
 		} );
 	};
 
-	const copy = () => {
-		setCopied( true );
-		setTimeout( () => setCopied( false ), 1000 );
+	const copy = async () => {
+		try {
+			await navigator.clipboard.writeText( data );
+			setCopied( true );
+			setTimeout( () => setCopied( false ), 1000 );
+		} catch ( error ) {
+			console.error( 'Failed to copy:', error );
+		}
 	};
 
-	const Clipboard = lazy( () => import( 'react-clipboard.js' ) );
 	const Highlight = lazy( () => import( 'react-highlight' ) );
 
 	return (
@@ -47,7 +51,7 @@ const ResultCode = () => {
 						</div>
 						<div className="og-result__body">
 							<Highlight className="php">{ data }</Highlight>
-							<Clipboard title="Click to copy the code" data-clipboard-text={ data } onSuccess={ copy }>{ copied ? 'Copied' : 'Copy' }</Clipboard>
+							<button type="button" title="Click to copy the code" onClick={ copy }>{ copied ? 'Copied' : 'Copy' }</button>
 						</div>
 					</div>
 				</Suspense>
