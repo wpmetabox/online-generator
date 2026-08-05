@@ -1,7 +1,7 @@
 import { lazy, Suspense, useState } from 'react';
 import { facebookIcon, twitterIcon } from '../constants/icons';
 
-const Highlight = lazy( () => import( 'react-highlight' ) );
+const CodeHighlight = lazy( () => import( './CodeHighlight' ) );
 
 const ResultCode = () => {
 	const [ isGenerating, setIsGenerating ] = useState( false );
@@ -50,7 +50,7 @@ const ResultCode = () => {
 							<a className="og-share--twitter" href="https://twitter.com/intent/tweet?url=https://metabox.io/online-generator/&amp;via=wpmetabox&amp;text=I+just+generated+a+custom+meta+box+and+custom+fields+for+%23WordPress" target="_blank" rel="noopener noreferrer">{ twitterIcon } Twitter</a>
 						</div>
 						<div className="og-result__body">
-							<Highlight className="php">{ data }</Highlight>
+							<CodeHighlight code={ data } language="php" />
 							<button type="button" title="Click to copy the code" onClick={ copy }>{ copied ? 'Copied' : 'Copy' }</button>
 						</div>
 					</div>
